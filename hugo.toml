@@ -1,4 +1,4 @@
-baseURL = "https://sillytree.github.io/yawningtree/"
+baseURL = "https://yawningtree.github.io/"
 theme = "yawningtree"
 locale = "zh-cn"
 title = "打哈欠的树"
