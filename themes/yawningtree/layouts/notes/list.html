@@ -8,7 +8,7 @@
     <article class="note-item">
       <div class="note-meta">
         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
-        {{ with .Params.tags }}<span class="muted small">· {{ delimit . " · " }}</span>{{ end }}
+        {{ if .Params.tags }}<span class="meta-sep"> · </span>{{ partial "tags.html" . }}{{ end }}
       </div>
       {{ if .Params.title }}<h2 class="note-title"><a href="{{ .RelPermalink }}">{{ .Params.title }}</a></h2>{{ end }}
       <div class="timeline-note">{{ .Content }}</div>

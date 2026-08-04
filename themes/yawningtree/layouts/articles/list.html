@@ -9,7 +9,7 @@
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
       <h2 class="post-row-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
       {{ with .Summary }}<p class="post-row-summary">{{ . | plainify }}</p>{{ end }}
-      {{ with .Params.tags }}<p class="muted small">{{ delimit . " · " }}</p>{{ end }}
+      {{ if .Params.tags }}<p class="post-row-tags">{{ partial "tags.html" . }}</p>{{ end }}
     </article>
   {{ else }}
     <p class="muted">还没有文章，等一棵树慢慢长出来。</p>

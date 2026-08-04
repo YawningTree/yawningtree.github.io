@@ -5,9 +5,11 @@
     {{ partial "meta.html" . }}
   </header>
   <div class="prose">{{ .Content }}</div>
-  <nav class="post-nav">
-    {{ with .PrevInSection }}<a class="prev" href="{{ .RelPermalink }}">← 更早的一条</a>{{ end }}
-    {{ with .NextInSection }}<a class="next" href="{{ .RelPermalink }}">更新的 →</a>{{ end }}
-  </nav>
+  <footer class="post-footer">
+    <nav class="post-nav">
+      {{ with .PrevInSection }}<a class="prev" href="{{ .RelPermalink }}">← 更早的一条</a>{{ end }}
+      {{ with .NextInSection }}<a class="next" href="{{ .RelPermalink }}">更新的 →</a>{{ end }}
+    </nav>
+  </footer>
 </article>
 {{ end }}

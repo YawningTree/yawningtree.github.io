@@ -22,8 +22,9 @@
       {{ if eq .Section "articles" }}
         <h2 class="timeline-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         {{ with .Summary }}<p class="timeline-summary">{{ . | plainify }}</p>{{ end }}
+        {{ $page := . }}
         {{ with partial "first-image.html" .Content }}
-          <a class="timeline-media" href="{{ $.RelPermalink }}"><img src="{{ . }}" alt="" loading="lazy"></a>
+          <a class="timeline-media" href="{{ $page.RelPermalink }}"><img src="{{ . }}" alt="" loading="lazy"></a>
         {{ end }}
       {{ else }}
         <div class="timeline-note">{{ .Content }}</div>

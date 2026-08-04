@@ -24,7 +24,7 @@ summaryLength = 60
   [markup.highlight]
     codeFences = true
     lineNos = false
-    noClasses = true
+    noClasses = false
 
 [taxonomies]
   tag = "tags"
