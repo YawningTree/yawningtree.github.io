@@ -1,7 +1,5 @@
 {{ $date := .Date | time.Format "2006-01-02" }}
 <span class="meta">
   <time datetime="{{ .Date.Format "2006-01-02" }}">{{ $date }}</time>
-  {{ with .Params.tags }}
-    <span class="tags">· {{ delimit . " · " }}</span>
-  {{ end }}
+  {{ if .Params.tags }}<span class="meta-sep">·</span>{{ partial "tags.html" . }}{{ end }}
 </span>

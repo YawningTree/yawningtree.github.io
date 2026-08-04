@@ -1,0 +1,6 @@
+{{/* 可点击的标签链接（复用：文章/随记列表、详情页顶部 meta） */}}
+{{ with .Params.tags }}
+<span class="tags">
+  {{ range $i, $t := . }}{{ if $i }}<span class="tags-sep">·</span>{{ end }}<a class="tag-link" href="{{ "tags/" | relURL }}{{ $t | urlize }}">{{ $t }}</a>{{ end }}
+</span>
+{{ end }}
