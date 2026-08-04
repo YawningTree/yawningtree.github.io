@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="树叶">
+  <rect width="800" height="600" fill="#f8f6f1"/>
+  <g transform="translate(240 210) rotate(-24)">
+    <path d="M0 0 C -44 -22 -56 -96 0 -128 C 56 -96 44 -22 0 0 Z" fill="#7d8a6f"/>
+    <path d="M0 0 L 0 -116" stroke="#eef0e6" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(420 170) rotate(12)">
+    <path d="M0 0 C -48 -24 -62 -102 0 -138 C 62 -102 48 -24 0 0 Z" fill="#8b9a7c"/>
+    <path d="M0 0 L 0 -126" stroke="#eef0e6" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(580 250) rotate(42)">
+    <path d="M0 0 C -40 -20 -52 -88 0 -118 C 52 -88 40 -20 0 0 Z" fill="#93a285"/>
+    <path d="M0 0 L 0 -106" stroke="#eef0e6" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(340 380) rotate(58)">
+    <path d="M0 0 C -34 -17 -44 -74 0 -100 C 44 -74 34 -17 0 0 Z" fill="#aebba0"/>
+    <path d="M0 0 L 0 -90" stroke="#eef0e6" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(520 430) rotate(88)">
+    <path d="M0 0 C -30 -15 -38 -64 0 -86 C 38 -64 30 -15 0 0 Z" fill="#c9d2b9"/>
+    <path d="M0 0 L 0 -78" stroke="#f8f6f1" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

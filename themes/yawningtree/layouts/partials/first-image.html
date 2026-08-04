@@ -1,0 +1,9 @@
+{{ $image := "" }}
+{{ $imgs := findRE "<img[^>]+>" . 1 }}
+{{ if $imgs }}
+  {{ $srcs := findRE "src=[\"'][^\"']+[\"']" (index $imgs 0) }}
+  {{ if $srcs }}
+    {{ $image = replaceRE "^src=[\"']|[\"']$" "" (index $srcs 0) }}
+  {{ end }}
+{{ end }}
+{{ return $image }}

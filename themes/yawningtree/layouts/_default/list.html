@@ -1,0 +1,15 @@
+{{ define "main" }}
+<header class="page-head">
+  <h1>{{ .Title }}</h1>
+</header>
+<section class="post-list">
+  {{ range .Pages.ByDate.Reverse }}
+    <article class="post-row">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+      <h2 class="post-row-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    </article>
+  {{ else }}
+    <p class="muted">这里还空着。</p>
+  {{ end }}
+</section>
+{{ end }}

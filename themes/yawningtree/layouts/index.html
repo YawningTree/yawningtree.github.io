@@ -1,0 +1,36 @@
+{{ define "main" }}
+{{ $articles := where site.RegularPages "Section" "articles" }}
+{{ $notes := where site.RegularPages "Section" "notes" }}
+{{ $all := sort (union $articles $notes) "Date" "desc" }}
+
+<section class="hero">
+  <h1 class="hero-title">欢迎来到我的数字花园</h1>
+  <p class="hero-sub">{{ .Site.Params.tagline }}</p>
+</section>
+
+<section class="timeline" aria-label="内容时间线">
+  {{ range $all }}
+    <article class="timeline-item">
+      <div class="timeline-meta">
+        {{ if eq .Section "articles" }}
+          <span class="badge badge-article">文章</span>
+        {{ else }}
+          <span class="badge badge-note">随记</span>
+        {{ end }}
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+      </div>
+      {{ if eq .Section "articles" }}
+        <h2 class="timeline-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{ with .Summary }}<p class="timeline-summary">{{ . | plainify }}</p>{{ end }}
+        {{ with partial "first-image.html" .Content }}
+          <a class="timeline-media" href="{{ $.RelPermalink }}"><img src="{{ . }}" alt="" loading="lazy"></a>
+        {{ end }}
+      {{ else }}
+        <div class="timeline-note">{{ .Content }}</div>
+      {{ end }}
+    </article>
+  {{ else }}
+    <p class="muted">花园还在播种，稍后再来看看吧。</p>
+  {{ end }}
+</section>
+{{ end }}

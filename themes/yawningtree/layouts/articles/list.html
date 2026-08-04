@@ -1,0 +1,18 @@
+{{ define "main" }}
+<header class="page-head">
+  <h1>文章</h1>
+  <p class="muted">长期沉淀：技术、学习、项目与思考。</p>
+</header>
+<section class="post-list">
+  {{ range .Pages.ByDate.Reverse }}
+    <article class="post-row">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+      <h2 class="post-row-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      {{ with .Summary }}<p class="post-row-summary">{{ . | plainify }}</p>{{ end }}
+      {{ with .Params.tags }}<p class="muted small">{{ delimit . " · " }}</p>{{ end }}
+    </article>
+  {{ else }}
+    <p class="muted">还没有文章，等一棵树慢慢长出来。</p>
+  {{ end }}
+</section>
+{{ end }}

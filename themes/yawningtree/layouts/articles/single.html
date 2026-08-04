@@ -1,0 +1,29 @@
+{{ define "main" }}
+<article class="layout-article">
+  <div class="content-col">
+    <header class="post-header">
+      <h1>{{ .Title }}</h1>
+      {{ partial "meta.html" . }}
+    </header>
+    {{ with .Params.summary }}<p class="post-summary">{{ . }}</p>{{ end }}
+    <div class="prose">{{ .Content }}</div>
+    <footer class="post-footer">
+      {{ with .Params.tags }}
+        <p class="small muted">标签：{{ range . }}<a class="tag" href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}</p>
+      {{ end }}
+      <nav class="post-nav">
+        {{ with .PrevInSection }}<a class="prev" href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}
+        {{ with .NextInSection }}<a class="next" href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}
+      </nav>
+    </footer>
+  </div>
+  {{ with .TableOfContents }}
+  <aside class="toc-col">
+    <nav class="toc" aria-label="文章目录">
+      <p class="toc-title">目录</p>
+      {{ . }}
+    </nav>
+  </aside>
+  {{ end }}
+</article>
+{{ end }}

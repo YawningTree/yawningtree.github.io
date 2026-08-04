@@ -1,0 +1,20 @@
+{{ define "main" }}
+<header class="page-head">
+  <h1>随记</h1>
+  <p class="muted">短文本、日常与灵感。像树梢上落下的叶子。</p>
+</header>
+<section class="notes-feed">
+  {{ range .Pages.ByDate.Reverse }}
+    <article class="note-item">
+      <div class="note-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+        {{ with .Params.tags }}<span class="muted small">· {{ delimit . " · " }}</span>{{ end }}
+      </div>
+      {{ if .Params.title }}<h2 class="note-title"><a href="{{ .RelPermalink }}">{{ .Params.title }}</a></h2>{{ end }}
+      <div class="timeline-note">{{ .Content }}</div>
+    </article>
+  {{ else }}
+    <p class="muted">还没有随记。</p>
+  {{ end }}
+</section>
+{{ end }}

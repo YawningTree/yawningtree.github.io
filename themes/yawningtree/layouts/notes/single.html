@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="note-single">
+  <header class="post-header">
+    {{ if .Params.title }}<h1>{{ .Params.title }}</h1>{{ end }}
+    {{ partial "meta.html" . }}
+  </header>
+  <div class="prose">{{ .Content }}</div>
+  <nav class="post-nav">
+    {{ with .PrevInSection }}<a class="prev" href="{{ .RelPermalink }}">← 更早的一条</a>{{ end }}
+    {{ with .NextInSection }}<a class="next" href="{{ .RelPermalink }}">更新的 →</a>{{ end }}
+  </nav>
+</article>
+{{ end }}

@@ -1,0 +1,5 @@
+name = "yawningtree"
+license = "MIT"
+description = "打哈欠的树 —— Tree 的个人数字花园主题：极简、留白、低饱和度。"
+homepage = "https://github.com/SillyTree/yawningtree"
+min_version = "0.120.0"

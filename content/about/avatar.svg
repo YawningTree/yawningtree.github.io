@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Tree 的头像">
+  <rect width="400" height="400" rx="200" fill="#eef0e6"/>
+  <circle cx="200" cy="168" r="118" fill="#7d8a6f"/>
+  <circle cx="152" cy="126" r="30" fill="#93a285"/>
+  <circle cx="238" cy="196" r="26" fill="#a9b897"/>
+  <path d="M180 282 h 40 v 68 h -40 z" fill="#5d6a4e"/>
+  <circle cx="200" cy="86" r="12" fill="#f8f6f1" opacity=".85"/>
+</svg>

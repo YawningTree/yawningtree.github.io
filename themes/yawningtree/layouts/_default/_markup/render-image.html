@@ -1,0 +1,6 @@
+{{/* 把 Markdown 中的相对图片路径解析为源页面下的绝对路径，保证内容被复用到首页/列表时图片不失效 */}}
+{{ $dest := .Destination }}
+{{ if and $dest (not (strings.HasPrefix $dest "http")) (not (strings.HasPrefix $dest "/")) (not (strings.HasPrefix $dest "#")) }}
+  {{ $dest = printf "%s%s" .Page.RelPermalink $dest }}
+{{ end }}
+<img src="{{ $dest | safeURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}>
