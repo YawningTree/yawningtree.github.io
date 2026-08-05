@@ -3,7 +3,7 @@ title: "PyTorch 学习笔记（一）：张量与自动求导"
 date: 2026-08-02
 tags: ["PyTorch", "深度学习", "学习笔记"]
 summary: "从张量到 autograd：一份简短的学习笔记，记录我理解 PyTorch 核心概念的思路。"
-draft: false
+draft: true
 ---
 
 最近在系统地学习 PyTorch。这篇笔记记录我最先理解清楚的三个核心概念：张量、自动求导和计算图。

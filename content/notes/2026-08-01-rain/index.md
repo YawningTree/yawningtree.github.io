@@ -1,7 +1,7 @@
 ---
 date: 2026-08-01
 tags: ["日常"]
-draft: false
+draft: true
 ---
 
 下午一场阵雨，窗外的树被洗得很绿。

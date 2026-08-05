@@ -1,0 +1,15 @@
+{{/* 标签云：全部标签按数量降序。在 terms 页无高亮；在单个标签页高亮当前标签。
+   用法：{{ partial "tag-cloud.html" . }} */}}
+{{ $active := .Title | lower }}
+{{ $tags := slice }}
+{{ range $term, $pages := site.Taxonomies.tags }}
+  {{ $tags = $tags | append (dict "name" $term "count" (len $pages) "page" $pages.Page) }}
+{{ end }}
+{{ $tags = sort $tags "count" "desc" }}
+{{ if $tags }}
+<section class="tag-cloud" aria-label="所有标签">
+  {{ range $tags }}
+    <a class="tag-cloud-link{{ if eq .name $active }} active{{ end }}" href="{{ .page.RelPermalink }}">{{ .page.Title }}<span class="tag-count">{{ .count }}</span></a>
+  {{ end }}
+</section>
+{{ end }}

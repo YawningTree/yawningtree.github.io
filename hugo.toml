@@ -1,6 +1,7 @@
 baseURL = "https://yawningtree.github.io/"
 theme = "yawningtree"
 locale = "zh-cn"
+timeZone = "Asia/Shanghai"
 title = "打哈欠的树"
 enableRobotsTXT = true
 publishDir = "public"
@@ -8,9 +9,9 @@ summaryLength = 60
 
 [params]
   author = "Tree"
-  description = "Tree 的个人数字花园 —— 记录学习、研究、生活与思想。"
-  tagline = "一棵慢慢生长的树，记录学习、研究、生活与思想。"
-  since = 2026
+  description = "Tree 的自娱自乐数字花园。"
+  tagline = "一棵无聊的树，随便记录点什么。"
+  since = 2019
 
 [markup]
   [markup.tableOfContents]

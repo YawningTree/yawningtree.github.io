@@ -1,6 +1,6 @@
 /* ============================================================
    打哈欠的树 · YawningTree
-   极简 / 留白 / 低饱和度 / 个人数字花园
+   自娱自乐数字花园
    ============================================================ */
 
 :root {
@@ -138,15 +138,26 @@ main.wrap { flex: 1 0 auto; width: 100%; }
 .site-footer p { margin: .25rem 0; }
 
 /* ---------- 首页 Hero ---------- */
-.hero { padding: 2.2rem 0 1.2rem; text-align: center; }
+.hero { padding: 3.4rem 0 1.2rem; text-align: center; }
 .hero-title {
-  font-size: 2rem;
+  font-size: 2.7rem;
   font-weight: 600;
-  line-height: 1.5;
-  letter-spacing: .04em;
-  margin: 0 0 .7rem;
+  line-height: 1.3;
+  letter-spacing: .1em;
+  padding-left: .1em;   /* 抵消末字后的字距，让字形光学居中（否则整体偏左约半字距） */
+  color: var(--accent-ink);
+  margin: 0 0 1rem;
 }
-.hero-sub { color: var(--ink-soft); margin: 0; }
+.hero-sub {
+  color: var(--ink);
+  font-size: 1.08rem;
+  margin: .4rem 0 0;
+}
+.hero-hint {
+  color: var(--ink-soft);
+  font-size: .94rem;
+  margin: .3rem 0 0;
+}
 .hero::after {
   content: "";
   display: block;
@@ -193,6 +204,7 @@ main.wrap { flex: 1 0 auto; width: 100%; }
   letter-spacing: .06em;
   color: var(--ink-faint);
 }
+.timeline-meta-detail { display: inline; }
 .badge {
   font-size: .72rem;
   letter-spacing: .16em;
@@ -215,6 +227,7 @@ main.wrap { flex: 1 0 auto; width: 100%; }
 
 .timeline-media {
   display: block;
+  text-decoration: none;   /* 图片链接不显示下划线（浏览器默认会给 <a> 加下划线） */
   margin-top: 1rem;
   border-radius: var(--radius);
   overflow: hidden;
@@ -368,13 +381,6 @@ main.wrap { flex: 1 0 auto; width: 100%; }
 }
 .tag-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .post-row-tags { margin: .5rem 0 0; }
-.page-sub {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: .08em;
-  color: var(--ink-soft);
-  margin: 2.4rem 0 .2rem;
-}
 .post-row-tags .tag-link { font-size: .84rem; }
 
 /* ---------- 标签云（标签落地页顶部） ---------- */
@@ -419,6 +425,11 @@ main.wrap { flex: 1 0 auto; width: 100%; }
 /* ---------- 正文排版 ---------- */
 .prose { font-size: 1.02rem; line-height: 2.05; }
 .prose p { margin: 1.25em 0; }
+/* 正文加粗：宋体合成加粗笔画差异小，用描边补粗以拉开与正文的区分度 */
+.prose strong, .prose b {
+  font-weight: 700;
+  -webkit-text-stroke: .5px currentColor;
+}
 .prose h2 {
   font-size: 1.42rem;
   margin: 2.1em 0 .8em;
@@ -476,6 +487,42 @@ main.wrap { flex: 1 0 auto; width: 100%; }
 .prose th { background: var(--bg-soft); font-family: var(--sans); font-weight: 600; }
 .prose hr { border: none; border-top: 1px solid var(--line); margin: 2.8em auto; width: 42%; }
 
+/* ---------- 404 页 ---------- */
+.page-404 { text-align: center; padding: 1.2rem 0 4.5rem; }
+.page-404 .post-header { padding-bottom: 1.2rem; }
+.page-404 h1 {
+  font-size: 4.2rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: .08em;
+  padding-left: .08em;   /* 抵消末字后的字距，让字形光学居中（同首页标题） */
+  color: var(--accent-ink);
+  margin: 0 0 1.2rem;
+}
+.page-404 .notfound-text {
+  color: var(--ink);
+  font-size: 1.12rem;
+  margin: .5rem 0;
+}
+.page-404 .notfound-hint {
+  color: var(--ink-soft);
+  font-size: .94rem;
+  margin: .35rem 0 2.2rem;
+}
+.notfound-home {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: .92rem;
+  letter-spacing: .04em;
+  color: var(--accent-ink);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .55rem 1.7rem;
+  transition: color .18s ease, border-color .18s ease, background .18s ease;
+}
+.notfound-home:hover { color: var(--accent); border-color: var(--accent); }
+
 /* ---------- 关于页 ---------- */
 .page-single .prose img { max-width: 220px; border-radius: 50%; border: 1px solid var(--line); }
 
@@ -497,8 +544,8 @@ main.wrap { flex: 1 0 auto; width: 100%; }
   body { font-size: 16px; }
   .header-inner { flex-direction: column; align-items: flex-start; gap: .9rem; }
   .site-nav { width: 100%; justify-content: space-between; gap: 0; }
-  .hero { padding-top: 2.2rem; }
-  .hero-title { font-size: 1.7rem; }
+  .hero { padding-top: 2.6rem; }
+  .hero-title { font-size: 2.1rem; }
   .page-head { padding-top: 2.2rem; }
   .page-head h1, .post-header h1 { font-size: 1.7rem; }
   .timeline-item { padding-left: 1.9rem; }

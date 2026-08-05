@@ -1,7 +1,7 @@
 {{ define "main" }}
 <header class="page-head">
   <h1>文章</h1>
-  <p class="muted">长期沉淀：技术、学习、项目与思考。</p>
+  <p class="muted">一些想法。</p>
 </header>
 <section class="post-list">
   {{ range .Pages.ByDate.Reverse }}
@@ -12,7 +12,7 @@
       {{ if .Params.tags }}<p class="post-row-tags">{{ partial "tags.html" . }}</p>{{ end }}
     </article>
   {{ else }}
-    <p class="muted">还没有文章，等一棵树慢慢长出来。</p>
+    <p class="muted">还没有文章。</p>
   {{ end }}
 </section>
 {{ end }}

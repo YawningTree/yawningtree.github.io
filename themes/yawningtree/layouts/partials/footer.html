@@ -1,6 +1,7 @@
 <footer class="site-footer">
   <div class="wrap">
-    <p>© {{ now.Year }} {{ .Site.Params.author }} · {{ .Site.Title }}</p>
-    <p class="muted">一棵慢慢生长的树 · 用 Markdown 写作 · Git 管理 · Hugo 生成</p>
+    {{ $since := .Site.Params.since | default now.Year }}
+    <p>© {{ if lt (int $since) (int now.Year) }}{{ $since }}–{{ end }}{{ now.Year }} {{ .Site.Params.author }} · {{ .Site.Title }}</p>
+    <p class="muted">一棵无聊的树 · 打个哈欠 · 内心平静 · 诸事顺意</p>
   </div>
 </footer>

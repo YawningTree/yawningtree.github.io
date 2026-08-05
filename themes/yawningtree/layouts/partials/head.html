@@ -2,8 +2,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ $t := .Title }}{{ if and (eq .Section "notes") (not $t) }}{{ $t = .Date.Format "2006-01-02" }}{{ end }}{{ with $t }}{{ . }} · {{ end }}{{ .Site.Title }}{{ end }}</title>
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="icon" href="{{ "favicon.svg" | absURL }}" type="image/svg+xml">
 {{ with .OutputFormats.Get "rss" -}}
   {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
-<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
