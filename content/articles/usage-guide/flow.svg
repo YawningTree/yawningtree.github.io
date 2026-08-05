@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="博客发布流程：写作、本地预览、提交推送、自动发布上线">
+  <rect width="1200" height="600" fill="#f8f6f1"/>
+  <path d="M0 468 Q 300 420 620 468 T 1200 442 L 1200 600 L 0 600 Z" fill="#eef0e6"/>
+  <path d="M0 530 Q 350 490 700 540 T 1200 508 L 1200 600 L 0 600 Z" fill="#dfe4d3"/>
+  <circle cx="180" cy="452" r="16" fill="#93a285"/>
+  <circle cx="392" cy="470" r="12" fill="#a9b897"/>
+  <circle cx="820" cy="452" r="14" fill="#8b9a7c"/>
+  <circle cx="1040" cy="478" r="12" fill="#aebba0"/>
+  <circle cx="608" cy="436" r="9" fill="#e5d9bd"/>
+  <circle cx="1120" cy="438" r="10" fill="#93a285"/>
+  <circle cx="80" cy="478" r="10" fill="#a9b897"/>
+  <circle cx="196" cy="492" r="12" fill="#aebba0"/>
+  <circle cx="920" cy="490" r="11" fill="#8b9a7c"/>
+
+  <g font-family="'Songti SC','PingFang SC','Noto Serif CJK SC',serif">
+    <g>
+      <rect x="10" y="210" width="230" height="160" rx="28" fill="#fbfaf6" stroke="#e5e0d3" stroke-width="2"/>
+      <circle cx="46" cy="246" r="17" fill="#7d8a6f"/>
+      <text x="46" y="252" font-size="19" fill="#f8f6f1" text-anchor="middle" font-family="'PingFang SC','Helvetica Neue',sans-serif">1</text>
+      <text x="125" y="300" font-size="25" fill="#3b3830" text-anchor="middle">写作</text>
+      <text x="125" y="332" font-size="17" fill="#6f6a5c" text-anchor="middle">Markdown 编辑</text>
+    </g>
+    <g>
+      <rect x="330" y="210" width="230" height="160" rx="28" fill="#fbfaf6" stroke="#e5e0d3" stroke-width="2"/>
+      <circle cx="366" cy="246" r="17" fill="#7d8a6f"/>
+      <text x="366" y="252" font-size="19" fill="#f8f6f1" text-anchor="middle" font-family="'PingFang SC','Helvetica Neue',sans-serif">2</text>
+      <text x="445" y="300" font-size="25" fill="#3b3830" text-anchor="middle">本地预览</text>
+      <text x="445" y="332" font-size="17" fill="#6f6a5c" text-anchor="middle">hugo server</text>
+    </g>
+    <g>
+      <rect x="650" y="210" width="230" height="160" rx="28" fill="#fbfaf6" stroke="#e5e0d3" stroke-width="2"/>
+      <circle cx="686" cy="246" r="17" fill="#7d8a6f"/>
+      <text x="686" y="252" font-size="19" fill="#f8f6f1" text-anchor="middle" font-family="'PingFang SC','Helvetica Neue',sans-serif">3</text>
+      <text x="765" y="300" font-size="25" fill="#3b3830" text-anchor="middle">提交并推送</text>
+      <text x="765" y="332" font-size="17" fill="#6f6a5c" text-anchor="middle">Git</text>
+    </g>
+    <g>
+      <rect x="970" y="210" width="230" height="160" rx="28" fill="#fbfaf6" stroke="#e5e0d3" stroke-width="2"/>
+      <circle cx="1006" cy="246" r="17" fill="#7d8a6f"/>
+      <text x="1006" y="252" font-size="19" fill="#f8f6f1" text-anchor="middle" font-family="'PingFang SC','Helvetica Neue',sans-serif">4</text>
+      <text x="1085" y="300" font-size="25" fill="#3b3830" text-anchor="middle">自动发布上线</text>
+      <text x="1085" y="332" font-size="17" fill="#6f6a5c" text-anchor="middle">GitHub Pages</text>
+    </g>
+  </g>
+
+  <g stroke="#8a7357" stroke-width="3.5" stroke-linecap="round">
+    <line x1="248" y1="290" x2="320" y2="290"/>
+    <line x1="568" y1="290" x2="640" y2="290"/>
+    <line x1="888" y1="290" x2="960" y2="290"/>
+  </g>
+  <g fill="#8a7357">
+    <path d="M322 282 L 336 290 L 322 298 Z"/>
+    <path d="M642 282 L 656 290 L 642 298 Z"/>
+    <path d="M962 282 L 976 290 L 962 298 Z"/>
+  </g>
+</svg>
