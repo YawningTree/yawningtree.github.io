@@ -6,4 +6,4 @@ draft: true
 
 傍晚的光落在书桌上，像一层很薄的蜂蜜。
 
-![傍晚的窗](evening-window.svg)
+![傍晚的窗](1.svg)

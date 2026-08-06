@@ -2,6 +2,27 @@
   <div class="wrap">
     {{ $since := .Site.Params.since | default now.Year }}
     <p>© {{ if lt (int $since) (int now.Year) }}{{ $since }}–{{ end }}{{ now.Year }} {{ .Site.Params.author }} · {{ .Site.Title }}</p>
-    <p class="muted">一棵无聊的树 · 打个哈欠 · 内心平静 · 诸事顺意</p>
+    <p class="muted">
+      <span id="busuanzi_container_site_pv" style="display:none">总访问量 <span class="count" id="busuanzi_value_site_pv"></span></span>
+      <span id="busuanzi_container_site_uv" class="bsz" style="display:none">· 总访客 <span class="count" id="busuanzi_value_site_uv"></span></span>
+    </p>
   </div>
+  {{ if not hugo.IsServer }}
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  {{ else }}
+  <script>
+    /* 本地预览：用示例数字展示排版，不请求不蒜子、不产生任何计数 */
+    (function () {
+      var pv = document.getElementById('busuanzi_value_site_pv'),
+          uv = document.getElementById('busuanzi_value_site_uv'),
+          pp = document.getElementById('busuanzi_value_page_pv');
+      if (pv) pv.textContent = '12,345';
+      if (uv) uv.textContent = '6,789';
+      if (pp) pp.textContent = '128';
+      document.querySelectorAll('[id^="busuanzi_container_"]').forEach(function (el) {
+        el.style.display = 'inline';
+      });
+    })();
+  </script>
+  {{ end }}
 </footer>

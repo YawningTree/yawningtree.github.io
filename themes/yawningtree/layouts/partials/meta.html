@@ -2,4 +2,5 @@
 <span class="meta">
   <time datetime="{{ .Date.Format "2006-01-02" }}">{{ $date }}</time>
   {{ if .Params.tags }}<span class="meta-sep"> · </span>{{ partial "tags.html" . }}{{ end }}
+  {{ if eq .Section "articles" }}<span id="busuanzi_container_page_pv" style="display:none"><span class="meta-sep"> · </span>阅读 <span class="count" id="busuanzi_value_page_pv"></span></span>{{ end }}
 </span>

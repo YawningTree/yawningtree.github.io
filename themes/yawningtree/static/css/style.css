@@ -76,6 +76,8 @@ main.wrap { flex: 1 0 auto; width: 100%; }
 
 .muted  { color: var(--ink-soft); }
 .small  { font-size: .84rem; }
+.count  { font-variant-numeric: tabular-nums; }  /* 计数数字：等宽，避免位数变化抖动 */
+.site-footer .bsz { margin-left: .45em; }  /* 计数项与标签行之间的空隙 */
 
 /* ---------- 页头 ---------- */
 .site-header { border-bottom: 1px solid var(--line); }
