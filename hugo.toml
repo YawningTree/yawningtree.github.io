@@ -9,8 +9,8 @@ summaryLength = 60
 
 [params]
   author = "Tree"
-  description = "Tree 的自娱自乐数字花园。"
-  tagline = "一棵无聊的树，随便记录点什么。"
+  description = "Tree 的自娱自乐赛博花园。"
+  tagline = "一棵无聊的树，随便记录点什么。（未应用）"
   since = 2019
 
 [markup]

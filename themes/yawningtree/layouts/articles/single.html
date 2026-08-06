@@ -6,6 +6,50 @@
       <p class="toc-title">目录</p>
       {{ . }}
     </nav>
+    {{/* 目录滚动高亮：滚动时高亮当前阅读章节（无 JS 时目录照常可用） */}}
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var toc = document.querySelector('.toc');
+        var prose = document.querySelector('.prose');
+        if (!toc || !prose) return;
+        var links = Array.prototype.slice.call(toc.querySelectorAll('a[href^="#"]'));
+        if (!links.length) return;
+        var items = {};
+        links.forEach(function (a) {
+          var id = decodeURIComponent(a.getAttribute('href').slice(1));
+          var head = document.getElementById(id);
+          if (head) items[id] = { link: a, head: head };
+        });
+        var ids = Object.keys(items);
+        if (!ids.length) return;
+        var current = null;
+        var HEAD_OFFSET = 96;  /* 视口顶部偏移：让"当前章节"判定点略低于视口顶 */
+        function setActive(id) {
+          if (id === current) return;
+          current = id;
+          links.forEach(function (a) { a.classList.remove('active'); });
+          if (id && items[id]) {
+            items[id].link.classList.add('active');
+            items[id].link.scrollIntoView({ block: 'nearest' });
+          }
+        }
+        function onScroll() {
+          var top = window.scrollY + HEAD_OFFSET;
+          var found = null;   /* 最后一个位于阈值上方的标题 */
+          var nearest = null; /* 距阈值最近的标题（页首/短页面兜底） */
+          var best = Infinity;
+          ids.forEach(function (id) {
+            var t = items[id].head.getBoundingClientRect().top + window.scrollY;
+            if (t <= top) found = id;
+            var d = Math.abs(t - top);
+            if (d < best) { best = d; nearest = id; }
+          });
+          setActive(found || nearest);
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      });
+    </script>
   </aside>
   {{ end }}
   <div class="content-col">

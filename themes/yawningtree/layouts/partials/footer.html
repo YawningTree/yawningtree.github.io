@@ -3,8 +3,7 @@
     {{ $since := .Site.Params.since | default now.Year }}
     <p>© {{ if lt (int $since) (int now.Year) }}{{ $since }}–{{ end }}{{ now.Year }} {{ .Site.Params.author }} · {{ .Site.Title }}</p>
     <p class="muted">
-      <span id="busuanzi_container_site_pv" style="display:none">总访问量 <span class="count" id="busuanzi_value_site_pv"></span></span>
-      <span id="busuanzi_container_site_uv" class="bsz" style="display:none">· 总访客 <span class="count" id="busuanzi_value_site_uv"></span></span>
+      <span id="busuanzi_container_site_pv" style="display:none">记录足迹 <span class="count" id="busuanzi_value_site_pv"></span> 次</span><span id="busuanzi_container_site_uv" class="bsz" style="display:none">邂逅旅人 <span class="count" id="busuanzi_value_site_uv"></span> 位</span>
     </p>
   </div>
   {{ if not hugo.IsServer }}

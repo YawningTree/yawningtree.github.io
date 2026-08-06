@@ -77,7 +77,8 @@ main.wrap { flex: 1 0 auto; width: 100%; }
 .muted  { color: var(--ink-soft); }
 .small  { font-size: .84rem; }
 .count  { font-variant-numeric: tabular-nums; }  /* 计数数字：等宽，避免位数变化抖动 */
-.site-footer .bsz { margin-left: .45em; }  /* 计数项与标签行之间的空隙 */
+.site-footer .bsz { margin-left: .5em; }                          /* 分隔符左侧间距 */
+.site-footer .bsz::before { content: "\00b7"; margin-right: .5em; }  /* 分隔符 "·" 由 CSS 生成，左右间距对称 */
 
 /* ---------- 页头 ---------- */
 .site-header { border-bottom: 1px solid var(--line); }
@@ -349,6 +350,7 @@ main.wrap { flex: 1 0 auto; width: 100%; }
   padding-left: 1.1rem;
   max-height: calc(100vh - 7rem);
   overflow-y: auto;
+  overflow-x: hidden;   /* 高亮通栏不产生横向滚动条 */
 }
 .toc-title {
   font-size: .74rem;
@@ -360,13 +362,20 @@ main.wrap { flex: 1 0 auto; width: 100%; }
 .toc ul ul { padding-left: .9rem; }
 .toc a {
   display: block;
+  width: fit-content;
+  max-width: 100%;
   color: var(--ink-soft);
   text-decoration: none;
-  padding: .22rem 0;
+  /* 胶囊高亮：与标签云同款圆角，背景只包住文字，不撑宽容器 */
+  padding: .2rem .7rem;
+  margin: .12rem 0;
+  border-radius: 999px;
   line-height: 1.5;
+  transition: color .18s ease, background .18s ease;
 }
-.toc a:hover { color: var(--accent-ink); }
-.toc a.active { color: var(--accent-ink); }
+.toc a:hover { color: var(--accent-ink); background: var(--accent-soft); }
+.toc a.active { color: var(--accent-ink); background: var(--accent-soft); }  /* 当前章节：与文章徽章同色的柔和底 */
+.toc a.active:hover { color: var(--accent-ink); background: var(--accent-soft); }
 
 .post-footer {
   margin-top: 3.2rem;
