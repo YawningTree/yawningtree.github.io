@@ -24,13 +24,26 @@
         if (!ids.length) return;
         var current = null;
         var HEAD_OFFSET = 96;  /* 视口顶部偏移：让"当前章节"判定点略低于视口顶 */
+        /* 目录跟随：只滚动目录自身的滚动条，绝不滚动整个页面。
+           移动端目录不可滚动时是空操作，避免滚动时页面被瞬间拽回顶部。 */
+        function keepActiveVisible(link) {
+          var c = toc;
+          if (c.scrollHeight <= c.clientHeight) return;
+          var cr = c.getBoundingClientRect();
+          var lr = link.getBoundingClientRect();
+          if (lr.top < cr.top) {
+            c.scrollTop -= (cr.top - lr.top);
+          } else if (lr.bottom > cr.bottom) {
+            c.scrollTop += (lr.bottom - cr.bottom);
+          }
+        }
         function setActive(id) {
           if (id === current) return;
           current = id;
           links.forEach(function (a) { a.classList.remove('active'); });
           if (id && items[id]) {
             items[id].link.classList.add('active');
-            items[id].link.scrollIntoView({ block: 'nearest' });
+            keepActiveVisible(items[id].link);
           }
         }
         function onScroll() {

@@ -1,6 +1,6 @@
 /* ============================================================
    打哈欠的树 · YawningTree
-   自娱自乐数字花园
+   自娱自乐赛博花园
    ============================================================ */
 
 :root {
@@ -100,9 +100,10 @@ main.wrap { flex: 1 0 auto; width: 100%; }
   font-size: 1.28rem;
   letter-spacing: .06em;
 }
-.brand-mark { width: 26px; height: 26px; color: var(--accent); }
-.brand:hover .brand-mark { transform: rotate(180deg); }
-.brand-mark { transition: transform .25s ease; }
+.brand-mark { width: 26px; height: 26px; color: var(--accent); transition: transform .3s ease; }
+/* 悬停：小树一直转圈；移开立即恢复原状 */
+.brand:hover .brand-mark { animation: brand-spin 1.0s linear infinite; }
+@keyframes brand-spin { to { transform: rotate(360deg); } }
 
 .site-nav {
   display: flex;
@@ -474,6 +475,9 @@ main.wrap { flex: 1 0 auto; width: 100%; }
   border: 1px solid #d5cdb8;  /* 发丝线描边，让代码胶囊边界明显 */
   padding: .12em .42em;
   border-radius: 5px;
+  /* 长路径 / URL 等不换行内容允许在字符间折行，避免移动端把整页撑宽 */
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .prose pre {
   background: #434343;  /* 中性灰：与暖纸页面同深，去暖去红 */
