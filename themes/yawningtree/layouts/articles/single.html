@@ -61,6 +61,19 @@
         }
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
+
+        /* 目录过长时：切换 overflow 状态，控制底部渐隐提示（配合 CSS 隐藏滚动条） */
+        var col = document.querySelector('.toc-col');
+        function updateTocOverflow() {
+          if (!col) return;
+          var scrollable = toc.scrollHeight > toc.clientHeight + 1;
+          col.classList.toggle('toc-overflow', scrollable);
+          col.classList.toggle('toc-at-bottom',
+            scrollable && toc.scrollTop + toc.clientHeight >= toc.scrollHeight - 2);
+        }
+        toc.addEventListener('scroll', updateTocOverflow, { passive: true });
+        window.addEventListener('resize', updateTocOverflow, { passive: true });
+        updateTocOverflow();
       });
     </script>
   </aside>

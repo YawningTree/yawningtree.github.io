@@ -344,6 +344,18 @@ main.wrap { flex: 1 0 auto; width: 100%; }
 .content-col { min-width: 0; }
 
 .toc-col { position: sticky; top: 2.2rem; padding-top: 2.2rem; }
+/* 目录过长时：隐藏内部滚动条，只保留滚动手势；底部渐隐提示还有更多内容 */
+.toc-col::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 2.4rem;
+  background: linear-gradient(to bottom, transparent, var(--bg) 80%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+.toc-col.toc-overflow:not(.toc-at-bottom)::after { opacity: 1; }
 .toc {
   font-family: var(--sans);
   font-size: .85rem;
@@ -352,7 +364,10 @@ main.wrap { flex: 1 0 auto; width: 100%; }
   max-height: calc(100vh - 7rem);
   overflow-y: auto;
   overflow-x: hidden;   /* 高亮通栏不产生横向滚动条 */
+  scrollbar-width: none;      /* Firefox：隐藏滚动条 */
+  -ms-overflow-style: none;   /* 旧 Edge / IE */
 }
+.toc::-webkit-scrollbar { display: none; }  /* Chrome / Safari：隐藏滚动条 */
 .toc-title {
   font-size: .74rem;
   letter-spacing: .2em;
