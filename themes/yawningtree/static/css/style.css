@@ -376,17 +376,19 @@ main.wrap { flex: 1 0 auto; width: 100%; }
 }
 .toc ul { list-style: none; margin: 0; padding: 0; }
 .toc ul ul { padding-left: .9rem; }
+.toc li { margin: .12rem 0; }
 .toc a {
-  display: block;
-  width: fit-content;
-  max-width: 100%;
+  display: inline;
   color: var(--ink-soft);
   text-decoration: none;
-  /* 胶囊高亮：与标签云同款圆角，背景只包住文字，不撑宽容器 */
+  /* 胶囊高亮：与标签云同款圆角，背景只包住文字，不撑宽容器。
+     多行条目用 box-decoration-break: clone 让每一行都成为独立胶囊，
+     避免整块被 border-radius 拉成大胶囊后两端不齐。 */
   padding: .2rem .7rem;
-  margin: .12rem 0;
   border-radius: 999px;
   line-height: 1.5;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
   transition: color .18s ease, background .18s ease;
 }
 .toc a:hover { color: var(--accent-ink); background: var(--accent-soft); }
