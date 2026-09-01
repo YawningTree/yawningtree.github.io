@@ -24,4 +24,41 @@
     })();
   </script>
   {{ end }}
+
+<script>
+/* 表格自适应：JS 自动给文章正文里的表格套横向滚动容器。
+   窄表占满容器、宽表容器内滚动，无需在文章中手动标记。 */
+(function () {
+  var resizeTimer = null;
+  function layoutTables() {
+    document.querySelectorAll('.prose').forEach(function (p) {
+      /* 先解包已包裹的表格，再按当前宽度重新判断 */
+      Array.prototype.slice.call(p.querySelectorAll(':scope > .table-wrap')).forEach(function (w) {
+        var t = w.querySelector('table');
+        if (t) w.parentNode.insertBefore(t, w);
+        w.remove();
+      });
+      Array.prototype.slice.call(p.children).forEach(function (el) {
+        if (el.tagName === 'TABLE') {
+          /* 仅当表格内容真正超出容器宽度时才套滚动容器；
+             窄表保持占满容器，宽表自动获得横向滚动，无需手动标记。
+             注意：表格自身的 max-width 对内容最小宽度约束无效，
+             需与父容器宽度比较，而不是与表格自身宽度比较。 */
+          if (el.scrollWidth > el.parentNode.clientWidth + 1) {
+            var wrap = document.createElement('div');
+            wrap.className = 'table-wrap';
+            el.parentNode.insertBefore(wrap, el);
+            wrap.appendChild(el);
+          }
+        }
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', layoutTables);
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(layoutTables, 150);
+  });
+})();
+</script>
 </footer>

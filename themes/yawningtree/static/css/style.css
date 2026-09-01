@@ -515,8 +515,22 @@ main.wrap { flex: 1 0 auto; width: 100%; }
 .prose li { margin: .45em 0; }
 .prose li::marker { color: var(--accent); }
 .prose table { width: 100%; border-collapse: collapse; margin: 1.6em 0; font-size: .95rem; }
-.prose th, .prose td { border: 1px solid var(--line); padding: .55em .85em; text-align: left; }
-.prose th { background: var(--bg-soft); font-family: var(--sans); font-weight: 600; }
+/* JS 包裹前的兜底：未进滚动容器的表格也不撑破页面 */
+.prose > table { max-width: 100%; }
+/* 宽表格：内容超出页宽时容器内横向滚动，不撑破布局 */
+.prose .table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.6em 0;
+  scrollbar-width: thin;
+}
+.prose .table-wrap table {
+  width: max-content;   /* 宽表按内容宽度展示 */
+  min-width: 100%;      /* 窄表仍占满容器 */
+  margin: 0;
+}
+.prose th, .prose td { border: 1px solid var(--line); padding: .55em .85em; text-align: left; vertical-align: top; word-break: break-word; overflow-wrap: anywhere; }
+.prose th { background: var(--bg-soft); font-family: var(--sans); font-weight: 600; white-space: nowrap; }
 .prose hr { border: none; border-top: 1px solid var(--line); margin: 2.8em auto; width: 42%; }
 
 /* ---------- 404 页 ---------- */
