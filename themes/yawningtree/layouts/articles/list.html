@@ -10,6 +10,12 @@
       <h2 class="post-row-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
       {{ with .Summary }}<p class="post-row-summary">{{ . | plainify }}</p>{{ end }}
       {{ if .Params.tags }}<p class="post-row-tags">{{ partial "tags.html" . }}</p>{{ end }}
+      {{ $cover := partial "first-image.html" .Content }}
+      {{ if $cover }}
+        <a class="post-row-media" href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
+          <img src="{{ $cover }}" alt="" loading="lazy">
+        </a>
+      {{ end }}
     </article>
   {{ else }}
     <p class="muted">还没有文章。</p>

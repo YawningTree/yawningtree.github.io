@@ -7,4 +7,6 @@
 {{ with .OutputFormats.Get "rss" -}}
   {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
-<link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
+{{/* CSS 加内容指纹：文件内容一变，URL 哈希就变，浏览器自动重新加载，杜绝缓存旧样式 */}}
+{{ $css := resources.Get "css/style.css" | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">

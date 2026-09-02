@@ -276,6 +276,22 @@ main.wrap { flex: 1 0 auto; width: 100%; }
 .post-list { margin-top: 1rem; }
 .post-row { padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
 .post-row:first-child { border-top: 1px solid var(--line); }
+/* 列表头图：同首页时间线图片，放在标签下方、通栏显示 */
+.post-row-media {
+  display: block;
+  margin-top: 1rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.post-row-media img {
+  display: block;
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+.post-row-media:hover img { transform: scale(1.02); }
 .post-row time {
   font-family: var(--sans);
   font-size: .8rem;

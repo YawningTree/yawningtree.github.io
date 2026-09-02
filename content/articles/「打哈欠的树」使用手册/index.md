@@ -131,7 +131,7 @@ git push --force-with-lease
 
 ## 全站自定义：外观
 
-配色、字体、圆角等全部由主题的 CSS 变量控制，位置在 `themes/yawningtree/static/css/style.css` 顶部的 `:root` 里。改一处，**全站同步生效**：
+配色、字体、圆角等全部由主题的 CSS 变量控制，位置在 `themes/yawningtree/assets/css/style.css` 顶部的 `:root` 里。改一处，**全站同步生效**：
 
 | 变量 | 含义 |
 | --- | --- |
