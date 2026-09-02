@@ -90,12 +90,6 @@ draft: false
 
 **中文:** SeaScan 能以如此低的能耗对水下环境成像，这一能力为海洋气候变化长期监测、海产品生产以及科学发现等重要应用打开了大门。
 
-**图注原文（Figure 1）：**
-
-> Figure 1: System Overview. (a) shows SeaScan imaging a coral reef model. (b) depicts our trinocular lensing system. (c) shows the processing pipeline.
-
-**中文图注：** 图 1：系统总览。（a）展示 SeaScan 拍摄珊瑚礁模型；（b）描绘我们的三目透镜系统；（c）展示处理流水线。
-
 ## 1 引言 INTRODUCTION
 
 **Original:** Long-term underwater imaging of marine animals, plants and the ocean is critical to discovering new species, monitoring the impact of human activities on the ocean, and sustainably monitoring and maintaining aquaculture farms [25, 27, 40]. For example, underwater cameras can help aquaculture farms in regulating feeding patterns, detecting diseases, and monitoring both contamination in their food chains and waste outflow to their surrounding environments [17, 63].
@@ -318,11 +312,8 @@ draft: false
 
 <a id="E001"></a>
 
-$$
-\frac{n_{\mathrm{air}}\,\sin(\alpha)}{n_{\mathrm{water}}\,\sin(\beta)}
-$$
+![公式 1（原图）](assets/equations/eq1.png)
 
-![Original equation E001](assets/equations/eq1.png)
 
 **中文说明：** 其中 n_air 与 n_water 分别为空气和水的折射率；α 与 β 分别为入射角和折射角。上式即斯涅尔定律（Snell's law）的比值形式，用于描述平面封装边界处的折射。
 
@@ -346,11 +337,8 @@ $$
 
 <a id="E002"></a>
 
-$$
-D = \frac{\Delta H}{H} \times 100
-$$
+![公式 2（原图）](assets/equations/eq2.png)
 
-![Original equation E002](assets/equations/eq2.png)
 
 **中文说明：** 畸变度量公式：D 为畸变量，H 为图像中物体的预测高度，ΔH 为物体高度相对预测高度的变化量。
 
@@ -471,17 +459,13 @@ $$
 
 <a id="E003"></a>
 
-$$
-P = I_{dd}\,V_{dd}
-$$
+![公式 3（原图）](assets/equations/eq3.png)
 
 **中文说明：** 平均功率计算公式：P 为平均功率，I_dd 为测试点电流，V_dd 为测试点电压。
 
 <a id="E004"></a>
 
-$$
-E = \int P(t)\,dt
-$$
+![公式 4（原图）](assets/equations/eq4.png)
 
 **中文说明：** 总能耗计算公式：E 为总能量，P(t) 为随时间变化的瞬时功率。
 
