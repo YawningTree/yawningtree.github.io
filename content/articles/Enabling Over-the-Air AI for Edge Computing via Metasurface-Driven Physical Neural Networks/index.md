@@ -2,7 +2,7 @@
 title: "Enabling Over-the-Air AI for Edge Computing via Metasurface-Driven Physical Neural Networks"
 date: 2026-09-02T15:00:00+08:00
 tags: ["学习", "论文"]
-summary: "双语精读"
+summary: "面向边缘计算的空中 AI：超表面驱动物理神经网络"
 draft: false
 ---
 
@@ -21,15 +21,15 @@ draft: false
 | 章节 | 内容 |
 |---|---|
 | 摘要 ABSTRACT | 系统概述与核心贡献 |
-| 1 INTRODUCTION | 引言：端到端“传输即计算”愿景与三大挑战 |
-| 2 BACKGROUND AND MOTIVATION | 背景：线性神经网络（LNN）与物理神经网络（PNN）基础 |
-| 3 DESIGN OF METAAI | 设计：训练、超表面权重实现、双并行方案、多传感器与同步/噪声处理 |
-| 4 IMPLEMENTATION | 实现：双频段原型、数据集、训练与实验设置 |
-| 5 PERFORMANCE EVALUATION | 评估：总体性能、微基准、多样因素与跨房间场景、实时人脸识别 |
-| 6 RELATED WORK | 相关工作：超表面、物理神经网络、RF 计算 |
-| 7 DISCUSSION AND FUTURE WORK | 讨论与未来工作 |
-| 8 CONCLUSION | 结论 |
-| 附录 A.1–A.4 | 为何多层 PNN、256 超原子选择（WDD）、并行化折中、端到端能效分析 |
+| 1 引言 INTRODUCTION | 引言：端到端“传输即计算”愿景与三大挑战 |
+| 2 背景与动机 BACKGROUND AND MOTIVATION | 背景：线性神经网络（LNN）与物理神经网络（PNN）基础 |
+| 3 MetaAI 的设计 DESIGN OF METAAI | 设计：训练、超表面权重实现、双并行方案、多传感器与同步/噪声处理 |
+| 4 实现 IMPLEMENTATION | 实现：双频段原型、数据集、训练与实验设置 |
+| 5 性能评估 PERFORMANCE EVALUATION | 评估：总体性能、微基准、多样因素与跨房间场景、实时人脸识别 |
+| 6 相关工作 RELATED WORK | 相关工作：超表面、物理神经网络、RF 计算 |
+| 7 讨论与未来工作 DISCUSSION AND FUTURE WORK | 讨论与未来工作 |
+| 8 结论 CONCLUSION | 结论 |
+| 附录 A：补充材料要点（APPENDIX） | 为何多层 PNN、256 超原子选择（WDD）、并行化折中、端到端能效分析 |
 
 ## 公式索引
 
@@ -1241,7 +1241,7 @@ draft: false
 
 **中文:** 准确率-效率折中。效率的巨大提升伴随可预期的准确率折中：复杂多层 ResNet-18 准确率最高（MNIST 99.62%），Meta-AI 的简单线性模型无法企及。但更有说服力的是与软件 LNN 的对比：Meta-AI 取得了相当的准确率（MNIST 上约 87% vs 92%），同时带来上述巨大能量与延迟收益。这说明 Meta-AI 并非“更不准的系统”，而是用根本不同、更高效的方式实现同一类模型——它在“准确率 vs 效率”曲线上创造了一个新的有价值工作点，尤其适合那些“延长 IoT 电池寿命、降低服务器负载比追求绝对最高准确率更重要”的应用。未来工作将专注于引入更复杂运算以缩小这一准确率差距。
 
-## 阅读提示（Critical Reading Notes）
+## 阅读提示 / Critical Reading Notes
 
 1. **一句话总结：** MetaAI 把无线信道“变成”一个可编程的线性计算层——IoT 设备按顺序发符号，环境中的可编程超表面在信号反射/传播中完成乘加，接收端累加即得分类结果；通信与计算从“两步”变成“一步”。
 

@@ -1,8 +1,8 @@
 ---
 title: "SeaScan: An Energy-Efficient Underwater Camera for Wireless 3D Color Imaging"
-date: 2026-09-01T17:12:31+08:00
+date: 2026-09-01T15:00:00+08:00
 tags: ["学习", "论文"]
-summary: "双语精读"
+summary: "SeaScan：面向无线 3D 彩色成像的高能效水下相机"
 draft: false
 ---
 
@@ -13,21 +13,21 @@ draft: false
 | 会议 | ACM MobiCom ’24, November 18–22, 2024, Washington D.C., DC, USA（第 30 届移动计算与网络国际会议） |
 | DOI | https://doi.org/10.1145/3636534.3690661 |
 | 论文类型 | 系统/方法论文（会议论文），15 页 |
-| 来源 | Zotero 本地 PDF（selectable-text）|
+| 来源 | Zotero 本地 PDF（selectable-text） |
 
 ## 章节索引
 
 | 章节 | 内容 |
 |---|---|
 | 摘要 ABSTRACT | 系统概述与核心贡献 |
-| 1 INTRODUCTION | 引言：动机、挑战、贡献 |
-| 2 TRINOCULAR PASSIVE IMAGING | 三目无源成像：对齐问题与跨色彩对齐（SeaNet） |
-| 3 CROSS-REFRACTIVE COMPENSATION AND FILTER SELECTION | 跨折射补偿（平面封装）与滤光片选择 |
-| 4 END-TO-END SYSTEM | 端到端系统：3D、压缩、反向散射 |
-| 5 IMPLEMENTATION | 实现：嵌入式硬件、封装、软件 |
-| 6 RESULTS | 结果：能耗、定性/定量评估、点云 |
-| 7 RELATED WORK | 相关工作 |
-| 8 CONCLUSION | 结论与展望 |
+| 1 引言 INTRODUCTION | 引言：动机、挑战、贡献 |
+| 2 三目无源成像 TRINOCULAR PASSIVE IMAGING | 三目无源成像：对齐问题与跨色彩对齐（SeaNet） |
+| 3 跨折射补偿与滤光片选择 CROSS-REFRACTIVE COMPENSATION AND FILTER SELECTION | 跨折射补偿（平面封装）与滤光片选择 |
+| 4 端到端系统 END-TO-END SYSTEM | 端到端系统：3D、压缩、反向散射 |
+| 5 实现 IMPLEMENTATION | 实现：嵌入式硬件、封装、软件 |
+| 6 结果 RESULTS | 结果：能耗、定性/定量评估、点云 |
+| 7 相关工作 RELATED WORK | 相关工作 |
+| 8 结论 CONCLUSION | 结论与展望 |
 
 ## 公式索引
 
@@ -188,12 +188,9 @@ draft: false
 
 **中文:** 贡献：SeaScan 是能效最高的水下彩色成像系统，也是第一款能够在 underwater 环境中实现 3D 彩色成像的相机。其设计引入多项创新，包括三目透镜设计、基于学习的颜色对齐方法，以及跨折射设计，从而以超低能耗捕获彩色图像。本文还贡献了系统的端到端原型实现与评估，集成了压缩和水下反向散射通信。
 
-## 2 TRINOCULAR PASSIVE IMAGING
+## 2 三目无源成像 TRINOCULAR PASSIVE IMAGING
 
-**中文:** 2 三目无源成像（TRINOCULAR PASSIVE IMAGING）
-
-### 2.1 The Alignment Problem
-**中文:** 2.1 对齐问题（The Alignment Problem）
+### 2.1 对齐问题（The Alignment Problem）
 
 **Original:** To understand why color reconstruction from a trinocular lensing system is challenging, consider Fig. 3a, where we depict the camera capturing a color image of a simplified scene containing two simple cubes: one red and one blue. Since the three monochromatic sensors are equipped with passive color filters, they not only see different viewpoints of the same scene but also the same object may exhibit disparate features across the three images (since many features are color-based).2
 
@@ -221,9 +218,7 @@ draft: false
 
 **中文:** 另一种可能的方案是考虑固定的相机位置，确定相机图像之间的变换，并期望通过逆变换在将图像放入彩色通道之前正确对齐。这看似合理，但重要的是要认识到：相机变换并不能直接转化为图像变换 [55]。图 3c 中的图像 2 显示了利用相机位置变换对齐图像的结果。在本文其余部分，我们将这种对齐称为线性变换对齐（linear transformation alignment）。
 
-### 2.2 Trinocular Cross Color Alignment
-
-**中文:** 2.2 三目跨色彩对齐（Trinocular Cross Color Alignment）
+### 2.2 三目跨色彩对齐（Trinocular Cross Color Alignment）
 
 **Original:** To overcome the above challenges and capture color images from the trinocular lensing system, SeaScan introduces Cross Color Alignment, a learning-based approach for aligning the monochrome images captured from the three filtered monochromatic sensors. This method operates in two stages.
 
@@ -265,16 +260,13 @@ draft: false
 
 **中文:** 为训练网络，我们使用 NeRF-Stereo 数据集 [56]，按 80-20 划分（约 6000 个图像三元组）。该数据集包含不同相机距离范围的真实三目图像三元组。我们将这些三元组划分为左、中、右图像。由于 SeaScan 的设计是使用 3 个无源滤光相机（最左侧为红色相机、中间为绿色相机、最右侧为蓝色相机），我们分别从数据集的左、中、右图像中提取红、绿、蓝通道，并在送入神经网络之前将其转换为灰度图像。与中心相机对应的彩色图像用作训练 SeaNet 的真值（ground truth）。训练过程中，这些图像会被随机调整尺寸，以提高神经网络对不同尺寸图像的性能。
 
-## 3 CROSS-REFRACTIVE COMPENSATION AND FILTER SELECTION
-
-**中文:** 3 跨折射补偿与滤光片选择（CROSS-REFRACTIVE COMPENSATION AND FILTER SELECTION）
+## 3 跨折射补偿与滤光片选择 CROSS-REFRACTIVE COMPENSATION AND FILTER SELECTION
 
 **Original:** Up to this point, we have described how our cross-color alignment technique works and how we use a SeaNet to correct for missing colors in the coarse aligned images. In this section, we will discuss the complementary design of both the underwater encapsulation and compensation for the unique lensing and distortion effects experienced in underwater environments.
 
 **中文:** 到目前为止，我们已经描述了跨色彩对齐技术的工作原理，以及如何使用 SeaNet 修正粗对齐图像中缺失的颜色。本节将讨论互补的设计：水下封装，以及对水下环境中特有的透镜与畸变效应的补偿。
 
-### 3.1 Distortion Compensation
-**中文:** 3.1 畸变补偿（Distortion Compensation）
+### 3.1 畸变补偿（Distortion Compensation）
 
 **Original:** While our CMOS imaging sensor performs excellently in terms of power, its wide-angle lens introduces a radially symmetric negative distortion in the resulting images. This distortion is known as barrel distortion [35]. To illustrate this, Fig. 6a shows a checkerboard pattern captured from the CMOS imaging sensor placed at roughly 30 cm from the sensor against a straight wall in air. The farther away we look from the center of the image, the more the distortion increases, and the straight lines of the checkerboard begin to curve into an increasingly barrel shape. As a result, the image magnification decreases with the distance away from the center.
 
@@ -314,7 +306,6 @@ draft: false
 
 ![公式 1（原图）](assets/equations/eq1.png)
 
-
 **中文说明：** 其中 n_air 与 n_water 分别为空气和水的折射率；α 与 β 分别为入射角和折射角。上式即斯涅尔定律（Snell's law）的比值形式，用于描述平面封装边界处的折射。
 
 ### 图 7 两种封装方法
@@ -339,16 +330,13 @@ draft: false
 
 ![公式 2（原图）](assets/equations/eq2.png)
 
-
 **中文说明：** 畸变度量公式：D 为畸变量，H 为图像中物体的预测高度，ΔH 为物体高度相对预测高度的变化量。
 
 **Original:** This illustrates that the barrel effect is significantly reduced in the captured image and enables our test dataset to be representative of and drawn from the same distribution as the training dataset.6
 
 **中文:** 这说明所捕获图像中的桶形效应已显著减小，并使我们的测试数据集能够代表训练数据集、且与训练数据集来自同一分布⁶。
 
-### 3.2 Filter Selection
-
-**中文:** 3.2 滤光片选择（Filter Selection）
+### 3.2 滤光片选择（Filter Selection）
 
 **Original:** Next, we focus on the selection of the filters for the red, green, and blue channels. Recall from §2 that our idea is to use a passive colorization technique using color filters on three grayscale cameras to enable energy-efficient color imaging. Proper performance of the color filters is critical to the end-to-end colorization performance of SeaScan.
 
@@ -376,9 +364,7 @@ draft: false
 
 **中文:** 凝胶滤光片：彩色凝胶（color gel）或灯光凝胶（lighting gel）是一种简单的透明着色材料，用于改变任意白光的颜色 [32]。这类滤光片的主要优点是：它们通过吸收不需要的波长来工作，而不是将其完全反射。在我们封装的场景中，这意味着滤光片会吸收不应通过的波长，从而抑制二向色滤光片所表现出的照明与反射伪影。虽然这类滤光片不像二向色滤光片那样具有明确定义的通带波长，但其工作波段与滤波性能足以从单色图像传感器重建彩色图像。因此，我们在 SeaScan 设计中选用凝胶滤光片作为红、绿、蓝彩色滤光片。
 
-## 4 END-TO-END SYSTEM
-
-**中文:** 4 端到端系统（END-TO-END SYSTEM）
+## 4 端到端系统 END-TO-END SYSTEM
 
 **Original:** Now that we have described SeaScan's core design, we describe how we extend it to an end-to-end system. From 2D to 3D: 3D underwater color reconstruction is important for various applications: monitoring fish growth, infrastructure, etc. Thus, we investigated various methods that can leverage monocular and stereo cameras for 3D reconstruction [11, 21, 49]. Our investigation showed that a (very) recent depth estimation method, called Depth Anything [65], performs extremely well. This method takes monocular images as input and outputs the depth estimation for each pixel in the captured scene. Thus, we integrated Depth Anything into our end-to-end pipeline. Specifically, SeaScan feeds the 2D color images to Depth Anything to estimate the depth of each pixel, then combines the depth estimates with the captured color image to reconstruct a 3D point cloud of the environment.
 
@@ -392,12 +378,9 @@ draft: false
 
 **中文:** 反向散射通信（Backscatter Communication）：在捕获并压缩带滤光片的单目图像之后，SeaScan 需要将这些数据无线传输到远程服务器，以进行颜色恢复和 3D 重建。由于 SeaScan 的目标是实现高能效水下成像，它集成了水下反向散射 [29] 以实现近零功率的无线通信。具体而言，每幅单色图像的像素数据被编码为数据帧，并在上行链路上传输。与以往工作类似，数据帧可包含帧头（含序列号与寻址）、帧尾（CRC 校验）和编码。在物理层，数据采用 FM0 调制编码，反向散射由与反向散射开关接口的嵌入式微控制器控制。我们的设计聚焦于全向反向散射节点，但可扩展至逆反射（retroreflective）设计，正如近期工作 [3, 4] 所展示的，可支持数百米的数据传输。此外，如有需要，该设计还可通过能量采集 [2, 29] 扩展，使 SeaScan 实现无电池运行。
 
-## 5 IMPLEMENTATION
+## 5 实现 IMPLEMENTATION
 
-**中文:** 5 实现（IMPLEMENTATION）
-
-### 5.1 Embedded Hardware
-**中文:** 5.1 嵌入式硬件（Embedded Hardware）
+### 5.1 嵌入式硬件（Embedded Hardware）
 
 **Original:** We designed and implemented a custom printed circuit board (PCB) powered by a Samsung 25R 2500 mAh battery [1] to house the three cameras, a microcontroller for receiving, processing, and transmitting the images, and backscatter switching. The overall schematic architecture is shown in Fig. 9a and the PCB is shown in Fig. 9b.
 
@@ -425,33 +408,27 @@ draft: false
 
 **中文:** (c) JPEG 压缩与反向散射传输。图像捕获后，我们使用开源 JPEC 库 [39] 以 30% 的质量因子对每幅图像进行 JPEG 压缩，为反向散射传输做准备。CPU 以 80 MHz 时钟运行，以加快计算并优化系统能耗。压缩完成后，我们将微控制器时钟降至最低可能的 100 kHz，以获得最低功耗。我们通过 SPI3 接口（收发从机模式）将压缩后的图像数据传输到反向散射开关。图像数据位被编码为 FM0 符号，再通过直接存储器访问（DMA）控制器送入 SPI3 发送数据缓冲。反向散射开关采用双 N 沟道 BSD840NH6327XTSA1 [52] MOSFET 实现。
 
-### 5.2 Encapsulation
-**中文:** 5.2 封装（Encapsulation）
+### 5.2 封装（Encapsulation）
 
 **Original:** Recall from our discussion in §3, our camera needs to be encapsulated such that the CMOS imaging sensors face a flat clear acrylic housing. To do so, we laser cut a clear, scratch-resistant piece of acrylic into a circle that serves as the viewport for the scene. This circular viewport fits the circumference of a dome7 that provides enough room to house our custom PCB and image sensors. The acrylic viewport and backing dome are secured together with 8 machine screws that compress an o-ring to create a watertight seal. We attached a Micro-Con-X [15] 4 pin circular connector to the flat viewport in the encapsulation as shown in Fig. 9c.
 
 **中文:** 回顾 §3 的讨论，我们的相机需要封装成使 CMOS 成像传感器面向平面透明丙烯酸外壳的形式。为此，我们激光切割出一块透明、耐刮擦的圆形丙烯酸片，作为观察场景的视窗。这个圆形视窗与穹顶⁷ 的圆周相匹配，穹顶提供了容纳我们定制 PCB 和图像传感器的足够空间。丙烯酸视窗与背衬穹顶通过 8 颗机制螺钉固定在一起，并压缩 O 形圈形成水密密封。我们在封装的平面视窗上安装了一个 Micro-Con-X [15] 4 针圆形连接器，如图 9c 所示。
 
-### 5.3 Software
-**中文:** 5.3 软件（Software）
+### 5.3 软件（Software）
 
 **Original:** The camera data was received and decoded in MATLAB on an Ubuntu 20.4 machine. This machine is connected to a remote server with a GTX 1080 Ti GPU where we perform Cross Color Alignment, depth estimation and point cloud generation. We trained SeaNet with the GTX 1080 Ti GPU in Python with Adam optimizer and smooth L1 loss for 300 epochs.
 
 **中文:** 相机数据在 Ubuntu 20.4 机器上通过 MATLAB 接收和解码。该机器连接到一台配备 GTX 1080 Ti GPU 的远程服务器，我们在其上执行 Cross Color Alignment、深度估计和点云生成。我们使用 GTX 1080 Ti GPU、采用 Python 训练 SeaNet，优化器为 Adam，损失函数为平滑 L1 损失，共训练 300 个 epoch。
 
-## 6 RESULTS
+## 6 结果 RESULTS
 
-**中文:** 6 结果（RESULTS）
-
-### 6.1 Experimental Setup
-**中文:** 6.1 实验设置（Experimental Setup）
+### 6.1 实验装置（Experimental Setup）
 
 **Original:** To evaluate the performance of SeaScan, all real-world experiments were performed underwater in either a small 20′′ × 12′′ × 10′′ tank or a large 4 m × 3 m × 1.2 m experimental pool under standard indoor lighting conditions. We note that in all of our experiments, there was no underwater light present. We used a GoPro 9 camera to obtain the ground truth. In our evaluation, we use models of fish and coral reefs, as well as a Macbeth chart as a gold standard for color reconstruction accuracy [47]. Our evaluation setup with the Macbeth chart is shown in Fig. 9d.
 
 **中文:** 为评估 SeaScan 的性能，所有真实实验均在标准室内照明条件下于水下进行，实验环境为小型 20′′ × 12′′ × 10′′ 水槽或大型 4 m × 3 m × 1.2 m 实验池。我们指出，在所有实验中均不存在水下光源。我们使用 GoPro 9 相机获取真值。在评估中，我们使用鱼和珊瑚礁模型，并以 Macbeth 色卡作为颜色重建精度的黄金标准 [47]。使用 Macbeth 色卡的评估设置如图 9d 所示。
 
-### 6.2 Energy Consumption
-**中文:** 6.2 能耗（Energy Consumption）
+### 6.2 能耗（Energy Consumption）
 
 **Original:** We measure the energy consumption of SeaScan in three phases: image capture, data compression, and backscatter communication. For a given phase, as the microcontroller firmware runs, we measured the current trace of our system at different I_dd testpoints on the PCB using the DMM6500 multimeter [53]. We calculated the average power as defined by P = I_dd V_dd, where the V_dd is the voltage at the testpoint. Using the average power and the time duration, we computed the total energy consumption of the entire system and its components (as E = ∫ P(t)dt).
 
@@ -522,9 +499,7 @@ draft: false
 
 **中文:** 请注意，SeaScan 无需用不同颜色的光照射场景即可捕获彩色图像。此外，它可以加装一个白光 LED（10.73 mJ），以在黑暗环境中（例如深海）运行。在这种情况下，SeaScan 图像采集阶段的能耗将增加到 23.6 mJ + 3×10.73 mJ = 55.79 mJ，比 [2] 中的 894.2 mJ 低 16 倍。这里的 16 倍提升完全来自 SeaScan 面向超低功耗水下成像的新型优化微控制器架构。
 
-### 6.3 Qualitative Results
-
-**中文:** 6.3 定性结果（Qualitative Results）
+### 6.3 定性结果（Qualitative Results）
 
 **Original:** Next, we evaluate the qualitative performance of SeaScan and compare it to alternate implementations and a GoPro camera underwater as ground truth. Alternate Implementations. We compared the performance of our Cross Color Alignment algorithm with (recall from §2) • Direct Combination: This method involves directly applying red, green, and blue images to the red green and blue channels of a color image without any transformation. • Linear Transformation Alignment: Here, we use the position of the three cameras to determine the transformation between them. Then, we linearly invert these transforms before applying the three images to their respective channels. • NN-based Colorization: [68] This baseline uses state-of-the-art neural network based colorization method to convert grayscale images into color images.
 
@@ -562,9 +537,7 @@ draft: false
 
 **Reading note:** (a) 粗对齐后仍有错位与边缘伪影；(b) 精细对齐（SeaNet）后错位消除、颜色更准确。
 
-### 6.4 Color Classification
-
-**中文:** 6.4 颜色分类（Color Classification）
+### 6.4 颜色分类（Color Classification）
 
 **Original:** In this section, we evaluate the performance of SeaScan in detecting different colors in each scene. This is important since many underwater imaging applications rely on tracking the changes in the appearance of underwater objects over time, for instance, to detect coral reefs' bleaching by observing their color change over time [18], or the changing hues in colors of marine mammals as a result of diseases and infections [20]. To perform color classification, we first transformed the colors of the pixels from RGB space to LAB color space, a three-dimensional color space that is focused on the human color perception range [9]. We then perform KNN classification on n ∈ {3,4,5,6,7,8,9} different colors (furthest colors in LAB space that are present in the Macbeth chart).
 
@@ -584,8 +557,7 @@ draft: false
 
 **中文:** 图 12a 绘制了颜色分类算法在我们方法和各基线输出上的准确率。图中还绘制了随机猜测的期望准确率（即随机为每个像素分配一个颜色类别）。我们注意到：• SeaScan 始终优于所有基线，在将颜色分为 3 类时达到 100% 的准确率。• 虽然直接组合在将像素分为 3 类时达到 91% 的准确率，但当类别数增加到 9 类时，其准确率降至 35% 以下。• 线性变换对齐在仅 3 类时准确率为 80%，在 9 类时降至 22%。随机策略在 9 类时准确率为 11%。• 基于 NN 的着色在仅 3 类时准确率为 55%，在 8 类时降至 20%。
 
-### 6.5 PSNR vs Distance
-**中文:** 6.5 PSNR 与距离的关系（PSNR vs Distance）
+### 6.5 PSNR 与距离（PSNR vs Distance）
 
 **Original:** To evaluate the performance of our system at different distances, we capture images of the Macbeth chart at different distances from our system and calculate the Peak Signal-to-Noise Ratio (PSNR) using the images captured from a GoPro 9 camera as ground truth. PSNR is a standard quantitative measure to evaluate the quality of an image in the presence of noise. Higher PSNR indicates a better quality image. Note that the physical position, camera resolution, and camera intrinsics of GoPro and SeaScan are different. Consequently, pixel-by-pixel comparison of the images captured from GoPro and SeaScan is not possible. To deal with this problem, we extracted the individual Macbeth chart color patches from the GoPro and SeaScan images manually and compare them. Therefore, it is the relative PSNR values that are important here rather than the absolute values.
 
@@ -595,8 +567,7 @@ draft: false
 
 **中文:** 图 12b 将图像的 PSNR 绘于 y 轴，将 Macbeth 色卡与相机的距离绘于 x 轴。我们得出以下结论：• 在所有距离上，我们方法的 PSNR（紫色线）平均比简单对齐方法高 2 dB。在成像文献中，这被认为是有意义的定量改进 [12, 37, 54]；不过，前面报告的定性结果仍是评估成像性能更理想的方式。• 简单对齐与线性变换对齐方法在不同距离上的性能趋势非常相似，平均差异约 0.5 dB。
 
-### 6.6 PSNR vs Image Quality (JPEG)
-**中文:** 6.6 PSNR 与图像质量的关系（JPEG）（PSNR vs Image Quality）
+### 6.6 PSNR 与图像质量（PSNR vs Image Quality (JPEG)）
 
 **Original:** In this section, we evaluate the performance of SeaScan against different image qualities as a result of image compression. Recall from §4 that we implement image compression on our system to reduce the data that needs to be transmitted to further decrease the energy consumption of our system. Fig. 12c shows the PSNR on the y-axis and JPEG image quality on the x-axis for our method and the baselines. Note that even at 10% image quality the performance of our method has negligible effect and consistently performs better than the baselines. Our method consistently has a PSNR above 9.5 dB, while baselines consistently have a PSNR lower than 8.5 dB. Fig. 13 shows the qualitative results of our method on three image qualities (30%, 60% and 100%). Note that the performance of Cross Color Alignment method is not affected even though the quality of the image has been significantly reduced.
 
@@ -612,8 +583,7 @@ draft: false
 
 **Reading note:** 30%、60%、100% JPEG 压缩质量下 SeaNet 的输出几乎不受影响。
 
-### 6.7 Performance of Passive Colorization
-**中文:** 6.7 无源着色性能（Performance of Passive Colorization）
+### 6.7 无源着色性能（Performance of Passive Colorization）
 
 **Original:** To further evaluate the performance of the Cross-Color Alignment algorithm, we use two types of datasets 1) unseen online test dataset [56] and 2) real-world images taken with SeaScan. In addition to PSNR, we compute two additional metrics: • Structural Similarity Index [8]: SSIM is an image quality metric between -1 and 1 indicating the structural similarity between any given two images. Similar to PSNR, the higher the SSIM better the performance of the system. • CIEDE2000 [22]: A quantitative metric to measure the perceived color difference between two images. Unlike PSNR and SSIM, lower CIEDE2000 is better.
 
@@ -637,8 +607,7 @@ draft: false
 
 **中文:** SeaScan 捕获图像上的性能（Performance on Images Captured by SeaScan）。现在我们评估 Cross-Color Alignment 算法在使用我们平台捕获的图像上的性能。我们使用平台在不同距离拍摄 Macbeth 色卡（如图 9d 所示），并将 GoPro 9 相机放在我们的相机旁边以捕获同一场景的图像。如 §6.5 所述，我们无法直接比较这两台相机捕获的图像，因此从图像中提取色块进行比较。图 14b 展示了我们方法与基线的 CIEDE2000、PSNR 和 SSIM。我们得出以下结论：• 图 14b(i) 显示我们方法的 CIEDE2000 为 35.8，比基线低约 5%–20%。需要注意的是，由于这些值是通过将低功耗 CMOS 传感器捕获的图像与高分辨率 GoPro 9 相机比较计算得到的，因此相对差异比绝对值更有意义。该图表明了颜色的正确性，且高度依赖滤光片的选择；通过更好的滤光片设计，绝对 CIEDE2000 可进一步降低。• 图 14b(ii) 以紫色展示我们方法与其他基线相比的 PSNR。与基线相比，我们方法的 PSNR 提高了约 2–3 dB。• 图 14b(iii) 展示我们方法的 SSIM，并与基线的 SSIM 比较。从图中可以看出，我们方法的平均 SSIM 超过 0.5。
 
-### 6.8 Generated Point Clouds
-**中文:** 6.8 生成的点云（Generated Point Clouds）
+### 6.8 生成的 3D 点云（Generated Point Clouds）
 
 **Original:** Finally, we qualitatively show sample 3D point clouds generated using the images captured from SeaScan in Fig. 15 for an underwater plant and Macbeth chart. This shows that SeaScan is capable of being used with the existing computer vision techniques to extend its applications.
 
@@ -654,9 +623,7 @@ draft: false
 
 **Reading note:** 植物（小水槽）与 Macbeth 色卡（大水槽）的 3D 点云重建结果。
 
-## 7 RELATED WORK
-
-**中文:** 7 相关工作（RELATED WORK）
+## 7 相关工作 RELATED WORK
 
 **Original:** Low-power & Underwater Cameras. The past few years have witnessed growing interest in ultra-low-power cameras in the mobile computing community [28, 30, 41, 43, 58]. Past work has achieved important advances in developing low-power imaging systems, adding wireless capabilities, and increasing their frame-rate and resolution. However, the majority of this past literature has focused on grayscale imaging in air. Our research shares the motivation of these past systems and aims to achieve ultra-low-power color imaging in underwater environments.
 
@@ -682,9 +649,7 @@ draft: false
 
 **中文:** 此前也有关于基于 ML 的水下彩色图像颜色增强方法的研究，用于去雾或提取场景的真实颜色 [6, 19, 36, 57]。这些方法处理的是与 SeaScan 正交的问题，SeaScan 的输出可以输入给它们以提取真实颜色（类似于将水下 GoPro 图像输入它们以提取真实颜色）。
 
-## 8 CONCLUSION
-
-**中文:** 8 结论（CONCLUSION）
+## 8 结论 CONCLUSION
 
 **Original:** Low-power underwater imaging is important for long-term observations of subsea environments, with applications ranging from ocean climate change monitoring and scientific discovery to seafood production and robotic navigation. This paper marks a new step towards that vision by introducing a highly energy-efficient underwater color imaging system. As the research evolves, it would be valuable to investigate methods that continue to push the boundaries of these systems through even lower power as well as higher frame rates and resolutions. Moreover, it would be interesting to investigate how some of the proposed methods here (e.g., trinocular lensing) may lend themselves to in-air imaging applications. More generally, the paper sits at the intersection of two emerging trends in the mobile computing community - of low-power imaging and ocean IoT - and we believe that the area of low-energy underwater imaging will benefit from technical advances in both of these areas.
 
