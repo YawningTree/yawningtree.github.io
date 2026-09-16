@@ -14,3 +14,7 @@
 - 再生、吸血、衰老分别使用原作 `REGENER`、`DRAINLIF`、`AGE`，写入 `effects.regen`、`effects.drain`、`effects.aging`。
 - 暴击使用原作 `DEATHBLO` 音效并写入 `effects.critical`；`SP03_.DEF` 按 `BEFORE_HIT` 在普通攻击前播放。
 - `Heroes3/` 原始游戏目录、SND 文件和 MP3 不进入 Git，生成后的音频也不应随公开构建发布。
+
+## 2026-09-16 本批更新
+
+新增petrify/paralyze两个效果入口，均映射本地原作PARALYZE；由tools/extract_audio_assets.py提取。
