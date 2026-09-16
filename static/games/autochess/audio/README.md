@@ -15,6 +15,10 @@
 - 暴击使用原作 `DEATHBLO` 音效并写入 `effects.critical`；`SP03_.DEF` 按 `BEFORE_HIT` 在普通攻击前播放。
 - `Heroes3/` 原始游戏目录、SND 文件和 MP3 不进入 Git，生成后的音频也不应随公开构建发布。
 
+## 默认音量
+
+原作 `sod.ini` 的音乐和音效设置均为 `0–9` 档，本机配置为 `9/9`。当前播放器因此让音乐和音效共同使用 `1.0` 满音量常量，不单独衰减任一通道；最终响度交给系统音量。
+
 ## 2026-09-16 本批更新
 
 新增petrify/paralyze两个效果入口，均映射本地原作PARALYZE；由tools/extract_audio_assets.py提取。
