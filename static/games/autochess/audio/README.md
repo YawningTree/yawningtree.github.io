@@ -11,4 +11,6 @@
 - manifest 的 `*Sample` 字段记录原始音源名；`npm run assets:check` 校验音源类别和各形态远程标记。
 - 大天使复活使用独立的原作 `resurect` 法术音效，写入 `effects.resurrect`。
 - 失明使用原作 `BLIND` 音效，缠绕使用原作 `BIND` 音效，分别写入 `effects.blind` 与 `effects.entangle`。
+- 再生、吸血、衰老分别使用原作 `REGENER`、`DRAINLIF`、`AGE`，写入 `effects.regen`、`effects.drain`、`effects.aging`。
+- 暴击使用原作 `DEATHBLO` 音效并写入 `effects.critical`；`SP03_.DEF` 按 `BEFORE_HIT` 在普通攻击前播放。
 - `Heroes3/` 原始游戏目录、SND 文件和 MP3 不进入 Git，生成后的音频也不应随公开构建发布。
