@@ -13,6 +13,7 @@
 - 失明使用原作 `BLIND` 音效，缠绕使用原作 `BIND` 音效，分别写入 `effects.blind` 与 `effects.entangle`。
 - 再生、吸血、衰老分别使用原作 `REGENER`、`DRAINLIF`、`AGE`，写入 `effects.regen`、`effects.drain`、`effects.aging`。
 - 暴击使用原作 `DEATHBLO` 音效并写入 `effects.critical`；`SP03_.DEF` 按 `BEFORE_HIT` 在普通攻击前播放。
+- 高级嗜血使用原作 `BLOODLUS` 并写入 `effects.bloodlust`；雷击使用 `LIGHTBLT` 并写入 `effects.thunder`。
 - `Heroes3/` 原始游戏目录、SND 文件和 MP3 不进入 Git，生成后的音频也不应随公开构建发布。
 
 ## 默认音量
@@ -21,4 +22,4 @@
 
 ## 2026-09-16 本批更新
 
-新增petrify/paralyze两个效果入口，均映射本地原作PARALYZE；由tools/extract_audio_assets.py提取。
+新增 petrify/paralyze 效果入口并映射 PARALYZE；高级嗜血新增 BLOODLUS，雷击新增 LIGHTBLT。全部由 tools/extract_audio_assets.py 提取。
