@@ -15,6 +15,7 @@
 - 暴击使用原作 `DEATHBLO` 音效并写入 `effects.critical`；`SP03_.DEF` 按 `BEFORE_HIT` 在普通攻击前播放。
 - 高级嗜血使用原作 `BLOODLUS` 并写入 `effects.bloodlust`；雷击使用 `LIGHTBLT` 并写入 `effects.thunder`。
 - 四系高级御法使用 `PROTECTA/PROTECTW/PROTECTF/PROTECTE`，写入 `effects.protectionAir/protectionWater/protectionFire/protectionEarth`；凤凰涅槃复用 `RESURECT`，不伪造专属音效。
+- 锈龙酸蚀使用原作 `ACID`，碧龙恐惧使用原作 `FEAR`，分别写入 `effects.acid/effects.fear`；两者来自本地 SoD 扩展 SND，并与对应 `C0ACID.DEF`/`C0FEAR.DEF` 独立帧同步触发。
 - `Heroes3/` 原始游戏目录、SND 文件和 MP3 不进入 Git，生成后的音频也不应随公开构建发布。
 
 ## 默认音量
@@ -23,4 +24,4 @@
 
 ## 2026-09-18 本批更新
 
-新增四系御法原作音效，并复核火鸟/凤凰龙息没有独立音效、凤凰涅槃没有专属音效。全部由 `tools/extract_audio_assets.py` 提取。
+新增四系御法、酸蚀与恐惧原作音效；复核火鸟/凤凰龙息没有独立音效、凤凰涅槃没有专属音效。全部由 `tools/extract_audio_assets.py` 提取。
