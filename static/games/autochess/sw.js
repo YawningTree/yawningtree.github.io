@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sot-pwa-v2';
+const CACHE_NAME = 'sot-pwa-v3';
 
 const corePaths = [
   '',
@@ -114,7 +114,7 @@ const cacheCore = async () => {
 const networkFirst = async (request, fallbackUrl) => {
   const cache = await caches.open(CACHE_NAME);
   try {
-    const response = await fetch(request);
+    const response = await fetch(new Request(request, { cache: 'no-store' }));
     if (cacheableResponse(response)) await cache.put(request, response.clone());
     return response;
   } catch {
