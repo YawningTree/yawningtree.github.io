@@ -16,12 +16,13 @@
 - 高级嗜血使用原作 `BLOODLUS` 并写入 `effects.bloodlust`；雷击使用 `LIGHTBLT` 并写入 `effects.thunder`。
 - 四系高级御法使用 `PROTECTA/PROTECTW/PROTECTF/PROTECTE`，写入 `effects.protectionAir/protectionWater/protectionFire/protectionEarth`；凤凰涅槃复用 `RESURECT`，不伪造专属音效。
 - 锈龙酸蚀使用原作 `ACID`，碧龙恐惧使用原作 `FEAR`，分别写入 `effects.acid/effects.fear`；两者来自本地 SoD 扩展 SND，并与对应 `C0ACID.DEF`/`C0FEAR.DEF` 独立帧同步触发。
+- 好运与坏运使用原作 `GOODLUCK`、`BADLUCK`，写入 `effects.goodLuck/effects.badLuck`；与战斗中的 `C09SPA0.DEF`/`C10SPF0.DEF` 独立帧同步触发。
 - `Heroes3/` 原始游戏目录、SND 文件和 MP3 不进入 Git，生成后的音频也不应随公开构建发布。
 
 ## 默认音量
 
 原作 `sod.ini` 的音乐和音效设置均为 `0–9` 档，本机配置为 `9/9`。当前播放器因此让音乐和音效共同使用 `1.0` 满音量常量，不单独衰减任一通道；最终响度交给系统音量。
 
-## 2026-09-18 本批更新
+## 2026-10-09 本批更新
 
-新增四系御法、酸蚀与恐惧原作音效；复核火鸟/凤凰龙息没有独立音效、凤凰涅槃没有专属音效。全部由 `tools/extract_audio_assets.py` 提取。
+新增好运 `GOODLUCK` 与坏运 `BADLUCK` 原作音效；复核火鸟/凤凰龙息没有独立音效、凤凰涅槃没有专属音效。全部由 `tools/extract_audio_assets.py` 提取。
