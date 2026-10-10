@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sot-pwa-v7';
+const CACHE_NAME = 'sot-pwa-v8';
 
 const corePaths = [
   '',
