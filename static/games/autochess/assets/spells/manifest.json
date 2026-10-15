@@ -1,0 +1,637 @@
+{
+  "version": 1,
+  "iconSource": "spells.def",
+  "mapping": "frame index = original spell reference ID (see docs/planning/spell-checklist.md)",
+  "icons": [
+    {
+      "key": "summonBoat",
+      "spellId": 0,
+      "iconIndex": 0,
+      "icon": "assets/spells/summonBoat.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "scuttleBoat",
+      "spellId": 1,
+      "iconIndex": 1,
+      "icon": "assets/spells/scuttleBoat.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "visions",
+      "spellId": 2,
+      "iconIndex": 2,
+      "icon": "assets/spells/visions.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "viewEarth",
+      "spellId": 3,
+      "iconIndex": 3,
+      "icon": "assets/spells/viewEarth.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "disguise",
+      "spellId": 4,
+      "iconIndex": 4,
+      "icon": "assets/spells/disguise.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "viewAir",
+      "spellId": 5,
+      "iconIndex": 5,
+      "icon": "assets/spells/viewAir.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "fly",
+      "spellId": 6,
+      "iconIndex": 6,
+      "icon": "assets/spells/fly.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "waterWalk",
+      "spellId": 7,
+      "iconIndex": 7,
+      "icon": "assets/spells/waterWalk.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "dimensionDoor",
+      "spellId": 8,
+      "iconIndex": 8,
+      "icon": "assets/spells/dimensionDoor.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "townPortal",
+      "spellId": 9,
+      "iconIndex": 9,
+      "icon": "assets/spells/townPortal.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "quicksand",
+      "spellId": 10,
+      "iconIndex": 10,
+      "icon": "assets/spells/quicksand.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "landMine",
+      "spellId": 11,
+      "iconIndex": 11,
+      "icon": "assets/spells/landMine.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "forceField",
+      "spellId": 12,
+      "iconIndex": 12,
+      "icon": "assets/spells/forceField.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "fireWall",
+      "spellId": 13,
+      "iconIndex": 13,
+      "icon": "assets/spells/fireWall.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "earthquake",
+      "spellId": 14,
+      "iconIndex": 14,
+      "icon": "assets/spells/earthquake.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "magicArrow",
+      "spellId": 15,
+      "iconIndex": 15,
+      "icon": "assets/spells/magicArrow.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "iceBolt",
+      "spellId": 16,
+      "iconIndex": 16,
+      "icon": "assets/spells/iceBolt.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "lightningBolt",
+      "spellId": 17,
+      "iconIndex": 17,
+      "icon": "assets/spells/lightningBolt.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "implosion",
+      "spellId": 18,
+      "iconIndex": 18,
+      "icon": "assets/spells/implosion.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "chainLightning",
+      "spellId": 19,
+      "iconIndex": 19,
+      "icon": "assets/spells/chainLightning.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "frostRing",
+      "spellId": 20,
+      "iconIndex": 20,
+      "icon": "assets/spells/frostRing.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "fireball",
+      "spellId": 21,
+      "iconIndex": 21,
+      "icon": "assets/spells/fireball.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "inferno",
+      "spellId": 22,
+      "iconIndex": 22,
+      "icon": "assets/spells/inferno.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "meteorShower",
+      "spellId": 23,
+      "iconIndex": 23,
+      "icon": "assets/spells/meteorShower.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "deathRipple",
+      "spellId": 24,
+      "iconIndex": 24,
+      "icon": "assets/spells/deathRipple.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "destroyUndead",
+      "spellId": 25,
+      "iconIndex": 25,
+      "icon": "assets/spells/destroyUndead.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "armageddon",
+      "spellId": 26,
+      "iconIndex": 26,
+      "icon": "assets/spells/armageddon.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "shield",
+      "spellId": 27,
+      "iconIndex": 27,
+      "icon": "assets/spells/shield.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "airShield",
+      "spellId": 28,
+      "iconIndex": 28,
+      "icon": "assets/spells/airShield.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "fireShield",
+      "spellId": 29,
+      "iconIndex": 29,
+      "icon": "assets/spells/fireShield.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "protectionAir",
+      "spellId": 30,
+      "iconIndex": 30,
+      "icon": "assets/spells/protectionAir.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "protectionFire",
+      "spellId": 31,
+      "iconIndex": 31,
+      "icon": "assets/spells/protectionFire.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "protectionWater",
+      "spellId": 32,
+      "iconIndex": 32,
+      "icon": "assets/spells/protectionWater.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "protectionEarth",
+      "spellId": 33,
+      "iconIndex": 33,
+      "icon": "assets/spells/protectionEarth.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "antiMagic",
+      "spellId": 34,
+      "iconIndex": 34,
+      "icon": "assets/spells/antiMagic.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "dispel",
+      "spellId": 35,
+      "iconIndex": 35,
+      "icon": "assets/spells/dispel.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "magicMirror",
+      "spellId": 36,
+      "iconIndex": 36,
+      "icon": "assets/spells/magicMirror.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "cure",
+      "spellId": 37,
+      "iconIndex": 37,
+      "icon": "assets/spells/cure.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "resurrection",
+      "spellId": 38,
+      "iconIndex": 38,
+      "icon": "assets/spells/resurrection.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "animateDead",
+      "spellId": 39,
+      "iconIndex": 39,
+      "icon": "assets/spells/animateDead.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "sacrifice",
+      "spellId": 40,
+      "iconIndex": 40,
+      "icon": "assets/spells/sacrifice.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "bless",
+      "spellId": 41,
+      "iconIndex": 41,
+      "icon": "assets/spells/bless.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "curse",
+      "spellId": 42,
+      "iconIndex": 42,
+      "icon": "assets/spells/curse.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "bloodlust",
+      "spellId": 43,
+      "iconIndex": 43,
+      "icon": "assets/spells/bloodlust.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "precision",
+      "spellId": 44,
+      "iconIndex": 44,
+      "icon": "assets/spells/precision.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "weakness",
+      "spellId": 45,
+      "iconIndex": 45,
+      "icon": "assets/spells/weakness.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "stoneSkin",
+      "spellId": 46,
+      "iconIndex": 46,
+      "icon": "assets/spells/stoneSkin.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "disruptingRay",
+      "spellId": 47,
+      "iconIndex": 47,
+      "icon": "assets/spells/disruptingRay.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "prayer",
+      "spellId": 48,
+      "iconIndex": 48,
+      "icon": "assets/spells/prayer.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "mirth",
+      "spellId": 49,
+      "iconIndex": 49,
+      "icon": "assets/spells/mirth.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "sorrow",
+      "spellId": 50,
+      "iconIndex": 50,
+      "icon": "assets/spells/sorrow.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "fortune",
+      "spellId": 51,
+      "iconIndex": 51,
+      "icon": "assets/spells/fortune.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "misfortune",
+      "spellId": 52,
+      "iconIndex": 52,
+      "icon": "assets/spells/misfortune.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "haste",
+      "spellId": 53,
+      "iconIndex": 53,
+      "icon": "assets/spells/haste.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "slow",
+      "spellId": 54,
+      "iconIndex": 54,
+      "icon": "assets/spells/slow.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "slayer",
+      "spellId": 55,
+      "iconIndex": 55,
+      "icon": "assets/spells/slayer.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "frenzy",
+      "spellId": 56,
+      "iconIndex": 56,
+      "icon": "assets/spells/frenzy.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "titansLightningBolt",
+      "spellId": 57,
+      "iconIndex": 57,
+      "icon": "assets/spells/titansLightningBolt.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "counterstrike",
+      "spellId": 58,
+      "iconIndex": 58,
+      "icon": "assets/spells/counterstrike.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "berserk",
+      "spellId": 59,
+      "iconIndex": 59,
+      "icon": "assets/spells/berserk.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "hypnotize",
+      "spellId": 60,
+      "iconIndex": 60,
+      "icon": "assets/spells/hypnotize.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "forgetfulness",
+      "spellId": 61,
+      "iconIndex": 61,
+      "icon": "assets/spells/forgetfulness.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "blind",
+      "spellId": 62,
+      "iconIndex": 62,
+      "icon": "assets/spells/blind.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "teleport",
+      "spellId": 63,
+      "iconIndex": 63,
+      "icon": "assets/spells/teleport.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "removeObstacle",
+      "spellId": 64,
+      "iconIndex": 64,
+      "icon": "assets/spells/removeObstacle.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "clone",
+      "spellId": 65,
+      "iconIndex": 65,
+      "icon": "assets/spells/clone.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "summonFireElemental",
+      "spellId": 66,
+      "iconIndex": 66,
+      "icon": "assets/spells/summonFireElemental.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "summonEarthElemental",
+      "spellId": 67,
+      "iconIndex": 67,
+      "icon": "assets/spells/summonEarthElemental.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "summonWaterElemental",
+      "spellId": 68,
+      "iconIndex": 68,
+      "icon": "assets/spells/summonWaterElemental.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    },
+    {
+      "key": "summonAirElemental",
+      "spellId": 69,
+      "iconIndex": 69,
+      "icon": "assets/spells/summonAirElemental.png",
+      "width": 78,
+      "height": 65,
+      "iconSource": "spells.def"
+    }
+  ]
+}
