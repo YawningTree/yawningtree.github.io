@@ -13,8 +13,8 @@ draft: false
 | 单位 | 东南大学毫米波国家重点实验室；新加坡南洋理工大学电气与电子工程学院；大连海事大学信息科学技术学院；浙江大学 ZJU-UIUC 联合学院；南京航空航天大学微波光子学国家重点实验室 |
 | 期刊 | Nature Electronics（《自然·电子学》）2025 年，第 8 卷，第 179–191 页 |
 | DOI | https://doi.org/10.1038/s41928-024-01298-7 |
-| 论文类型 | 系统/方法论文（期刊 Article），13 页（正文 + Methods + 参考文献） |
-| 来源 | Zotero 本地 PDF（selectable-text） |
+| 论文类型 | 系统/方法论文（期刊 Article），正文 13 页；补充材料 42 页 |
+| 来源 | Zotero 本地正文 PDF + 补充材料 PDF（均为 selectable-text） |
 
 ## 章节索引
 
@@ -28,6 +28,7 @@ draft: false
 | 5 模拟数据传输 SIMULATED DATA TRANSMISSION | 图像传输仿真、误码率评估、与 MIMO 的对比与局限 |
 | 6 结论 CONCLUSIONS | 主要成果与展望 |
 | Methods 方法 | 编码序列与远场响应（式 6–10）、一次谐波响应独特性（式 11–13）、半谐波方向远场响应（式 14）、负一次谐波的共轭对称、Sᵢ 集合编码序列、非谐波方向、实验装置、比特串编码 |
+| 附录 A：补充材料（APPENDIX） | 21 个补充注记（S1–S21）、19 幅补充图（S1–S19）、1 张补充表（Table S1）、16 个补充公式（式 S1–S16） |
 
 ## 公式索引
 
@@ -45,6 +46,22 @@ draft: false
 - [E012 · Eq. (12)](#E012) — Mζ = (R + J)ζ = 0
 - [E013 · Eq. (13)](#E013) — 循环矩阵 M 的伴随多项式 α(x)
 - [E014 · Eq. (14)](#E014) — p = 5 时的非退化变换矩阵 g₁ᵀ = γ₅·g₁/₂ᵀ
+- [E015 · 补充式 (S1)](#E015) — 单列场分布的 δ 函数形式
+- [E016 · 补充式 (S2)](#E016) — 第 m 列场分布（含 (m−1)d 空间移位）
+- [E017 · 补充式 (S3)](#E017) — p 列叠加得到超表面平面总场分布
+- [E018 · 补充式 (S4)](#E018) — 编码序列 s(x₁) 的定义
+- [E019 · 补充式 (S5)](#E019) — 卷积关系 E1(x) = φd(x) ∗ s(x)
+- [E020 · 补充式 (S6)](#E020) — 一次谐波远场 = 编码序列与均匀相位梯度的内积
+- [E021 · 补充式 (S7)](#E021) — 阵列因子展开（序列与其反序给出相同强度）
+- [E022 · 补充式 (S8)](#E022) — 递归序列在一次谐波方向响应为零
+- [E023 · 补充式 (S9)](#E023) — 多项式改写为 (xᵖ − 1)/(x − 1)
+- [E024 · 补充式 (S10)](#E024) — 代换 x → x+1（Eisenstein 判别法）
+- [E025 · 补充式 (S11)](#E025) — 级联编码下的一次谐波远场（场幅放大 r 倍）
+- [E026 · 补充式 (S12)](#E026) — 半谐波方向的离散相位梯度
+- [E027 · 补充式 (S13)](#E027) — 相位梯度按 r 个分组的拆分
+- [E028 · 补充式 (S14)](#E028) — 半谐波方向的远场（r 为偶数时完全抵消）
+- [E029 · 补充式 (S15)](#E029) — 施加附加相位梯度 gu 后的远场展开
+- [E030 · 补充式 (S16)](#E030) — 施加相位梯度后的第 m 次谐波远场
 
 ## 术语表（Terminology Ledger）
 
@@ -561,24 +578,616 @@ draft: false
 
 **中文:** 数据可用性：支撑本研究结论的数据可向通讯作者合理索取。
 
+## 附录：补充材料（Supplementary Information）
+
+### A.1 远场响应的卷积关系（Supplementary Note S1）
+
+**Original:** Suppose that the single column of the meta-atoms is of the width d, and the center of the meta-atoms is located at the x = d/2. Thus, the electric field distribution on this single column of meta-atom array can be denoted as φd(x)exp(−jφ0), where φd(x) is non-zero at 0 ≤ x ≤ d and zero elsewhere, and φ0 represents the phase response of the meta-atom array. To simplify the notation, the electric field distribution on the mth column of meta-atom array is denoted as E1m−1(x).
+
+**中文:** 设单列超原子的宽度为 d，其中心位于 x = d/2。于是这一列超原子阵列上的电场分布可记为 φd(x)·exp(−jφ0)，其中 φd(x) 在 0 ≤ x ≤ d 上非零、其余为零，φ0 表示该列超原子阵列的相位响应。为简化记号，第 m 列超原子阵列上的电场分布记为 E1m−1(x)。
+
+**Original:** Notably, the term E10(x) = φd(x)exp(−jφ0) could be reformulated with the aid of Dirac pulse function as:
+
+**中文:** 值得注意的是，E10(x) = φd(x)·exp(−jφ0) 可以借助狄拉克脉冲函数改写为：
+
+<a id="E015"></a>
+
+![补充公式 S1（原图）](assets/si/equations/eqS1.png)
+
+**中文说明：** 补充式 (S1) 用 δ 函数把单列场分布写成积分形式 E1₀(x) = ∫φd(x₁)δ(x−x₁)×exp(−jφ₀)dx₁。引入 δ 函数看似多余，但它让后续所有列都能用同一套“移位 δ”的写法统一表达，从而自然导出卷积结构。
+
+**Original:** Similarly, the electric field distribution on the mth column of meta-atom array can be formulated as
+
+**中文:** 类似地，第 m 列超原子阵列的电场分布可写为
+
+<a id="E016"></a>
+
+![补充公式 S2（原图）](assets/si/equations/eqS2.png)
+
+**中文说明：** 补充式 (S2) 与式 (S1) 的唯一区别是 δ 的宗量中多了 (m−1)d 的平移，即 E1ₘ₋₁(x) = ∫φd(x₁)δ(x−x₁−(m−1)d)×exp(−jφₘ)dx₁。这就是“空间移位”的数学表达。
+
+**Original:** Thus, the resultant electric field distribution on the plane of the metasurface or metasurface antenna could be obtained by the summation of these terms as:
+
+**中文:** 因此，超表面（或超表面天线）平面上的总电场分布可由这些项求和得到：
+
+<a id="E017"></a>
+
+![补充公式 S3（原图）](assets/si/equations/eqS3.png)
+
+**中文说明：** 补充式 (S3) 把 p 列叠加为 E1(x) = E1₀(x) + E1₁(x) + … + E1ₚ₋₁(x)。由于每一项都是 φd 与“移位 δ”的乘积，求和后自然呈现出“口径函数与编码序列卷积”的结构。
+
+**Original:** The second term in the square bracket is denoted as s(x1), which can be expressed as:
+
+**中文:** 方括号中的第二项记为 s(x₁)，可表示为：
+
+<a id="E018"></a>
+
+![补充公式 S4（原图）](assets/si/equations/eqS4.png)
+
+**中文说明：** 补充式 (S4) 定义 s(x₁) = Σ_{m=0}^{p−1} δ(x₁−md)×exp(−jφₘ)，即把 p 个移位脉冲按各自相位加权后叠加。这个 s(x₁) 就是主文中所说的“编码序列”在空间域中的表示。
+
+**Original:** Accordingly, Eq. 3 can be reformulated as the convolution between φd(x) and s(x) that:
+
+**中文:** 相应地，式 (S3) 可以改写为 φd(x) 与 s(x) 之间的卷积：
+
+<a id="E019"></a>
+
+![补充公式 S5（原图）](assets/si/equations/eqS5.png)
+
+**中文说明：** 补充式 (S5) 是注记 S1 的结论：E1(x) = φd(x) ∗ s(x)。取傅里叶变换后立即可得 E2(kₓ) ∝ F[φd(x)] × F[s(x)]，即主文式 (7)、(8) 的物理来源——**远场方向图是“单列响应”与“编码序列频谱”的乘积**。
+
+### A.2 谐波场响应的 C₂ₚ 对称性（Supplementary Note S2）
+
+**Original:** The scattered electric far field at the direction of the first spatial harmonic can be expressed as the inner product between the modulation sequence and the uniform phase gradient that:
+
+**中文:** 一次空间谐波方向上的散射电场远场可表示为调制序列与均匀相位梯度之间的内积：
+
+<a id="E020"></a>
+
+![补充公式 S6（原图）](assets/si/equations/eqS6.png)
+
+**中文说明：** 补充式 (S6) 把一次谐波方向的远场展开为 E1(k1) ∝ Σ_{m=0}^{p−1} exp(−jφₘ)·exp(−j2πm/p)，即“第 m 列贡献 exp(−j2πm/p) 相位”。这是 C₂ₚ 对称性推导的起点。
+
+**Original:** Eq. S6 suggests that the cyclic permutation (R) of the encoding sequence from [exp(−jφ0), exp(−jφ1), … exp(−jφp−1)] to [exp(−jφp−1), exp(−jφ0) … exp(−jφp−2)] produces the phase shift of exp(−j2π/p) to the far-field response at the 1st harmonic direction with fixed amplitude. Since there are p distinctive cyclic permutation operations [R0, R1, R2 … Rp−1], by which phase shift of [exp(−j0π/p), exp(−2jπ/p), exp(−4jπ/p) …, exp(−(p−1)j2π/p)] would be generated for the harmonic responses of arbitrary sequence. Thus, the generated far-field responses of all sequences must share the Cp symmetry in the complex plane at the 1st harmonic direction.
+
+**中文:** 式 (S6) 表明，把编码序列从 [exp(−jφ₀), exp(−jφ₁), … exp(−jφₚ₋₁)] 循环置换（R）为 [exp(−jφₚ₋₁), exp(−jφ₀), … exp(−jφₚ₋₂)]，会使一次谐波方向的远场响应产生 exp(−j2π/p) 的相位偏移而幅度不变。由于共有 p 种不同的循环置换 [R₀, R₁, R₂, …, Rₚ₋₁]，对任意序列的谐波响应而言，它们会分别产生 [exp(−j0π/p), exp(−2jπ/p), exp(−4jπ/p), …, exp(−(p−1)j2π/p)] 的相位偏移。因此，所有序列在一次谐波方向产生的远场响应在复平面上必然具有 Cₚ 对称性。
+
+**Original:** On the other hand, since the phase state of the meta-atoms are either '0' or 'π' for the 1-bit phase modulated programmable metasurface antenna, the flip of the signs of the phase states of arbitrary encoding sequence will induce phase shift of π to the far-field responses. Accordingly, the generated far-field responses of all sequences must share the C2 symmetry in the complex plane as well. Hence, the generated far-field responses must share both Cp and C2 symmetry in the complex plane at the 1st harmonic direction, by which the far-field responses must share Clcm(p,2) symmetry in the complex plane, where 'lcm' denotes the least common multiples. When p is an odd prime number, lcm(p, 2) is just 2p. Thus, it is demonstrated that the 1st harmonic field responses of the binary phase coded programmable metasurface antenna must share the C2p symmetry in the complex plane.
+
+**中文:** 另一方面，由于 1 比特相位调制可编程超表面天线的超原子相位状态只取‘0’或‘π’，把任意编码序列的相位状态整体反号会使远场响应产生 π 的相位偏移。因此，所有序列产生的远场响应在复平面上必然也具有 C₂ 对称性。综上，一次谐波方向的远场响应必须同时具有 Cₚ 与 C₂ 对称性，因而必须具有 C_lcm(p,2) 对称性（lcm 表示最小公倍数）。当 p 为奇素数时，lcm(p, 2) = 2p。由此可证：二值相位编码可编程超表面天线的一次谐波场响应必然具有 C₂ₚ 对称性。
+
+**Original:** The intensity of the array factor, represented by |Σ_{m=0}^{p−1} exp[−j(mkₓd)]·sm|², exhibits two types of degeneracy. Firstly, when the sign of the encoding sequence inverts, i.e., s → −s, the resulting intensity of the array factor remains unchanged. Secondly, the intensity of the array factor is unchanged when the sequence s = [s0, s1, … sp−2, sp−1] is reversed to s′ = [sp−1, sp−2, … s1, s0]. To illustrate this degeneracy, we formulate the array factor as:
+
+**中文:** 阵列因子的强度 |Σ_{m=0}^{p−1} exp[−j(mkₓd)]·sₘ|² 存在两类简并。其一，当编码序列整体反号（s → −s）时，阵列因子强度不变；其二，当序列 s = [s₀, s₁, …, sₚ₋₂, sₚ₋₁] 反转为其反序 s′ = [sₚ₋₁, sₚ₋₂, …, s₁, s₀] 时，阵列因子强度也不变。为说明这种简并，我们把阵列因子写成：
+
+<a id="E021"></a>
+
+![补充公式 S7（原图）](assets/si/equations/eqS7.png)
+
+**中文说明：** 补充式 (S7) 把阵列因子展开为逐项求和，用以说明序列与反序序列给出相同的阵列因子（强度）。这解释了一个重要结果：**p = 5 时 32 种编码序列只对应 10 个互不相同的阵列因子**，因此实际可区分的状态数为 2ᵖ − 1 = 31 而非 2ᵖ。
+
+### A.3 长度为奇素数的递归 1 比特编码序列的证明（Supplementary Note S3）
+
+**Original:** For an encoding sequence with length p, if a cyclic permutation of this sequence with number of steps that are not multiples of p cannot yield the original sequence, then the sequence is classified as non-recurrent. Conversely, if there exists such a cyclic permutation that can restore the sequence to its initial configuration with the number of steps that are not multiples of p, then the sequence is classified as recurrent. For instance, the sequence sa = [1,1,−1,1,1,−1] is recurrent for which the cyclic permutation of the sequence with 3 steps results in the original sequence that R3(sa) = sa. In contrast, the sequence sb = [1,1,1,1,1,−1] is nonrecurrent for which it cannot be restored to its original configuration unless the permutation step is the integer multiples of 6.
+
+**中文:** 对长度为 p 的编码序列，若步数不是 p 的整数倍的循环置换都无法得到原序列，则该序列称为非递归序列；反之，若存在这样的循环置换、其步数不是 p 的整数倍却能把序列恢复为初始构型，则该序列称为递归序列。例如序列 sa = [1,1,−1,1,1,−1] 是递归的，因为它循环置换 3 步后即回到原序列，R₃(sa) = sa；而序列 sb = [1,1,1,1,1,−1] 是 非递归 的，除非置换步数为 6 的整数倍，否则无法恢复原构型。
+
+**Original:** For an encoding sequence with the length of odd prime and consists of 1's and −1's. If the encoding sequence is not made of entirely 1's or −1's, then the sequence must be [non-recurrent]. The proof is as follows: if there exists such a recurrent sequence, then cyclic shift the sequence by steps less than p (e.g., 1, 2, 3, ..., p−1) would result in the original sequence. On the other hand, the allowable step number that can result in the same sequence must be a divisor of the length of the encoding sequence. Since p is restricted to an odd prime, the permissible number of steps for a cyclic shift to result in the same sequence must be 1, which implies that the recurrent encoding sequence must consist of identical elements. Therefore, in the case where the encoding sequences are made of 1's and −1's, the only allowable recurrent encoding sequences are those comprising either all 1's or all −1's.
+
+**中文:** 对于长度为奇素数、由 1 与 −1 构成的编码序列：若它并非全部由 1 或全部由 −1 组成，则该序列一定是非递归的。证明如下：若存在这样的递归序列，则把它循环平移小于 p 的步数（如 1, 2, 3, …, p−1）都会得到原序列；另一方面，能使序列保持不变的允许步数必须是序列长度的约数。由于 p 限定为奇素数，能保持序列不变的最小循环平移步数只能是 1，这意味着递归编码序列必须由相同的元素构成。因此在由 1 与 −1 构成的编码序列中，唯一允许的递归序列就是全部为 1 或全部为 −1 的序列。
+
+### A.4 递归编码序列的远场响应为零（Supplementary Note S4）
+
+**Original:** It is demonstrated that the recurrent sequence must be composed of all 1's or all −1's. We suppose the recurrent sequence is made of all 1's, and the far-field response of the sequence can be expressed based on Eq. 5 that:
+
+**中文:** 前已证明递归序列必须由全 1 或全 −1 构成。设该递归序列为全 1，则基于式 (5)，该序列的远场响应可表示为：
+
+<a id="E022"></a>
+
+![补充公式 S8（原图）](assets/si/equations/eqS8.png)
+
+**中文说明：** 补充式 (S8) 计算全 1（递归）序列在一次谐波方向的远场：E1(k1) ∝ f(k1)·Σ_{m=0}^{p−1} exp(−j2πm/p)。由于当 p > 1 时该等比级数之和恒为 0（首项 1、公比 exp(−j2π/p) ≠ 1 且满足 exp(−j2π) = 1），远场响应严格为零。
+
+**Original:** Thus, we demonstrated that the far-field responses of the metasurface antenna encoded with recurrent sequence must vanish at the 1st harmonic direction.
+
+**中文:** 由此证明：以递归序列编码的超表面天线，其远场响应在一次谐波方向必然消失（为零）。
+
+### A.5 用 Eisenstein 判别法证明多项式的不可约性（Supplementary Note S5）
+
+**Original:** The polynomial x^{p−1} + x^{p−2} + ⋯ + 1 can be rewritten as:
+
+**中文:** 多项式 x^(p−1) + x^(p−2) + ⋯ + 1 可以改写为：
+
+<a id="E023"></a>
+
+![补充公式 S9（原图）](assets/si/equations/eqS9.png)
+
+**中文说明：** 补充式 (S9) 即 x^(p−1) + x^(p−2) + ⋯ + 1 = (x^p − 1)/(x − 1)。这是使用 Eisenstein 判别法的第一步准备。
+
+**Original:** The substitution of x + 1 for x can be adopted, such that the above equation can be reformulated as:
+
+**中文:** 可作代换 x → x + 1，从而把上式改写为：
+
+<a id="E024"></a>
+
+![补充公式 S10（原图）](assets/si/equations/eqS10.png)
+
+**中文说明：** 补充式 (S10) 即 ((x+1)^p − 1)/x = x^(p−1) + C(p,1)x^(p−2) + … + C(p,p−1)。除首项外的系数都是二项式系数、可被 p 整除，而常数项等于 p、不被 p² 整除。这正是 Eisenstein 判别法要求的条件。
+
+**Original:** Evidently, all of those non-leading coefficients are divisible by p by the properties of binomial coefficients. In addition, the constant coefficient is equal to p, and thus is not divisible by p². Consequently, the Eisenstein's criterion is fulfilled, indicating that the polynomial x^{p−1} + x^{p−2} + ⋯ + 1 is irreducible over the rational numbers as long as p is a prime number. In other words, the polynomial x^{p−1} + x^{p−2} + ⋯ + 1 cannot be factorized into the products of non-constant.
+
+**中文:** 显然，由二项式系数的性质，这些非首项系数都能被 p 整除；此外常数项等于 p，故不被 p² 整除。因此满足 Eisenstein 判别法，说明只要 p 是素数，多项式 x^(p−1) + x^(p−2) + ⋯ + 1 在有理数域上不可约；换言之，该多项式无法分解为非平凡（非常数）多项式之积。
+
+**Reading note:** 注记 S3–S5 合起来回答了“为什么必须取 p 为奇素数”：S5 说明 x^(p−1)+…+1 不可约 ⇒ 不存在非平凡的循环置换把序列映回自身（除全 1/全 −1）⇒ 除两条递归序列外其余序列都互不相同；S4 则说明那两条递归序列在一次谐波方向响应恰好为零。两者共同保证“2ᵖ 种图案 → 2ᵖ − 1 个互不重叠状态”的近似双射成立，这正是主文信息映射效率 η₁ = log₂(2ᵖ − 1)/p 的理论根基。
+
+### A.6 1 比特相位调制的馈电结构表征（Supplementary Note S6）
+
+**Original:** Positive (+2.5V) and negative (−2.5V) bias voltages can be applied to the two sides of the feeding line through two metallic rods to control the 'on' and 'off' states for the four Pin diodes, and thus provide phase modulation of 0° and 180° for the radiated wave. The performance of the 1-bit phase-modulation structure is stimulated and depicted in Fig. S1b-d. It can be noticed from Fig. S1b that the reflection of the feeding structure is below 0.2 for 'on' and 'off' states at the working frequency of 9.7GHz. Meanwhile, it can be observed that the transmission amplitudes are almost the same when different bias voltages (2.5V and −2.5V) are applied, and the phase difference between the two states is almost 180° at the working frequency of 9.7GHz, as shown in Fig. S1c-d.
+
+**中文:** 通过两根金属棒把正（+2.5 V）与负（−2.5 V）偏置电压加到馈线两侧，即可控制四个 PIN 二极管的‘开/关’状态，从而为辐射波提供 0° 与 180° 的相位调制。该 1 比特相位调制结构的性能经仿真得到，如图 S1b–d 所示。由图 S1b 可见，在工作频率 9.7 GHz 处，馈电结构在‘开’与‘关’两种状态下的反射均低于 0.2；同时可以看到，在不同偏置电压（2.5 V 与 −2.5 V）下透射幅度几乎相同，而两状态间的相位差在工作频率 9.7 GHz 处接近 180°，如图 S1c–d 所示。
+
+**Original:** One to eight power dividers are adopted to provide the amplitude and phase modulation for meta-atoms in each column, as shown in Fig. S2a. The simulated transmission amplitude and phase received at the eight ports and presented in Fig. S2b-c. It can be observed that the resulting amplitude and phases response are almost same for the eight meta-atoms in the same column.
+
+**中文:** 每个列采用一分八功分器为各超原子提供幅度与相位调制，如图 S2a 所示。在八个端口处得到的仿真透射幅度与相位分别见图 S2b–c。可以看到，同一列中八个超原子得到的幅度与相位响应几乎相同。
+
+#### 图 S1 1 比特相位调制结构的表征
+
+![FS1](assets/si/figures/figS1.png)
+
+**Original caption:** Fig. S1. Characterization of the 1-bit phase modulation structure. a, Top view of the 1-bit phase modulator. The bias voltage is connected to the left feeding line, and the right feeding line is connected to the ground located at the central layer. b, Reflection amplitude of the phase modulation structure when opposite bias voltages are applied. c-d, Transmission amplitude (c) and phase (d) of the phase modulation structure when opposite bias voltages are applied.
+
+**中文图注:** 图 S1：1 比特相位调制结构的表征。a 1 比特相位调制器的俯视图；偏置电压接左侧馈线，右侧馈线连接到位于中间层的接地。b 施加相反偏置电压时相位调制结构的反射幅度。c、d 施加相反偏置电压时相位调制结构的透射幅度（c）与相位（d）。
+
+**Reading note:** 读图时按“反射 → 透射幅度 → 透射相位”三步走：b 说明馈电结构在工作频段反射很低（< 0.2），因此能量基本被送入超原子而不被返回；c 说明两态的透射幅度几乎重合，即调制几乎不损失能量；d 是最关键的一幅——两态相位差在工作频率 9.7 GHz 处约为 180°，这正是 1 比特相位调制的物理前提。
+
+#### 图 S2 每列一分八功分器的表征
+
+![FS2](assets/si/figures/figS2.png)
+
+**Original caption:** Fig. S2. Characterization of the one-to-eight power divider in each column. a, Top view of the one to eight power divider that feeds the eight meta-atoms in each column. b-c, Transmission amplitude (b) and phase (c) of the power divider at the eight ports.
+
+**中文图注:** 图 S2：每列一分八功分器的表征。a 为每列八个超原子馈电的一分八功分器俯视图。b、c 功分器在八个端口处的透射幅度（b）与相位（c）。
+
+**Reading note:** 这张图回答的是“同一列八个超原子能否被一致驱动”。b 与 c 中各端口曲线几乎重合，说明经过功分器后八个超原子获得几乎相同的幅度与相位激励；因此主文把“每列”当作一个整体编码单元来处理是合理的，这也是样机只用 5 路控制电压就能驱动 5 × 8 个辐射单元的原因。
+
+### A.7 通过级联编码提升一次空间谐波的能量转换效率（Supplementary Note S7）
+
+**Original:** When a cascaded encoding factor of r is introduced to the encoding sequence, the far-field response of the metasurface antenna is modified to E(k1) ∝ f(k1) × ∫ s_r(x)e^{−jk1x}dx at the direction of the 1st harmonic. The term s_r(x) represents the encoding sequence with cascaded encoding factor of r, meaning that the encoding sequence repeated r times in space. For instance, the sequence s = [1,1,−1,1,−1] will be extended to s2 = [1,1,−1,1,−1,1,1,−1,1,−1] when cascaded encoding with r = 2 is introduced.
+
+**中文:** 当对编码序列引入级联编码因子 r 时，超表面天线在一次谐波方向的远场响应变为 E(k1) ∝ f(k1) × ∫s_r(x)e^(−jk1x)dx。其中 s_r(x) 表示级联编码因子为 r 的编码序列，即该编码序列在空间上重复 r 次。例如序列 s = [1,1,−1,1,−1] 在引入 r = 2 的级联编码后扩展为 s2 = [1,1,−1,1,−1,1,1,−1,1,−1]。
+
+**Original:** Notably, the oscillating phase shift factor e^{−jk1x} and the sequence s_r(x) with cascaded encoding factor of r share the same periodicity of pd, such that the generated far-field response at the 1st harmonic can be reformulated as:
+
+**中文:** 值得注意的是，振荡相位因子 e^(−jk1x) 与级联因子为 r 的序列 s_r(x) 具有相同的周期 pd，因此一次谐波方向的远场响应可改写为：
+
+<a id="E025"></a>
+
+![补充公式 S11（原图）](assets/si/equations/eqS11.png)
+
+**中文说明：** 补充式 (S11) 把积分区间由 r·pd 缩小为 pd，代价是场幅多出一个因子 r：E(k1) ∝ f(k1) × ∫₀^{rpd} s_r(x)e^(−jk1x)dx = r × f(k1) × ∫₀^{pd} s(x)e^(−jk1x)dx。也就是说**场幅放大 r 倍、强度放大 r² 倍，而输入能量只随 r 线性增长**，因此一次谐波的归一化强度随 r 线性提升——这就是级联编码提升能量转换效率的数学根据。
+
+**Original:** where f(k1) × ∫ s(x)e^{−jk1x}dx from 0 to pd is the harmonic field response generated by a sequence s(x) without cascaded encoding. Eq. S10 suggests that the intensity of the 1st harmonic mode (I(k1) ∝ E(k1)²) is proportional to the square of repetition factor (r²), whereas the input energy also grows linearly as r increases. That is to say, the normalized intensity at the 1st harmonic grows linearly as r increases. In fact, this conclusion can be extended to the directions of all the integer harmonics. In other words, the radiation energy will become more concentrated to the integer harmonics when cascaded encoding is introduced to the metasurface antenna.
+
+**中文:** 其中 f(k1) × ∫₀^{pd} s(x)e^(−jk1x)dx 是不含级联编码的序列 s(x) 所产生的谐波场响应。该式表明：一次谐波模式的强度 I(k1) ∝ E(k1)² 正比于重复因子 r 的平方，而输入能量只随 r 线性增长；换言之，一次谐波的归一化强度随 r 线性提升。事实上该结论可推广到所有整数次谐波方向——也就是说，引入级联编码后辐射能量会更集中到整数次谐波上。
+
+**Original:** To demonstrate the enhancement of the energy conversion efficiency of the 1st harmonic response, Fig. S3 plots the array factors of the metasurface antenna with respect to encoding schemes of different cascaded encoding factors, where the adopted sequences are s1 = [1,−1,1,−1,1] and s2 = [1,−1,1,1,−1,−1,1] respectively.
+
+**中文:** 为展示一次谐波响应能量转换效率的提升，图 S3 给出了不同级联编码因子下超表面天线的阵列因子，所用序列分别为 s1 = [1,−1,1,−1,1] 与 s2 = [1,−1,1,1,−1,−1,1]。
+
+#### 图 S3 不同级联编码下超表面天线的阵列因子
+
+![FS3](assets/si/figures/figS3.png)
+
+**Original caption:** Fig. S3. Array factor of the metasurface antenna with different cascaded encoding factors. a-b, Array factor of the metasurface antenna generated by the sequences with different length and cascaded encoding factors, where the width of the meta-atom is 0.5λ. The pink lines mark the 1st, 2nd and the 3rd harmonic directions. c-d, Array factor of the metasurface antenna generated by the sequences with different length and cascaded encoding factors, where the width of the meta-atom is 0.33λ (c) and 0.25λ (d) respectively.
+
+**中文图注:** 图 S3：不同级联编码因子下超表面天线的阵列因子。a、b 超原子宽度为 0.5λ 时，不同序列长度与级联编码因子下超表面天线的阵列因子；粉色竖线标出一次、二次与三次谐波方向。c、d 超原子宽度分别为 0.33λ（c）与 0.25λ（d）时的阵列因子。
+
+**Reading note:** 读图时抓住两点：其一，随着级联因子 r 增大，能量向离散的整数次谐波方向收拢，谐波之间的旁瓣被压低，这正是“级联提升能量转换效率”的直观证据；其二，c、d 对比 a、b 说明超原子宽度（即单元周期 d 与波长之比）决定了哪些谐波模式能够被辐射——当 d 取 0.33λ 或 0.25λ 时，|k₁| < k < |k₂| 得以满足，二次及以上谐波不再出现。这也提醒读者：级联带来的“效率提升”并非无条件，需要与单元尺寸设计配合。
+
+### A.8 通过级联编码完全抑制所有半谐波方向的远场响应（Supplementary Note S8）
+
+**Original:** For direction that corresponds to half harmonic (k_{n+1/2} = 2(n+0.5)π/pd), the far-field responses will be in proportional to the inner product between the discrete phase gradient and the encoding sequence. Specifically, when the cascaded encoding factor being a positive number, the discrete phase gradient at the direction of the half harmonic can be expressed as:
+
+**中文:** 对于半谐波方向（k_{n+1/2} = 2(n+0.5)π/pd），远场响应正比于离散相位梯度与编码序列的内积。具体而言，当级联编码因子为正整数时，半谐波方向的离散相位梯度可表示为：
+
+<a id="E026"></a>
+
+![补充公式 S12（原图）](assets/si/equations/eqS12.png)
+
+**中文说明：** 补充式 (S12) 给出半谐波方向的离散相位梯度 g(k_{n+1/2})。它是一个含 rp 个元素的序列，各元素为单位模复指数，其相位随列序号线性增长，并带有与 n + 1/2 相关的固定偏移。
+
+**Original:** Notably, the discrete phase gradient can be further partitioned into r terms as g1(k_{n+1/2}), g2(k_{n+1/2}), …, gr(k_{n+1/2}), where gm(k_{n+1/2}) is expressed as:
+
+**中文:** 值得注意的是，该离散相位梯度可以进一步拆分为 r 个分组 g1(k_{n+1/2}), g2(k_{n+1/2}), …, gr(k_{n+1/2})，其中 gm(k_{n+1/2}) 表示为：
+
+<a id="E027"></a>
+
+![补充公式 S13（原图）](assets/si/equations/eqS13.png)
+
+**中文说明：** 补充式 (S13) 把相位梯度按 r 个分组写出。每个分组 gm 对应“级联序列中的第 m 次重复”，因此第 m 组在第 m 次重复的位置上相位额外增加 π/r 的偏移。
+
+**Original:** It can be verified that these phase gradient terms obey the following relations that g_{n+1/2}³ = ⋯ = g_{n+1/2}^{r−1}, g_{n+1/2}² = g_{n+1/2}⁴ = ⋯ = g_{n+1/2}^{r} and g_{n+1/2}¹ are [alternating]. Since the cascaded encoding sequence repeats the original sequence r times in space, the resulting far-field response at the half harmonic can be expressed as:
+
+**中文:** 可以验证这些相位梯度项满足如下关系：奇数号分组与偶数号分组分别彼此相等（g³ = ⋯ = g^{r−1}、g² = g⁴ = ⋯ = g^{r}），且 g¹ 与之呈交替关系。由于级联编码序列在空间上把原序列重复 r 次，半谐波方向的远场响应可表示为：
+
+<a id="E028"></a>
+
+![补充公式 S14（原图）](assets/si/equations/eqS14.png)
+
+**中文说明：** 补充式 (S14) 给出半谐波方向的远场 F(k_{n+1/2}) ∝ f(k_{n+1/2}) × (⟨s, g1⟩ + ⟨s, g2⟩ + … + ⟨s, gr⟩)。由于奇数号与偶数号分组的贡献符号相反而成对出现，当 r 为偶数时它们两两抵消，因此**所有半谐波方向的远场响应被完全抑制**。
+
+**Original:** where ⟨s, gm⟩ indicates the inner product between the sequence s without cascaded encoding and the phase gradient gm(k_{n+1/2}). Notably, Eq. S13 suggests that the terms of odd and even indexes will be cancelled out for the inner products if r is an even number. As a result, the far-field responses will be completely vanished at the directions of all half harmonics.
+
+**中文:** 其中 ⟨s, gm⟩ 表示不含级联编码的序列 s 与相位梯度 gm(k_{n+1/2}) 的内积。值得注意的是，式 (S13) 表明当 r 为偶数时，奇数号与偶数号分组的贡献在内积中会相互抵消，其结果是所有半谐波方向的远场响应都被完全消除。
+
+### A.9 不同长度编码序列的谐波场响应（Supplementary Note S9）
+
+**Original:** We have shown that the encoding sequence with prime length plays an important role in producing unique far-field responses at the direction of the 1st harmonic. Once the length of the encoding sequence is a prime number, all of the non-constant sequences exhibit distinctive far-field responses with symmetrical distribution in the complex plane at the 1st harmonic direction. However, if the length of the sequence is not prime, the uniqueness of the far-field responses at the 1st harmonic will not hold in general. For instance, it can be verified that the far-field responses generated by the two encoding sequences of '1, −1, 1, −1' and '−1, 1, −1, 1' are the same.
+
+**中文:** 我们已说明，长度为素数的编码序列对于在一次谐波方向产生互不相同的远场响应至关重要。一旦编码序列长度为素数，所有非常数序列都会在一次谐波方向呈现互不相同、且在复平面上对称分布的远场响应。然而若序列长度不是素数，一次谐波方向远场响应的唯一性一般不再成立——例如可以验证，编码序列‘1,−1,1,−1’与‘−1,1,−1,1’产生的远场响应完全相同。
+
+**Original:** For illustration, we plot the constellation diagrams generated by encoding sequences of the length from 3 to 8, as shown in Fig. S4-5. At the normal direction, the number of unique far-field states are always p + 1, for p columns of 1-bit encoding sequence, as shown in Fig. S4. At the direction of the 1st harmonic, the number of the unique states will be extended for both encoding sequences with prime and composite lengths. However, the information mapping efficiency for the encoding sequence with length of the composite number is relatively small as that of prime number, as shown in Fig. S5. For instance, 31 unique states can be generated when the length of encoding sequences is 5, whereas only 19 unique states will be generated when the length of encoding sequences increases to 6.
+
+**中文:** 为便于说明，我们绘制了长度为 3 至 8 的编码序列所产生的星座图，见图 S4、S5。在法向方向，对于含 p 列的 1 比特编码序列，不同远场状态数始终为 p + 1，如图 S4 所示。而在一次谐波方向，无论长度为素数还是合数，不同状态数都会增加；但与素数长度相比，合数长度编码序列的信息映射效率明显偏低，如图 S5 所示。例如当编码序列长度为 5 时可产生 31 个不同状态，而当长度增至 6 时只能产生 19 个不同状态。
+
+#### 图 S4 法向方向的远场响应
+
+![FS4](assets/si/figures/figS4.png)
+
+**Original caption:** Fig. S4. Far-field responses of the metasurface antenna at the normal direction. a-c, Far-field responses generated by all possible encoding sequences with the length of composite number of 4 (a), 6 (b), and 8 (c), respectively. d-f, Far-field responses generated by encoding sequences with the length of prime number of 3 (d), 5 (e), and 7 (f), respectively.
+
+**中文图注:** 图 S4：法向方向的远场响应。a–c 长度分别为合数 4（a）、6（b）、8（c）的全部可能编码序列产生的远场响应。d–f 长度分别为素数 3（d）、5（e）、7（f）的编码序列产生的远场响应。
+
+**Reading note:** 这张图是“对照组”：在法向方向，无论长度是素数还是合数，可分辨状态数都只有 p + 1 个，远小于 2ᵖ − 1。这说明**法向方向无法承载信息映射**——主文之所以强调“空间谐波检索”，正是因为只有把检索方向选在一次谐波（或半谐波）方向，状态数才会被拉到最大。
+
+#### 图 S5 一次谐波方向的远场响应
+
+![FS5](assets/si/figures/figS5.png)
+
+**Original caption:** Fig. S5. Far-field responses of the metasurface antenna at the 1st harmonic direction. a-c, Far-field responses generated by all possible encoding sequences with the length of composite number of 4 (a), 6 (b), and 8 (c), respectively. d-f, Far-field responses generated by encoding sequences with the length of prime number of 3 (d), 5 (e), and 7 (f), respectively.
+
+**中文图注:** 图 S5：一次谐波方向的远场响应。a–c 长度分别为合数 4（a）、6（b）、8（c）的全部可能编码序列产生的远场响应。d–f 长度分别为素数 3（d）、5（e）、7（f）的编码序列产生的远场响应。
+
+**Reading note:** 与图 S4 对照阅读即可看出素数长度的价值：在 d–f（p = 3、5、7）中，全部 2ᵖ 种图案几乎一一对应到 2ᵖ − 1 个互不重叠的状态点，排布呈 C₂ₚ 对称；而在 a–c（p = 4、6、8）中，状态点明显重合（p = 6 时只剩 19 个不同状态）。这直接解释了主文为何要求 p 为奇素数。
+
+### A.10 非谐波方向的远场响应（Supplementary Note S10）
+
+**Original:** The far-field responses of the metasurface antenna at the non-harmonic directions exhibit no rotational symmetry unless the retrieving direction is aligned with the half harmonic (kx = 0.5k1), as shown in Fig. S6. In addition, the far-field responses at these non-harmonic directions (other than the half harmonic) are less robust against disorders, for which the states are more likely to overlap when noise is introduced. For instance, when noise of δ = 0.14 is introduced, all of non-harmonic states (other than the half harmonic) exhibit states overlapping in the constellation diagrams, as shown in Fig. S6.
+
+**中文:** 超表面天线在非谐波方向的远场响应不具有旋转对称性，除非检索方向与半谐波方向（kx = 0.5k1）对齐，如图 S6 所示。此外，这些非谐波方向（半谐波除外）的远场响应对抗扰动的鲁棒性较差，一旦引入噪声，状态更容易重叠。例如当引入 δ = 0.14 的噪声时，除半谐波外所有非谐波状态在星座图中都出现重叠，如图 S6 所示。
+
+**Original:** Figs. S7a-i illustrate the non-overlapping far-field states at different directions (kx = 0.2k1, 0.7k1 and k1). Different levels of noises (δ) are introduced, which are represented as the radii of the red circles in the constellation diagram. We note that the far-field responses exhibit no rotational symmetry at the non-harmonic directions, whereas the C2p symmetry is [retained at the 1st harmonic]. The number of non-overlapping far-field states varies as the noise level increases. Compared to the non-harmonic directions, the far-field responses at the 1st harmonic direction exhibit more robustness against the disorders. In particular, the robustness of the far-field responses at the 1st harmonic will be further enhanced when cascaded encoding is introduced.
+
+**中文:** 图 S7a–i 展示了不同方向（kx = 0.2k1、0.7k1 与 k1）上互不重叠的远场状态。图中引入了不同水平的噪声 δ，其大小以星座图中红圈的半径表示。可以看到，非谐波方向的远场响应不具备旋转对称性，而一次谐波方向则保留 C₂ₚ 对称性。互不重叠的远场状态数随噪声增大而变化：与各非谐波方向相比，一次谐波方向的远场响应对扰动更为鲁棒；特别地，引入级联编码后，一次谐波方向远场响应的鲁棒性会进一步增强。
+
+**Original:** For instance, Figs. S7g-i plot the non-overlapping far-field states at different retrieving angles when the cascaded encoding factor of 2 is introduced. It is noticed that the number of non-overlapping states remains invariant at the 1st harmonic even when the noise level increases, whereas the number of non-overlapping states at the non-harmonic directions drops significantly. In addition, it can be observed from Figure S7k that the far-field responses at the 1st harmonic exhibit much more robustness than the non-harmonic angles when the cascaded encoding is adopted.
+
+**中文:** 例如，图 S7g–i 给出引入级联编码因子 2 时不同检索角度下互不重叠的远场状态。可以看到：即使噪声水平提高，一次谐波方向的不重叠状态数仍保持不变；而各非谐波方向的不重叠状态数则显著下降。此外，由图 S7k 可见，采用级联编码后，一次谐波方向的远场响应比非谐波方向鲁棒得多。
+
+#### 图 S6 非谐波方向的远场响应
+
+![FS6](assets/si/figures/figS6.png)
+
+**Original caption:** Fig. S6. Far-field responses at the non-harmonic directions. a-i, Far-field responses generated by all 1-bit encoding sequences with the length p = 5, where the retrieving direction spans from kx = 0.1k1 to 0.9k1.
+
+**中文图注:** 图 S6：非谐波方向的远场响应。a–i 长度为 p = 5 的全部 1 比特编码序列产生的远场响应，检索方向从 kx = 0.1k1 变化到 0.9k1。
+
+**Reading note:** 这张图是一张“角度扫描图”：九个面板对应九种检索方向，只有半谐波（kx = 0.5k1）与整数次谐波方向呈现出规整、不重叠的状态分布，其余方向的状态点彼此交叠。读图时应把它当作“为什么必须精确对准半谐波/一次谐波方向”的反面证据。
+
+#### 图 S7 噪声存在时的远场响应
+
+![FS7](assets/si/figures/figS7.png)
+
+**Original caption:** Fig. S7. Far-field responses of the programmable metasurface antenna in the presence of noise. a-c, In the presence of noise of δ = 0.12, the far-field responses obtained at the directions of kx = 0.2k1, 0.7k1 and k1 respectively, where the overlapping states are omitted. d-f, In the presence of noise of δ = 0.24, the far-field responses obtained at the directions of kx = 0.2k1, 0.7k1 and k1 respectively. g-i, In the presence of noise of δ = 0.48, the far-field responses obtained at the directions of kx = 0.2k1, 0.7k1 and k1 respectively, where the cascaded encoding factor of 2 is introduced for the encoding sequences. j, Number of non-overlapping states at different retrieval directions with the increase of noise. k, Number of non-overlapping states at different retrieval directions with the increase of noise, where the cascaded encoding factor of 2 is introduced for the encoding sequences.
+
+**中文图注:** 图 S7：存在噪声时可编程超表面天线的远场响应。a–c 噪声 δ = 0.12 时，在 kx = 0.2k1、0.7k1 与 k1 方向上得到的远场响应（重叠状态已略去）。d–f 噪声 δ = 0.24 时，同样三个方向上的远场响应。g–i 噪声 δ = 0.48 时、对编码序列引入级联编码因子 2 后同样三个方向上的远场响应。j 随噪声增大，不同检索方向上互不重叠状态数的变化。k 引入级联编码因子 2 后，同样互不重叠状态数的变化。
+
+**Reading note:** 这张图把“噪声鲁棒性”量化了。横轴是噪声水平、纵轴是可分辨状态数：j 中一次谐波（k1）曲线始终高于各非谐波方向；k 中引入级联编码后，一次谐波的曲线几乎不随噪声下降，而非谐波方向迅速塌陷。结论很清楚——**级联编码在提升能量效率之外，还额外买到了一次谐波方向的抗噪裕度**。
+
+### A.11 偏离角度下的模拟远场响应（Supplementary Note S11）
+
+**Original:** The far-field responses of the meta-array, encompassing all 25 possible coding sequences, are simulated by the CST Microwave Studio. In particular, the constellation diagrams corresponding to the far-field responses at the normal (θ = 0°), half harmonic (θ = 11.6°) and the 1st harmonic directions (θ = 24.4°) are provided in Fig. S8a-c. It can be observed from Fig. S8a that the far-field responses exhibit great degeneracy at the normal direction, showing only 6 unique states in the complex plane. In sharp contrast, the far-field responses at the half-harmonic and the 1st harmonic directions exhibit 31 non-overlapping states symmetrically distributed in the complex plane, validating the proposed information mapping at the harmonic and the half-harmonic directions.
+
+**中文:** 我们使用 CST Microwave Studio 对包含全部可能编码序列的元阵列远场响应进行了仿真。其中，法向（θ = 0°）、半谐波（θ = 11.6°）与一次谐波（θ = 24.4°）方向远场响应对应的星座图见图 S8a–c。由图 S8a 可见，法向方向的远场响应高度简并，在复平面上只有 6 个互不相同的状态；与之形成鲜明对照的是，半谐波与一次谐波方向的远场响应呈现出 31 个互不重叠、在复平面上对称分布的状态，从而验证了本文在谐波与半谐波方向上的信息映射方案。
+
+**Original:** Due to the angle dependency of the phase gradient term e^{ikx}, the far-field responses of the programmable metasurface antenna exhibit high angle sensitivity at the 1st harmonic direction. As an illustrative example, Fig. S8d-f display the simulated far-field responses of the metasurface antenna at the directions that deviate from the first harmonic by ∆θ of −2°, −4° and 4°, respectively. Substantial distortions of both amplitude and phase responses are observed, which serve as great impedance for the retrieval of modulated information at the deviated angles.
+
+**中文:** 由于相位梯度项 e^(ikx) 的角度依赖性，可编程超表面天线在一次谐波方向的远场响应具有很强的角度敏感性。作为示例，图 S8d–f 给出天线在偏离一次谐波 ∆θ 分别为 −2°、−4° 与 4° 的方向上的仿真远场响应。可以观察到幅度与相位响应都出现了明显畸变，这对在偏离角度上检索调制信息构成了很大障碍。
+
+#### 图 S8 不同检索角度下的模拟远场响应
+
+![FS8](assets/si/figures/figS8.png)
+
+**Original caption:** Fig. S8. Simulated far-field responses at different retrieving angles. a-c, The constellation diagrams that display the simulated far-field responses of the metasurface antenna for all 32 encoding sequences, with the radiation angles oriented towards the normal, half-harmonic, and 1st harmonic directions, respectively. d-f, The constellation diagrams that display the simulated far-field responses of the metasurface antenna at the angles deviated from the 1st harmonic direction with −2°, −4°, and 4°, respectively.
+
+**中文图注:** 图 S8：不同检索角度下的模拟远场响应。a–c 分别以法向、半谐波与一次谐波方向为辐射角时，超表面天线对全部 32 种编码序列的模拟远场响应星座图。d–f 偏离一次谐波方向 −2°、−4° 与 4° 时超表面天线的模拟远场响应星座图。
+
+**Reading note:** 六个面板构成了“角度敏感性”的完整叙事：a 的 6 个状态点说明法向不可用；b 与 c 各有 31 个清晰的对称状态点；而 d–f 只要偏离几度，状态点就沿切向被拉长、重叠。这为主文“系统对角度敏感、仅适合小角度变化场景”的结论提供了直接的仿真证据。
+
+### A.12 偏离一次谐波角度时的简并解除（Supplementary Note S12）
+
+**Original:** The phase gradient term introduces angular dependency to the far-field responses, and thus the amplitude degeneracy at the 1st harmonic will be lifted when the retrieving angle is deviated. For illustration, Fig. S9a-d shows the simulated far-field radiation patterns generated by encoding sequences with the same amplitude responses at the 1st harmonic (θ = 24.4°), where dashed red line marks the retrieving direction. Evidently, the far-field responses are almost the same (degenerated) at the angle that align with the 1st harmonic (Fig. S9a). In contrast, the collected far-field amplitudes exhibit different responses when the retrieving angle is deviated from the 1st harmonic, as shown in Fig. S9b-d.
+
+**中文:** 相位梯度项使远场响应具有角度依赖性，因此当检索角度偏离时，一次谐波处的幅度简并会被解除。作为示例，图 S9a–d 给出在一次谐波（θ = 24.4°）处幅度响应相同的若干编码序列所产生的仿真远场辐射方向图，红色虚线标出检索方向。显然，当检索角与一次谐波对齐时，各序列的远场响应几乎相同（即简并），见图 S9a；相反，当检索角偏离一次谐波时，各序列的远场幅度呈现出互不相同的响应，如图 S9b–d 所示。
+
+#### 图 S9 偏离一次谐波角度时的远场幅度响应
+
+![FS9](assets/si/figures/figS9.png)
+
+**Original caption:** Fig. S9. Far-field amplitude responses at angles deviated from the 1st harmonic. a, Simulated far-field radiation patterns. The dashed red line marks the angle of the 1st harmonic. b-d, Simulated far-field radiation patterns. The dashed red line marks the angle deviated from the 1st harmonic by ∆θ = −2° (b), ∆θ = −4° (c), and ∆θ = 4° (d), respectively.
+
+**中文图注:** 图 S9：偏离一次谐波角度时的远场幅度响应。a 仿真远场辐射方向图，红色虚线标出一次谐波角度。b–d 仿真远场辐射方向图，红色虚线分别标出偏离一次谐波 ∆θ = −2°（b）、∆θ = −4°（c）与 ∆θ = 4°（d）的角度。
+
+**Reading note:** 这张图说明的是一个“双刃剑”效应：简并解除意味着**偏离角度后原本重合的幅度态变得可区分**，理论上可以借此扩大可分辨状态数；但同一效应也会让本该重合的星座点变形、破坏既定的分区表。因此主文才强调“把接收端对准一次谐波附近的窄角范围”，否则星座图会被扭曲。
+
+### A.13 偏离角度下远场响应的实验结果（Supplementary Note S13）
+
+**Original:** Fig. 4d-f demonstrates that the far-field responses of encoding sequences within the same set exhibit nearly identical amplitudes at the 1st harmonic direction, as indicated by the red dashed lines. However, such amplitude degeneracy will be lifted at angles away from the 1st harmonic, leading to the transition from single to multiple amplitude states. The amplitude degeneracy lifting along with the phase distortions leads to the deformation of constellation diagram when deviated far from the 1st harmonic. Specifically, the measured constellation diagrams obtained at directions away from the 1st harmonic are presented in Fig. S10, with deviations angles of ±2° and ±4°, respectively. The observed far-field distortions in the constellation diagrams exhibit great agreement with the simulation results, thereby confirming the high angular sensitivity inherent in the proposed communication scheme.
+
+**中文:** 图 4d–f 表明，同一集合内编码序列的远场响应在一次谐波方向上的幅度几乎相同（由红色虚线标出）；然而一旦偏离一次谐波方向，这种幅度简并就会被解除，从而由单一幅度态过渡为多个幅度态。幅度简并解除与相位畸变共同作用，导致偏离一次谐波较远时星座图发生变形。具体而言，在偏离一次谐波方向上测得星座图见图 S10，偏离角分别为 ±2° 与 ±4°。星座图中观察到的远场畸变与仿真结果高度一致，从而确认了所提通信方案固有的高角度敏感性。
+
+**Original:** Indeed, attaining the upper limit on information mapping efficiency entails a trade-off in the communication angular coverage, necessitating the stabilization of the relative angle between the receiver and transmitter. Hence, it is suggested to align the receiver within a narrow angular proximity around the 1st harmonic, otherwise the constellation diagram might be distorted, which will potentially compromise the communication quality.
+
+**中文:** 事实上，要达到信息映射效率的上限，就必须在通信角度覆盖范围上作出取舍，并要求收发两端相对角度保持稳定。因此建议把接收端对准一次谐波附近的狭窄角度范围，否则星座图可能发生畸变，进而损害通信质量。
+
+#### 图 S10 偏离角度处星座图的实验结果
+
+![FS10](assets/si/figures/figS10.png)
+
+**Original caption:** Fig. S10. Experimental results of constellation diagrams at the deviated angles. a-d, The constellation diagrams that display the simulated far-field responses of the metasurface antenna at the angles deviated from the 1st harmonic direction with −2°, −4°, 2° and 4°, respectively.
+
+**中文图注:** 图 S10：偏离角度处星座图的实验结果。a–d 分别给出偏离一次谐波方向 −2°、−4°、2° 与 4° 时超表面天线的远场响应星座图。
+
+**Reading note:** 与图 S8d–f、图 S9 一起看：这是仿真预测在实验中的复现。a–d 中状态点沿切向被拉伸、边界模糊，与仿真给出的畸变形态一致，说明角度敏感性并非仿真假象。工程含义是——若要把该方案用于实际通信，必须配备精确对准（或角度反馈校正）机制。
+
+### A.14 谐波信息映射的频率扫描（Supplementary Note S14）
+
+**Original:** After achieving the phase difference of 180 degree for the two states of the meta-atoms in a certain frequency range, it becomes feasible to realize frequency scanning for the purpose of mapping harmonic information. For instance, the far-field radiation patterns at different frequencies are simulated and illustrated in Fig. S11. The adopted encoding sequences belong to the set S3, where the phase modulation for each radiation pattern is denoted in this plot. It can be clearly observed that the direction of the 1st harmonic scans from 24.4° to 23.5° when the frequency changes from 9.7GHz to 10GHz. In addition, the constellation diagrams retrieved from the 9.7GHz and 10GHz are presented as shown in Fig. S12, where the retrieved angle spans from 24.4° to 23.5°. It is evident that the far-field responses are in great agreement with the theoretical predictions, indicating the feasibility for angle-scanning in data transmissions.
+
+**中文:** 只要在某一频率范围内使超原子两种状态间的相位差达到 180°，就可以通过频率扫描来实现谐波信息的映射。例如图 S11 给出不同频率下的仿真远场辐射方向图，所用编码序列属于集合 S₃，图中标注了各辐射方向图对应的相位调制。可以清楚看到，当频率由 9.7 GHz 变化到 10 GHz 时，一次谐波方向从 24.4° 扫描到 23.5°。此外，从 9.7 GHz 与 10 GHz 检索得到的星座图见图 S12，其检索角度覆盖 24.4° 至 23.5°。显然远场响应与理论预测高度一致，说明在数据传输中实现角度扫描是可行的。
+
+#### 图 S11 不同频率下的远场辐射方向图
+
+![FS11](assets/si/figures/figS11.png)
+
+**Original caption:** Fig. S11. Far-field radiation patterns with varying frequency. a, Simulated far-field radiation patterns at the frequency of f = 9.7GHz, where the angle of the 1st harmonic is θ = 24.4°. b, Simulated far-field radiation patterns at the frequency of f = 9.8GHz, where the angle of the 1st harmonic is θ = 24.1°. c, Simulated far-field radiation patterns at the frequency of f = 9.9GHz, where the angle of the 1st harmonic is θ = 23.8°. d, Simulated far-field radiation patterns at the frequency of f = 10GHz, where the angle of the 1st harmonic is θ = 23.5°.
+
+**中文图注:** 图 S11：随频率变化的远场辐射方向图。a 频率 f = 9.7 GHz 时的仿真远场辐射方向图，一次谐波角度为 θ = 24.4°。b 频率 f = 9.8 GHz 时，θ = 24.1°。c 频率 f = 9.9 GHz 时，θ = 23.8°。d 频率 f = 10 GHz 时，θ = 23.5°。
+
+**Reading note:** 这幅图给出的是“用频率换角度”的可行性证据：由于一次谐波方向 θ = sin⁻¹(λc/pd) 与波长成正比，改变工作频率即可平移波束指向，10% 的相对带宽对应约 1° 的扫描范围。注意扫描幅度很小（24.4° → 23.5°），因此频率扫描只能做细调；若要大范围改变通信方向，需要借助补充注记 S21 的附加相位梯度方案。
+
+#### 图 S12 谐波信息映射的频率扫描
+
+![FS12](assets/si/figures/figS12.png)
+
+**Original caption:** Fig. S12. Frequency scanning for the harmonic information mapping. a, Constellation diagrams retrieved at frequency of f = 9.7GHz, where the retrieving angle is θ = 24.4°. b, Constellation diagrams retrieved at frequency of f = 9.8GHz, where the retrieving angle is θ = 24.1°. c, Constellation diagrams retrieved at frequency of f = 9.9GHz, where the retrieving angle is θ = 23.8°. d, Constellation diagrams retrieved at frequency of f = 10GHz, where the retrieving angle is θ = 23.5°.
+
+**中文图注:** 图 S12：用于谐波信息映射的频率扫描。a 频率 f = 9.7 GHz、检索角 θ = 24.4° 时检索得到的星座图。b f = 9.8 GHz、θ = 24.1°。c f = 9.9 GHz、θ = 23.8°。d f = 10 GHz、θ = 23.5°。
+
+**Reading note:** 与图 S11 配对：S11 说明波束指向随频率移动，S12 则确认“在移动后的新角度上重新对准接收端，星座图依然保持 31 个可分辨状态”。也就是说，频率扫描改变的是通信链路的方向，而不会破坏信息映射本身的可解码性。
+
+### A.15 半谐波与一次谐波方向零幅度远场响应的实验结果（Supplementary Note S15）
+
+**Original:** The two programmable patterns of with the encoding sequences of '1,1,1,1,1' and '−1,−1,−1,−1,−1' will produce far-field responses with zero amplitude at the direction of the 1st harmonic. The simulated far-field responses generated by the two encoding sequences are shown in Fig. S13a. It can be clearly observed that the far-field responses are almost zero at the 1st harmonic. Similarly, the two programmable patterns of with the encoding sequences of '−1,1,−1,1,−1' and '1,−1,1,−1,1' will produce far-field responses with zero amplitude at the direction of the half harmonic, as shown in Fig. S13b.
+
+**中文:** 编码序列为‘1,1,1,1,1’与‘−1,−1,−1,−1,−1’的两个可编程图案，会在一次谐波方向产生幅度为零的远场响应；这两个编码序列产生的仿真远场响应见图 S13a，可以清楚看到一次谐波处的远场响应几乎为零。类似地，编码序列为‘−1,1,−1,1,−1’与‘1,−1,1,−1,1’的两个可编程图案，会在半谐波方向产生幅度为零的远场响应，如图 S13b 所示。
+
+#### 图 S13 半谐波与一次谐波方向零幅度远场响应的实验结果
+
+![FS13](assets/si/figures/figS13.png)
+
+**Original caption:** Fig. S13. Experimental results of the programmable metasurface antenna enabled information mapping with zero far-field responses at the half and the 1st harmonics. a, Measured radiation patterns produced by the encoding sequences belonging to the set γ5⁻¹{S0}, where the resultant far-field responses vanish at the positive half and negative half harmonic directions. b, Measured radiation patterns produced by the encoding sequences belonging to the set {S0}, where the resultant far-field responses vanish at the −1st and the 1st harmonic directions.
+
+**中文图注:** 图 S13：可编程超表面天线在半谐波与一次谐波方向实现零幅度远场响应的信息映射实验结果。a 属于集合 γ5⁻¹{S₀} 的编码序列所产生的实测辐射方向图，其远场响应在正、负半谐波方向消失。b 属于集合 {S₀} 的编码序列所产生的实测辐射方向图，其远场响应在 −1 次与 +1 次谐波方向消失。
+
+**Reading note:** 这张图是补充注记 S4（递归序列响应为零）的实验落地：a 中全 1/全 −1 两条序列在一次谐波方向“打洞”，b 中两条交替序列在半谐波方向“打洞”。工程意义是——这两条特殊图案不能用于编码信息，必须从 2ᵖ 种图案中剔除，这正是信息映射效率写成 log₂(2ᵖ − 1)/p（而非 log₂(2ᵖ)/p）的原因。
+
+### A.16 法向、半谐波与一次谐波方向远场响应的实验结果（Supplementary Note S16）
+
+**Original:** The far-field amplitude and phase response of the 32 encoding patterns of the programmable metasurface antenna is measured. The collected far-field responses at the directions of normal, half harmonic and the 1st harmonic are presented in Fig. S14. The collected states at the normal direction exhibit great overlaps, with only 6 states can be identified. In comparison, 31 states can be uniquely identified at the directions of the half and the 1st harmonics.
+
+**中文:** 我们测量了可编程超表面天线 32 种编码图案的远场幅度与相位响应。在法向、半谐波与一次谐波方向收集到的远场响应见图 S14。法向方向收集到的状态高度重叠，只能辨认出 6 个状态；相比之下，在半谐波与一次谐波方向都能唯一辨认出 31 个状态。
+
+#### 图 S14 不同方向检索得到的实测远场响应
+
+![FS14](assets/si/figures/figS14.png)
+
+**Original caption:** Fig. S14. Experimental retrieved far-field responses at different directions. a-c, Far-field responses generated by the 32 possible encoding sequences, measured at the normal (a), half harmonic (b) and the 1st harmonic (c) directions, respectively.
+
+**中文图注:** 图 S14：不同方向检索得到的实测远场响应。a–c 32 种可能编码序列分别在法向（a）、半谐波（b）与一次谐波（c）方向测得的远场响应。
+
+**Reading note:** 这张图是主文图 4 的实测版“三点对照”：法向只有 6 个可辨状态（a），半谐波与一次谐波各有 31 个（b、c）。把它与补充图 S8（仿真）并排看，即可确认“31 个可分辨状态”这一核心指标在实验上成立，且半谐波方向同样可用——这为可选的双方向通信留出了空间。
+
+### A.17 负谐波方向远场响应的实验结果（Supplementary Note S17）
+
+**Original:** Figs. S15a-b depict the theoretically computed constellation diagrams generated at the 1st and the −1st harmonics. In the two plots, each point is labeled with an integer number to represent the corresponding binary coding sequence. For instance, an encoding sequence with phase modulation of 0, π, π, 0, 0 is first converted to the binary sequence 01100, which is then represented as the integer 12 through binary-to-decimal conversion. It can be clearly observed that the distribution of the constellation diagram produced at the −1st harmonic exhibit conjugation symmetry with those produced at the 1st harmonic. Therefore, it is also possible to adopt the −1st harmonic to realize the information mapping and wireless communication. It should be noted that the decoding scheme for the −1st harmonic must differ from that used for the 1st harmonic, as the point distribution in the constellation diagram at the −1st harmonic is conjugate to that at the 1st harmonic.
+
+**中文:** 图 S15a–b 给出在 +1 次与 −1 次谐波处计算得到的星座图。两图中每个点都用整数标注，以表示对应的二进制编码序列。例如，相位调制为 0, π, π, 0, 0 的编码序列先转为二进制序列 01100，再通过二进制-十进制转换表示为整数 12。可以清楚看到，−1 次谐波处星座图的分布与 +1 次谐波处呈共轭对称。因此，同样可以用 −1 次谐波实现信息映射与无线通信。但需注意，−1 次谐波的解码方案必须与 +1 次谐波不同，因为其星座图点位分布与 +1 次谐波共轭。
+
+**Original:** The simulated and measured far-field responses at the negative half and 1st harmonics are presented, as shown in Fig. S15c-f. The obtained constellation diagrams exhibit great agreement with the theoretical predictions, validating the effectiveness of our model.
+
+**中文:** 负半谐波与负一次谐波方向的仿真与实测远场响应见图 S15c–f。所得星座图与理论预测高度一致，验证了模型的有效性。
+
+#### 图 S15 负角度处星座图的实验结果
+
+![FS15](assets/si/figures/figS15.png)
+
+**Original caption:** Fig. S15. Experimental results of the constellation diagrams of the programmable metasurface antenna at negative angles. a-b, Calculated array factors produced by 31 encoding sequences at the 1st and −1st harmonics, with the corresponding encoding sequences represented by integers from 0 to 30. c-d, Simulated constellation diagram generated by the 32 possible encoding sequences, retrieved at the directions of the negative half (kx = −0.5k1) and 1st harmonics (kx = −k1). e-f, Measured constellation diagram generated by the 32 possible encoding sequences, retrieved at the directions of the negative half (kx = −0.5k1) and 1st harmonics (kx = −k1).
+
+**中文图注:** 图 S15：负角度处可编程超表面天线星座图的实验结果。a、b 31 条编码序列在 +1 次与 −1 次谐波处计算得到的阵列因子，对应编码序列用 0 至 30 的整数表示。c、d 32 种可能编码序列在负半谐波（kx = −0.5k1）与负一次谐波（kx = −k1）方向检索得到的仿真星座图。e、f 同样两个方向上的实测星座图。
+
+**Reading note:** 这张图的意义在于“多出一个可用的信道”：−1 次谐波方向的星座图与 +1 次谐波共轭，因此理论上可以把负一次谐波当作第二个（共轭）通信方向，从而在不增加硬件的前提下扩展可用角度资源。代价是解码表必须为负方向单独设计——不能直接套用正方向的区域划分。
+
+### A.18 用于比特串检索的星座图划分与标注（Supplementary Note S18）
+
+**Original:** For the extraction of bit string from experimental measurement of the harmonic field responses, the constellation diagram should be partitioned and labeled corresponding to each input encoding sequence. Specifically, Fig. S16 illustrates one of the partition and labeling of both theoretically and experimentally retrieved constellation diagrams. The integer in each region of the constellation diagram corresponds to the encoding sequence labelled with the same integer in Table. S1. Notably, the experimental constellation diagram shown in Fig. S16b is obtained by averaging the experimentally retrieved far-field responses of each encoding pattern that presented in Fig. 4l. [Section S19 follows.]
+
+**中文:** 为从谐波场响应的实验测量中提取比特串，需要按照每一个输入编码序列对星座图进行划分与标注。具体而言，图 S16 给出了理论检索与实验检索星座图的一种划分与标注方式。星座图每个区域内的整数，对应于表 S1 中标注同一整数的编码序列。值得注意的是，图 S16b 中的实验星座图是对图 4l 中各编码图案的实验远场响应取平均后得到的。
+
+#### 图 S16 星座图的划分与标注
+
+![FS16](assets/si/figures/figS16.png)
+
+**Original caption:** Fig. S16. Partition and label of the points in analytically and experimentally retrieved constellation diagrams at the 1st harmonic. a-b, Partition of the analytically (a) and experimentally (b) retrieved constellation diagrams, where each constellation diagram is partitioned into 31 regions. c-d, Label of the analytically (c) and experimentally (d) retrieved constellation diagrams, where each region of the constellation diagram is labeled by a unique integer ranging from 0 to 30.
+
+**中文图注:** 图 S16：一次谐波处解析检索与实验检索星座图中各点的划分与标注。a、b 解析检索（a）与实验检索（b）星座图的划分，每幅星座图都被划分为 31 个区域。c、d 解析检索（c）与实验检索（d）星座图的标注，每个区域都用 0 至 30 的唯一整数标注。
+
+**Reading note:** 这张图是把“物理状态”翻译成“比特串”的字典：a、b 是判决区域（Voronoi 式的 31 个扇区），c、d 则是为每个区域分配 0–30 的整数编号。实际解码时，接收端测到的复场点落在哪个区域，就直接查出对应整数，再换算回 5 比特图案。注意 b 与 d 是实测数据平均后的结果，比 a、c 更“粗糙”，因此实验星座图需要单独划分而不能直接套用理论划分。
+
+#### 表 S1 编码序列与星座图区域编号的对应关系
+
+![TabS1](assets/si/figures/tabS1.png)
+
+**Original caption:** Table. S1. The encoding sequence and the corresponding region of the partitioned constellation diagram.
+
+**中文图注:** 表 S1：编码序列与划分后星座图区域编号的对应关系。
+
+**Reading note:** 这张表是补充注记 S18 解码流程的“查表依据”：星座图的 31 个区域各自对应一条 5 位编码序列，收发双方共享同一张表，接收端只需判断落在哪个区域即可反推编码图案。
+
+### A.19 通信架构对比（Supplementary Note S19）
+
+**Original:** In Fig. S17a, the architecture of a conventional sub-6GHz transmitter is given, encompassing several key components: a digital-to-analog converter (DAC) that converts digital bit streams into amplitude and phase-modulated signals; a π/2 phase shifter aimed at generating in-phase (I) and quadrature (Q) signal components; a frequency mixer employed to generate new frequencies through the multiplication of two input signals; a summing device to combine the signals from the I and Q channels; and finally, a radiating antenna deployed to transmit the signal.
+
+**中文:** 图 S17a 给出了传统 sub-6 GHz 发射机的架构，包含若干关键部件：把数字比特流转为幅度与相位调制信号的数模转换器（DAC）；用于生成同相（I）与正交（Q）信号分量的 π/2 移相器；通过两路输入信号相乘产生新频率的混频器；把 I、Q 两路信号合路相加的求和器件；以及最终用于发射信号的辐射天线。
+
+**Original:** In comparison, the schematic of architecture for the proposed programmable metasurface antenna based transmitter is depicted in Fig. S17b. Specifically, the transmitter includes a dynamic controller, such as a Microcontroller Unit (MCU) or Field-Programmable Gate Array (FPGA) to convert the binary bit stream to high and low levels of voltage signal; an oscillator for generating the base signal; and the 1-bit phase modulated programmable metasurface antenna for the simultaneous modulation and radiation of the signal.
+
+**中文:** 作为对比，所提出的可编程超表面天线发射机架构示意见图 S17b。该发射机具体包括：动态控制器（如微控制器单元 MCU 或现场可编程门阵列 FPGA），用于把二进制比特流转换为高、低电平电压信号；产生基信号的振荡器；以及 1 比特相位调制的可编程超表面天线，用于同时完成信号的调制与辐射。
+
+#### 图 S17 传统发射机与所提可编程超表面天线发射机的架构示意
+
+![FS17](assets/si/figures/figS17.png)
+
+**Original caption:** Fig. S17. Schematic illustration of the architectures for conventional transmitter and the proposed programmable metasurface antenna based transmitter. a, The conventional transmitter consists of an oscillator, the digital-to-analog converter, the π/2 phase shifter, mixers, the signal summing device, and the radiation antenna. b, The proposed programmable metasurface antenna based transmitter consists of an oscillator, the dynamic controller, and the 1-bit phase modulated programmable metasurface antenna.
+
+**中文图注:** 图 S17：传统发射机与所提可编程超表面天线发射机的架构示意。a 传统发射机由振荡器、数模转换器、π/2 移相器、混频器、信号求和器件与辐射天线构成。b 所提可编程超表面天线发射机由振荡器、动态控制器与 1 比特相位调制可编程超表面天线构成。
+
+**Reading note:** 这张图用“器件清单”讲清了本文的工程价值：传统链路里 DAC、π/2 移相器、混频器与求和器件逐个对应着成本、功耗与频率上限；而本文方案把这些全部替换为“MCU/FPGA + 振荡器 + 1 比特相位调制超表面天线”。读图时注意 b 中只有两条控制线（动态控制器 → 超表面天线），这正是“无需射频链”的直观体现。
+
+### A.20 通信能力与功耗对比（Supplementary Note S20）
+
+**Original:** Regarding system complexity and expenditure, our proposed scheme does not require I/Q channels to synthesize the constellation diagram, thereby eliminating the necessity for mixers and summation devices. Moreover, the proposed programmable metasurface antenna based platform enables concurrent signal modulation and emission, eliminating the need to integrate extra antennas for signal radiation. Furthermore, in our proposed scheme, increasing the number of states in the constellation diagram can be accomplished by expanding the number of columns of the programmable metasurface antenna, a process that does not significantly raise the design complexity of the system.
+
+**中文:** 在系统复杂度与开销方面，所提方案无需 I/Q 通道来合成星座图，因而不需要混频器与求和器件；此外，基于可编程超表面天线的平台可同时完成信号调制与发射，无需额外集成天线来辐射信号；再者，在所提方案中增加星座图的状态数只需扩展可编程超表面天线的列数，这一过程不会显著提升系统设计复杂度。
+
+**Original:** Notably, the existing sub-6GHz transmitters are well-developed, offering considerable performance with a relatively low cost, rendering our design potentially less applicable for sub-6GHz applications. In higher working spectra such as X, Ku, and Ka bands, as well as terahertz and optical frequencies, the requirement of precise multi-level amplitude and phase modulation in the I/Q channels to synthesize the constellation diagram significantly increases the design complexity and expenses for the transmitter. Meanwhile, the integration of mixers at higher frequency spectrum entails increased design complexity and cost as well. In comparison, our proposed transmitter architecture necessitates only two modulation phase states for each column. The simplified signal modulation process exhibits advantages particularly at higher working spectrum.
+
+**中文:** 值得注意的是，现有 sub-6 GHz 发射机已相当成熟，能以较低成本提供可观性能，因此本文设计在 sub-6 GHz 应用中可能未必占优。但在更高的工作频段（如 X、Ku、Ka 波段，乃至太赫兹与光学频率），要在 I/Q 通道中实现精确的多电平幅度与相位调制以合成星座图，会显著提高发射机的设计复杂度与成本；同时，在高频段集成混频器同样会增加设计复杂度与成本。相比之下，所提发射机架构每列只需要两种调制相位状态，这种简化的信号调制过程在高频段尤其具有优势。
+
+**Original:** Notably, the data transmission rate of our proposed scheme is closely related to the switching rate of the programmable patterns. Specifically, the switching rate of our proposed scheme is determined by the external controlling devices such as the Microcontroller unit (MCU) or Field-Programmable Gate Array (FPGA), as well as the integrated PIN diodes. Commercial FPGA is capable of achieving switching speed in the Gigahertz range and beyond, and the switching time for the PIN diodes (MADP-14020-907) implemented in this study is approximately 2-3 nanoseconds, as indicated in the data sheet of the product. Recent advancement in CMOS based programmable arrays have demonstrated the capability to achieve minimum switching time of 0.2 nanoseconds within the terahertz spectrum.
+
+**中文:** 值得注意的是，所提方案的数据传输速率与可编程图案的切换速率密切相关。具体而言，切换速率由外部控制器件（如 MCU 或 FPGA）以及集成的 PIN 二极管共同决定。商用 FPGA 的切换速度可达吉赫兹量级甚至更高；本研究采用的 PIN 二极管（MADP-14020-907）根据产品数据手册，其切换时间约为 2–3 纳秒。近期基于 CMOS 的可编程阵列的进展已表明，在太赫兹频谱内可实现 0.2 纳秒的最短切换时间。
+
+**Original:** Here, we consider the PIN diodes are characterized by the switching time of 3 nanoseconds, and thus the switching speed can be computed as 1/3 gigabits per second. As discussed above, the employment of two successive programmable patterns enables the transmission of 9-bit string, yielding an average information transmission rate of 4.5 bits per unit switching time. As a result, the data transmission rate of the proposed scheme can be computed as 1/3 × 4.5 = 1.5 Gbits/s, which is comparable to communication speed in current 5G network. A higher communication speed is expected with the optimization the strategy for encoding and decoding of bit string, the integration of higher speed dynamic devices, and increasing the number of columns of the dynamic array.
+
+**中文:** 这里我们取 PIN 二极管的切换时间为 3 纳秒，则切换速率为 1/3 Gbit/s（即每秒 3.33 亿次切换）。如上所述，连续使用两个可编程图案可传输 9 比特串，平均信息传输速率为每个单位切换时间 4.5 比特。因此所提方案的数据传输速率可计算为 1/3 × 4.5 = 1.5 Gbit/s，与当前 5G 网络的通信速率相当。通过优化比特串的编码与解码策略、集成更高速的动态器件以及增加动态阵列的列数，有望获得更高的通信速率。
+
+**Reading note:** 注记 S20 的关键数字有三个：8 m 距离下 0.05 mW 辐射功率即可区分 31 个状态；扩展到 100 m 与 1000 m 时所需辐射功率按距离平方增长到 0.0078 W 与 0.78 W；每列调制功耗 0.027 W，5 列合计 0.135 W。原文同时坦率指出：**由于辐射方向图峰值与一次谐波方向未对齐，本文方案的辐射功率效率低于标准 MIMO**，需要通过补充注记 S21 的相位梯度（或优化单元方向图）来改善。
+
+### A.21 施加相位梯度以调谐与扫描通信信道（Supplementary Note S21）
+
+**Original:** Section S12 of the Supplementary Information demonstrates that the orientation of the 1st harmonic can be tuned by frequency scanning, but the realized angular tuning range is relatively small, thereby limiting the angular flexibility of the communication channel. To address this issue, we demonstrate that applying an additional phase gradient to the meta-atom array can shift the angle of the first harmonic, thereby enhancing the angular scanning range of the communication channel.
+
+**中文:** 补充注记 S12 表明，一次谐波的指向可以通过频率扫描来调谐，但可实现的角度调谐范围相对较小，因而限制了通信信道的角度灵活性。为解决这一问题，我们证明对超原子阵列施加附加相位梯度可以移动一次谐波的角度，从而扩大通信信道的角度扫描范围。
+
+**Original:** In the proposed prototype, the angle of the first harmonic is determined as θ1 = sin⁻¹(k1/k). Here, we apply an additional uniform phase gradient gu to the input end of the meta-array. Given that the spacing between adjacent columns of the meta-array is d, the phase gradient gu can be implemented by introducing an additional phase delay of m·gu·d to the (m+1)th column of the meta-array, where m ranges from 0 to p−1. Consequently, the phase of the first column of radiators (m = 0) should be unchanged, while an additional phase of φu should be added to the phase state of the second column of radiators (m = 1), and an additional phase of 2φu should be added to the phase state of the third column of radiators (m = 2), and so on. Alternatively, the (m+1)th column of the meta-array can be considered as being modulated by two modified phase states, expressed as φmu = m·gu·d + φm, where φm takes the value between 0 and π.
+
+**中文:** 在所提样机中，一次谐波的角度由 θ1 = sin⁻¹(k1/k) 决定。这里我们在元阵列输入端施加一个附加的均匀相位梯度 gu。设元阵列相邻列的间距为 d，则相位梯度 gu 可以通过对第 (m+1) 列引入额外的相位延迟 m·gu·d 来实现，其中 m 取 0 到 p−1。于是第一列辐射体（m = 0）的相位保持不变，第二列辐射体（m = 1）的相位状态需额外增加 φu，第三列辐射体（m = 2）的相位状态需额外增加 2φu，依此类推。换一种说法，第 (m+1) 列可以看作被两个修正后的相位状态调制，即 φmu = m·gu·d + φm，其中 φm 取值于 0 到 π 之间。
+
+**Original:** When subjected to such an additional uniform phase gradient, the far-field responses at the shifted angle of θu = sin⁻¹((kx − gu)/k) can be determined as:
+
+**中文:** 在受到这种附加均匀相位梯度作用时，偏移角度 θu = sin⁻¹((kx − gu)/k) 处的远场响应可表示为：
+
+<a id="E029"></a>
+
+![补充公式 S15（原图）](assets/si/equations/eqS15.png)
+
+**中文说明：** 补充式 (S15) 给出施加附加均匀相位梯度 gu 后，偏移角方向上的远场展开式。其中每一项对应一个带附加相位偏移 m·gu·d 的辐射分量，因此原本集中在一次谐波方向的主波束（及其简并状态）会随 gu 一起平移。
+
+**Original:** In other words, when an additional phase gradient of gu is applied to the meta-array, the constellation diagram at the 1st harmonic will be shifted from θ1 = sin⁻¹(2π/pd / k) to θ1u = sin⁻¹(2π/pd / k − gu/k). Meanwhile, the average energy of the points in the constellation diagram will be rescaled by a factor of [f(k1−gu)/f(k1)]².
+
+**中文:** 换言之，当对元阵列施加附加相位梯度 gu 时，一次谐波处的星座图将从 θ1 = sin⁻¹((2π/pd)/k) 平移到 θ1u = sin⁻¹((2π/pd)/k − gu/k)；同时，星座图中各点的平均能量将按 [f(k1−gu)/f(k1)]² 的比例重新缩放。
+
+**Original:** It should be noted that the radiation function of a single column of radiators, f(kx), peaks in the normal direction (kx = 0). Hence, the average energy of the points in the produced constellation diagram reaches the maximum when the additional phase gradient of gu = k1 = 2π/pd is applied. In such case, φu can be determined as φu = gu·d = 2π/p.
+
+**中文:** 需要指出的是，单列辐射体的辐射函数 f(kx) 在法向（kx = 0）处取峰值。因此，当施加的附加相位梯度为 gu = k1 = 2π/pd 时，所得星座图中各点的平均能量达到最大；此时 φu 可由 φu = gu·d = 2π/p 确定。
+
+**Original:** Consequently, the additional phases to be added to the 1st (m = 0), 2nd (m = 1), through the pth (m = p−1) column of radiators are determined as 0, 2π/p, 4π/p, …, (p−1)2π/p, respectively. In the simulation, each column from the left to right was fed with additional phase delays of 0, 2π/5, 4π/5, 6π/5, and 8π/5, respectively. In the absence of the additional phase gradient, the 1st harmonic appears at an angle of 24.4°, and the corresponding constellation diagram is retrieved at 24.4°, as presented in Fig. S18a. When the additional phase gradient of 2π/5d is applied, the 1st harmonic shifts to the angle 0°, and the constellation diagram is also retrieved at this angle, as presented in Fig. S18b. Despite slight deviations, the obtained constellation diagram at the normal direction exhibits similar distribution to that at the angle of 24.4°.
+
+**中文:** 因此，需为第 1 列（m = 0）、第 2 列（m = 1）直至第 p 列（m = p−1）辐射体分别附加相位 0, 2π/p, 4π/p, …, (p−1)2π/p。在仿真中，从左到右各列分别被馈以 0、2π/5、4π/5、6π/5 与 8π/5 的附加相位延迟。未施加附加相位梯度时，一次谐波出现在 24.4° 处，星座图也在 24.4° 处检索得到，如图 S18a 所示；当施加 2π/5d 的附加相位梯度后，一次谐波移至 0° 角，星座图也改在该角度检索，如图 S18b 所示。尽管存在轻微偏差，在法向方向得到的星座图与在 24.4° 处的分布相近。
+
+**Original:** Therefore, we demonstrate that incorporating varying phase gradients to the meta-array can extend the angular coverage of the proposed scheme. In practice, varying phase gradients can be introduced by approaches such as incorporating electrically tunable phase shifters at the input end of the meta-array.
+
+**中文:** 由此证明，对元阵列引入可变的相位梯度可以扩展所提方案的角度覆盖范围。在实际中，可变相位梯度可以通过在元阵列输入端引入电可调移相器等方式实现。
+
+**Original:** Fig. S19 presents the normalized far-field radiation pattern generated by a single column of radiators and the computed average energies of the points in the constellation diagrams shown in Fig. S18. We observe that an energy enhancement of approximately 10% is realized when the phase gradient of gu = 2π/5d is applied.
+
+**中文:** 图 S19 给出单列辐射体产生的归一化远场辐射方向图，以及图 S18 中星座图各点的计算平均能量。可以看到，当施加 gu = 2π/5d 的相位梯度时，能量提升了约 10%。
+
+<a id="E030"></a>
+
+![补充公式 S16（原图）](assets/si/equations/eqS16.png)
+
+**中文说明：** 补充式 (S16) 给出施加附加相位梯度后第 m 次谐波的远场表达式，其中多出与 gu 相关的相位项（即把每个编码状态的相位从 φm 修正为 φmu = m·gu·d + φm）。它是补充注记 S21 中“用附加相位梯度扫描通信信道、并把一次谐波对准单列辐射方向图峰值”的核心公式，也是把辐射能量效率提升约 10% 的来源。
+
+#### 图 S18 有/无相位梯度时一次谐波处的检索星座图
+
+![FS18](assets/si/figures/figS18.png)
+
+**Original caption:** Fig. S18. The retrieved constellation diagrams at the 1st harmonic without and with the phase gradients. a, The constellation diagram retrieved at the first harmonic at the angle of θ1 = 24.4°, where no phase gradient is applied. b, The constellation diagram retrieved at the 1st harmonic at the angle of θ1u = 0°, where the phase gradient of gu = 2π/5d is applied.
+
+**中文图注:** 图 S18：未施加与施加相位梯度时在一次谐波处检索得到的星座图。a 未施加相位梯度时、在 θ1 = 24.4° 处检索得到的星座图。b 施加 gu = 2π/5d 的相位梯度后、在 θ1u = 0° 处检索得到的星座图。
+
+**Reading note:** 这张图是注记 S21 的直接验证：a 与 b 的星座图形状相似，说明把相位梯度加在输入端只是“把整个一次谐波搬到法向”，并没有破坏星座图的内部结构。工程含义是——可以在不重新设计超表面的前提下，用附加相位梯度把通信方向指向任意期望角度。
+
+#### 图 S19 有/无相位梯度时星座图各点的平均能量
+
+![FS19](assets/si/figures/figS19.png)
+
+**Original caption:** Fig. S19. Average energies of the retrieved constellation diagrams at the 1st harmonic without and with the phase gradients. The blue curve depicts the simulated radiation pattern of a single column of the meta-array. The red triangle represents the calculated average energy of the points in the constellation diagram at the 1st harmonic where no phase gradient is applied. The green triangle represents the calculated average energy of the points in the constellation diagram at the 1st harmonic where phase gradient of gu = 2π/5d is applied.
+
+**中文图注:** 图 S19：未施加与施加相位梯度时一次谐波处检索星座图各点的平均能量。蓝线为单列元阵列的仿真辐射方向图；红色三角表示未施加相位梯度时一次谐波处星座图各点计算所得的平均能量；绿色三角表示施加 gu = 2π/5d 相位梯度后一次谐波处星座图各点计算所得的平均能量。
+
+**Reading note:** 读图时把三个标记与蓝色方向图峰值对齐看：红色三角落在方向图的下降沿上（对应 24.4°，能量偏低），绿色三角形则被搬到方向图峰值附近（对应 0°），因此能量提升约 10%。这幅图解释了主文所述“辐射功率效率低于 MIMO”的根因——**峰值与一次谐波方向不重合**，而附加相位梯度正是把二者对齐的手段。
+
+### A.22 补充参考文献（Supplementary References）
+
+**Original:** 1. Zhang, N. et al. Programmable Coding Metasurface for Dual-Band Independent Real-Time Beam Control. IEEE J. Emerg. Sel. Top. Circuits Syst. 10, 20-28 (2020). 2. Wang, S. R., Dai, J. Y., Zhou, Q. Y., Ke, J. C., Cheng, Q., & Cui, T. J. Manipulation of multi-frequency waves and signals via multi-partition asynchronous space-time-coding digital metasurface. Nat. Commun. 14, 5377 (2023). 3. Wong, K. L., Hsu, Y. H., Lee, C. Y., Li, W. Y. Wideband 4-Port Patch Antenna Module Based Compact 8-Port Two-Module Antenna for 6G Upper Mid-Band 8 x 4 Device MIMO With Enhanced Spectral Efficiency. IEEE Access 12, 88976-88991, (2024). 4. Wong, K. L., Hong, S. E., Li, W. Y. Low-Profile Four-Port MIMO Antenna Module Based 16-Port Closely-Spaced 2 x 2 Module Array for 6G Upper Mid-Band Mobile Devices. IEEE Access 11, 110796-110808, (2023). 5. Proakis, J. G., Salehi, M., Digital Communications, McGraw-Hill Higher Education, 5th edition, (2008). 6. Nam, H., Nguyen, V. V., Trinh, V. S., Song, J. M., Lee, B. H., Full X-Band Phased-Array Transmit/Receive Module Chip in 65-nm CMOS Technology. IEEE Access 8, 76182-76192, (2020). 7. Venkatesh, S., Lu, X. Y., Saeidi, H., Sengupta, K. A high-speed programmable and scalable terahertz holographic metasurface based on tiled CMOS chips. Nat. Electron. 3, 785-793 (2020).
+
+**中文:** 1. Zhang, N. 等，用于双频独立实时波束控制的可编程编码超表面，IEEE J. Emerg. Sel. Top. Circuits Syst. 10, 20–28 (2020)。2. Wang, S. R., Dai, J. Y., Zhou, Q. Y., Ke, J. C., Cheng, Q., Cui, T. J.，通过多分区异步时空编码数字超表面操控多频波与信号，Nat. Commun. 14, 5377 (2023)。3. Wong, K. L., Hsu, Y. H., Lee, C. Y., Li, W. Y.，面向 6G 上中频段 8×4 设备 MIMO 的宽带四端口贴片天线模块与紧凑八端口双模块天线，IEEE Access 12, 88976–88991 (2024)。4. Wong, K. L., Hong, S. E., Li, W. Y.，面向 6G 上中频段移动设备的低剖面四端口 MIMO 天线模块与 2×2 紧凑十六端口模块阵列，IEEE Access 11, 110796–110808 (2023)。5. Proakis, J. G., Salehi, M.，数字通信，McGraw-Hill Higher Education，第 5 版 (2008)。6. Nam, H., Nguyen, V. V., Trinh, V. S., Song, J. M., Lee, B. H.，65 nm CMOS 工艺中的全 X 波段相控阵收发模块芯片，IEEE Access 8, 76182–76192 (2020)。7. Venkatesh, S., Lu, X. Y., Saeidi, H., Sengupta, K.，基于拼接 CMOS 芯片的高速可编程可扩展太赫兹全息超表面，Nat. Electron. 3, 785–793 (2020)。
+
 ## 阅读提示 / Critical Reading Notes
 
 ### 论文解决的问题与核心主张
 
-本文解决的是可编程超表面发射机“信息映射效率”低下的问题：传统时空/编码超表面系统每单位切换时间实际传出的比特远低于编码图案所含比特。核心主张有三：(1) 用“非递归编码 + 空间谐波检索”，把 2ᵖ 种可编程图案（除全 1/全 −1 外）与一次谐波方向 2ᵖ−1 个星座状态构成近乎双射的映射，单次测量即可取回 p 比特信息；(2) 信息映射效率 η₁ = log₂(2ᵖ−1)/p 随 p 趋近 100%（p=5 为 99%、p=7 超 99.8%）；(3) 用级联编码把辐射能量集中到（整数）谐波方向，改善能量转换效率，代价是映射效率降至 1/q。
+本文解决的是可编程超表面发射机“信息映射效率”低下的问题：传统时空/编码超表面系统每单位切换时间实际传出的比特远低于编码图案所含比特。核心主张有三：
+- (1) 用“非递归编码 + 空间谐波检索”，把 2ᵖ 种可编程图案（除全 1/全 −1 外）与一次谐波方向 2ᵖ−1 个星座状态构成近乎双射的映射，单次测量即可取回 p 比特信息；
+- (2) 信息映射效率 η₁ = log₂(2ᵖ−1)/p 随 p 趋近 100%（p=5 为 99%、p=7 超 99.8%）；
+- (3) 用级联编码把辐射能量集中到（整数）谐波方向，改善能量转换效率，代价是映射效率降至 1/q。
 
 ### 证据链与结论边界
 
-证据链由四层构成：理论证明（循环矩阵 M 非奇异 ⇒ 一次谐波响应唯一、C₂ₚ 对称）→ 全波仿真（图 2/图 3 的幅度相位与 36° 相位台阶）→ 实测（32 图案方向图、四级幅度 α₀–α₃ 集合划分、星座图合成，图 4）→ 端到端图像传输仿真（BER 在解析/实验星座下分别于 15/17 dB 达 10⁻⁶，图 5）。结论边界明确：实测谐波角存在 1–2° 偏差（归因于转台标定）；实验星座图有畸变导致 BER 高于理论；系统对角度敏感，仅适合小角度变化场景；当前只是 1D 编码、单频样机，尚无动态波束赋形、主动波束成形与高动态带宽等 MIMO 功能。
+- 证据链由四层构成：理论证明（循环矩阵 M 非奇异 ⇒ 一次谐波响应唯一、C₂ₚ 对称）→ 全波仿真（图 2/图 3 的幅度相位与 36° 相位台阶）→ 实测（32 图案方向图、四级幅度 α₀–α₃ 集合划分、星座图合成，图 4）→ 端到端图像传输仿真（BER 在解析/实验星座下分别于 15/17 dB 达 10⁻⁶，图 5）。
+- 结论边界明确：实测谐波角存在 1–2° 偏差（归因于转台标定）；实验星座图有畸变导致 BER 高于理论；系统对角度敏感，仅适合小角度变化场景；当前只是 1D 编码、单频样机，尚无动态波束赋形、主动波束成形与高动态带宽等 MIMO 功能。
 
 ### 值得注意的局限与风险
 
-(1) 图像传输是“模拟/仿真”而非实时射频链路实验，BER 评估在实测星座图上加复高斯噪声完成；(2) “双射”有一个例外（全 1 与全 −1 两条递归序列在一次谐波响应均为零，只取其一），并非严格双射；(3) 提高 p 会增加星座点密度、降低噪声鲁棒性，故实际编码长度需按信道 SNR 折中；(4) 能量转换效率的提升依赖附加相位梯度或级联编码，级联会等比例降低映射效率；(5) 实测中区分 31 个状态对输入功率（0.05 mW）与测量次数（1000 次）有较高要求。
+- (1) 图像传输是“模拟/仿真”而非实时射频链路实验，BER 评估在实测星座图上加复高斯噪声完成；
+- (2) “双射”有一个例外（全 1 与全 −1 两条递归序列在一次谐波响应均为零，只取其一），并非严格双射；
+- (3) 提高 p 会增加星座点密度、降低噪声鲁棒性，故实际编码长度需按信道 SNR 折中；
+- (4) 能量转换效率的提升依赖附加相位梯度或级联编码，级联会等比例降低映射效率；
+- (5) 实测中区分 31 个状态对输入功率（0.05 mW）与测量次数（1000 次）有较高要求。
 
 ### 与领域的关系
 
-本文把“可编程超表面直接发射/反射数字信息”（无 DAC/混频的射频链简化发射机）从“低效率、小状态数”推进到“效率逼近理论上限、状态数指数覆盖”的一步，属于东南大学崔铁军团队在编码超表面/信息超材料方向上的延续（同团队此前工作：时间域编码、时空编码、光控超表面、256-QAM 等）。与 RIS 被动波束赋形不同，本文强调“发射机架构 + 星座合成”的信息论视角，并与光学计算中“用波传播与干涉做计算”的思路相通。
+- 本文把“可编程超表面直接发射/反射数字信息”（无 DAC/混频的射频链简化发射机）从“低效率、小状态数”推进到“效率逼近理论上限、状态数指数覆盖”的一步，属于东南大学崔铁军团队在编码超表面/信息超材料方向上的延续（同团队此前工作：时间域编码、时空编码、光控超表面、256-QAM 等）。
+- 与 RIS 被动波束赋形不同，本文强调“发射机架构 + 星座合成”的信息论视角，并与光学计算中“用波传播与干涉做计算”的思路相通。
 
 ### 延伸阅读建议
 
-可对照阅读：(1) 直接数字消息传输（Research 2019，崔铁军等）；(2) 时空编码数字超表面（Nat. Commun. 2018）；(3) 基于时空编码超表面的简化架构无线通信（Adv. Mater. Technol. 2019）；(4) 空频复用超表面通信（Nat. Electron. 2021）；(5) 与本文对比的 RIS 发射机综述（Proc. IEEE 2022，Cheng 等）。若关心“信息映射效率”的信息论定义，可回溯本文参考文献 49（Fourier/信息光学）。
+可对照阅读：
+- (1) 直接数字消息传输（Research 2019，崔铁军等）；
+- (2) 时空编码数字超表面（Nat. Commun. 2018）；
+- (3) 基于时空编码超表面的简化架构无线通信（Adv. Mater. Technol. 2019）；
+- (4) 空频复用超表面通信（Nat. Electron. 2021）；
+- (5) 与本文对比的 RIS 发射机综述（Proc. IEEE 2022，Cheng 等）。若关心“信息映射效率”的信息论定义，可回溯本文参考文献 49（Fourier/信息光学）。

@@ -1,6 +1,27 @@
-{{/* 把 Markdown 中的相对图片路径解析为源页面下的绝对路径，保证内容被复用到首页/列表时图片不失效 */}}
+{{/* 把 Markdown 中的相对图片路径解析为源页面下的绝对路径，保证内容被复用到首页/列表时图片不失效。
+     随记（notes）里的本地图片额外做两件事：
+       - src 换成 480×480 方形缩略图（九宫格按正方形裁切显示，列表页体积从数 MB 降到数十 KB）
+       - data-full 指向原图，供灯箱「点击看大图」使用
+     其它栏目（文章）保持原样，不受影响。 */}}
 {{ $dest := .Destination }}
-{{ if and $dest (not (strings.HasPrefix $dest "http")) (not (strings.HasPrefix $dest "/")) (not (strings.HasPrefix $dest "#")) }}
-  {{ $dest = printf "%s%s" .Page.RelPermalink $dest }}
+{{ $src := $dest }}
+{{ $full := "" }}
+{{ $isExternal := or (strings.HasPrefix $dest "http") (strings.HasPrefix $dest "//") (strings.HasPrefix $dest "/") (strings.HasPrefix $dest "#") }}
+{{ $isNote := eq .Page.Section "notes" }}
+{{ if and $dest (not $isExternal) }}
+  {{ $src = printf "%s%s" .Page.RelPermalink $dest }}
+  {{ if $isNote }}
+    {{ with .Page.Resources.GetMatch $dest }}
+      {{ $res := . }}
+      {{ if and (eq $res.ResourceType "image") (ne $res.MediaType.SubType "gif") (ne $res.MediaType.SubType "svg") }}
+        {{ $full = $res.RelPermalink }}
+        {{ if ge $res.Width 480 }}
+          {{ $src = ($res.Fill "480x480 q82").RelPermalink }}
+        {{ else }}
+          {{ $src = $res.RelPermalink }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
 {{ end }}
-<img src="{{ $dest | safeURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}>
+<img src="{{ $src | safeURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ with $full }} data-full="{{ . | safeURL }}"{{ end }}{{ if $isNote }} loading="lazy" decoding="async"{{ end }}>

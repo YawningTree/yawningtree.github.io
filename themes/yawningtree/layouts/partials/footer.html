@@ -62,3 +62,9 @@
 })();
 </script>
 </footer>
+
+{{/* 随记配图：方形九宫格 + 点击放大灯箱（加内容指纹，改脚本自动失效缓存） */}}
+{{ with resources.Get "js/photos.js" }}
+  {{ $js := . | fingerprint }}
+  <script defer src="{{ $js.RelPermalink }}"></script>
+{{ end }}

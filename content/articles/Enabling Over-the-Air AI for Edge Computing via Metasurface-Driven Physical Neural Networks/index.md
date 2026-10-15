@@ -735,7 +735,7 @@ draft: false
 
 **中文:** 数据集描述。为评估 MetaAI 的性能，我们选取六个多样性数据集：MNIST [26]、Fashion-MNIST [59]、Fruits-360 [1]、AFHQ [2]、CelebA [61] 与 Widar 3.0 [64]，涵盖手写数字、服饰、水果、动物、人脸与手势。六个数据集的详细信息列于表 1。
 
-**表 1（Table 1：Performance under different datasets，不同数据集下的性能）**（图注原文见上句；数据来自 PDF 内嵌表格，转写为 Markdown）：
+**表 1（Table 1：Performance under different datasets，不同数据集下的性能）**：
 
 | 数据集 | 训练样本 | 测试样本 | 类别 | ResNet18（仿真） | DiscreteNN（仿真） | DiscreteNN（原型） | MetaAI（仿真） | MetaAI（原型） |
 |---|---|---|---|---|---|---|---|---|
@@ -1205,7 +1205,7 @@ draft: false
 
 **中文:** 我们在 MNIST 与 AFHQ 数据集上测试所有系统，测量处理单张输入图像从传输到出结果所需的总时间与能量。结果汇总于表 2 与表 3：原始准确率与计算效率之间存在清晰折中，而 Meta-AI 开辟了一个新的超低功耗工作点。
 
-**表 2（Table 2：Performance under MNIST dataset，MNIST 数据集下的性能）**（数据来自 PDF 内嵌表格）：
+**表 2（Table 2：Performance under MNIST dataset，MNIST 数据集下的性能）**：
 
 | 系统 | 模型 | 准确率 | 传输时间 | 服务器计算时间 | 总时间 | 传输能量 | 服务器计算能量 | MTS 能量 | 总能量 |
 |---|---|---|---|---|---|---|---|---|---|
