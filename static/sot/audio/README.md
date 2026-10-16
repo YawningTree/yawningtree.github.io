@@ -18,6 +18,9 @@
 - 锈龙酸蚀使用原作 `ACID`，碧龙恐惧使用原作 `FEAR`，分别写入 `effects.acid/effects.fear`；两者来自本地 SoD 扩展 SND，并与对应 `C0ACID.DEF`/`C0FEAR.DEF` 独立帧同步触发。
 - 好运与坏运使用原作 `GOODLUCK`、`BADLUCK`，写入 `effects.goodLuck/effects.badLuck`；与战斗中的 `C09SPA0.DEF`/`C10SPF0.DEF` 独立帧同步触发。
 - 好士气与坏士气使用原作 `GOODMRLE`、`BADMRLE`，写入 `effects.goodMorale/effects.badMorale`；与战斗中的 `C09SPW0.DEF`（Mirth 战斗内效果）/`C14SPE0.DEF`（Sorrow 战斗内效果）独立帧同步触发。亡灵同队士气-1、天使全军士气和鬼龙敌军士气都是开战快照，不产生独立音效。
+- 开战场地法术（0.8.0）使用原作 `QUIKSAND`（流沙出现）、`LANDMINE`（地雷埋设）、`LANDKILL`（地雷引爆）、`FORCEFLD`（力场出现）与 `FIREWALL`（火墙出现），写入 `effects.quicksand/landMine/landMineBlast/forceField/fireWall`；音源名来自 VCMI 法术配置（`appearSound` 与 `landMineTrigger.sounds.cast`），提取结果与本地 `Heroes3.snd` 逐字节一致。
+- 场地**站立循环**不配音效：VCMI 的障碍渲染只有 `appearSound`，没有环境循环字段，因此 `LOOPMINE`、`LOOPFIRE` 两个本地音源保持未使用，不自行发明持续音。
+- 场地**解除**也不配音效（VCMI 注明“原作没有障碍移除音效”）；火墙灼烧同样没有专属音效（`fireWallTrigger` 只带 `directDamage`）。
 - `Heroes3/` 原始游戏目录、SND 文件和 MP3 不进入 Git，生成后的音频也不应随公开构建发布。
 
 ## 默认音量
