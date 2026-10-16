@@ -2,34 +2,17 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="apple-mobile-web-app-title" content="酒馆阴影" />
-    <meta name="theme-color" content="#000000" />
-    <script>
-      (() => {
-        const updateDisplayMode = () => {
-          const standalone = window.matchMedia('(display-mode: standalone)').matches
-            || window.matchMedia('(display-mode: fullscreen)').matches
-            || window.matchMedia('(display-mode: minimal-ui)').matches
-            || navigator.standalone === true;
-          document.documentElement.dataset.displayMode = standalone ? 'pwa' : 'web';
-        };
-        updateDisplayMode();
-        for (const query of ['(display-mode: standalone)', '(display-mode: fullscreen)', '(display-mode: minimal-ui)']) {
-          window.matchMedia(query).addEventListener?.('change', updateDisplayMode);
-        }
-      })();
-    </script>
-    <style>html,body,#root{background:#000;min-height:100%;margin:0}</style>
-    <link rel="stylesheet" href="./fonts/fusion-pixel/Fusion-Pixel-12px-Proportional-Simplified-Chinese.css" />
-    <link rel="manifest" href="./manifest.webmanifest" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png" />
-    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
-    <title>魔法门之英雄无敌Ⅲ：酒馆阴影</title>
-    <script type="module" crossorigin src="/games/autochess/assets/index-DKseYEUd.js"></script>
-    <link rel="stylesheet" crossorigin href="/games/autochess/assets/index-DY9Q7k5U.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>酒馆阴影已迁移到 /sot/</title>
+    <link rel="canonical" href="https://yawningtree.github.io/sot/" />
+    <meta http-equiv="refresh" content="0; url=https://yawningtree.github.io/sot/" />
+    <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0b0a08;color:#e8d9ae;font-family:system-ui,-apple-system,"PingFang SC",sans-serif;text-align:center;padding:24px}</style>
   </head>
   <body>
-    <div id="root"></div>
+    <p>「酒馆阴影」已迁移到 <a href="https://yawningtree.github.io/sot/" style="color:#f1d58e">https://yawningtree.github.io/sot/</a>，正在跳转……</p>
+    <script>
+      // Keep hash routes such as #/sandbox working across the move.
+      location.replace('https://yawningtree.github.io/sot/' + location.hash);
+    </script>
   </body>
 </html>
