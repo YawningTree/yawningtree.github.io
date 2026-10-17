@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sot-pwa-v17';
+const CACHE_NAME = 'sot-pwa-v18';
 
 const corePaths = [
   '',
@@ -48,10 +48,8 @@ const corePaths = [
   'assets/effects/thunder.webp',
   'assets/effects/weakness.webp',
   'assets/effects/fireWall.webp',
-  'assets/effects/fireWallDispel.webp',
   'assets/effects/fireWallIdle.webp',
   'assets/effects/forceField.webp',
-  'assets/effects/forceFieldDispel.webp',
   'assets/effects/forceFieldIdle.webp',
   'assets/effects/landMine.webp',
   'assets/effects/landMineBlast.webp',
