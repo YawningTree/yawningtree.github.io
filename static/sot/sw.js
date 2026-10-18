@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sot-pwa-v32';
+const CACHE_NAME = 'sot-pwa-v33';
 
 const corePaths = [
   '',
@@ -50,7 +50,6 @@ const corePaths = [
   'assets/effects/spellResist.webp',
   'assets/effects/summon.webp',
   'assets/effects/thunder.webp',
-  'assets/effects/thunderBolt.webp',
   'assets/effects/weakness.webp',
   'assets/effects/fireWall.webp',
   'assets/effects/fireWallIdle.webp',
