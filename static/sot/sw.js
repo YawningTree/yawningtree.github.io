@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sot-pwa-v34';
+const CACHE_NAME = 'sot-pwa-v35';
 
 const corePaths = [
   '',
@@ -15,6 +15,7 @@ const corePaths = [
   'assets/decor/moonlit-tavern.webp',
   'assets/effects/acid.webp',
   'assets/effects/aging.webp',
+  'assets/effects/armageddon.webp',
   'assets/effects/badLuck.webp',
   'assets/effects/badMorale.webp',
   'assets/effects/blast.webp',
