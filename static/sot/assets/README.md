@@ -13,3 +13,10 @@
 ## 本批地狱机制与资源
 
 十字爆炸/死亡云、永久恶魔转换、天然初级火盾、三头/环击边界及原作资产来源见[地狱技能评估](../../docs/inferno-skill-review.md)。当前基线为0.5.9；墓园、据点、元素城与中立单位评估分别见 `docs/undead-skill-review.md`、`docs/stronghold-skill-review.md`、`docs/conflux-skill-review.md`、`docs/neutral-skill-review.md`。动画时长约束统一见[战斗动画与音效时序规范](../../docs/animation-timing.md)。
+
+2026-10-18 开战控制、连锁与全场法术：
+
+- 地震：SoD 没有战斗 DEF 图集，只接入 `ERTHQUAK` 音效与画面震动；不生成替代法术贴图。
+- 连锁闪电：`C03SPA0`（底部锚定雷柱）+ `C03SPA1`（12 帧爆散），主目标先使用 `C03SPA0`；后续雷弧没有 DEF，按原作 `SBolt/doBolt` 程序绘制；全部跳完后所有目标同时播放 `C03SPA1` 爆散。
+- 死亡波纹：`C04SPE0`（15 帧）；亡灵杀手：`C14SPA0`（15 帧，50% 透明）。死亡之云 `SP04_` 在本项目中取消透明度，固定为 1.0。
+- 以上图集已加入 `public/sw.js` 预缓存，并随 `SPELL_EFFECT_ASSET_VERSION = 6` 刷新缓存。

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sot-pwa-v27';
+const CACHE_NAME = 'sot-pwa-v29';
 
 const corePaths = [
   '',
@@ -34,6 +34,10 @@ const corePaths = [
   'assets/effects/goodLuck.webp',
   'assets/effects/inferno.webp',
   'assets/effects/meteorShower.webp',
+  'assets/effects/deathRipple.webp',
+  'assets/effects/destroyUndead.webp',
+  'assets/effects/chainLightningBolt.webp',
+  'assets/effects/chainLightningDust.webp',
   'assets/effects/goodMorale.webp',
   'assets/effects/paralyze.webp',
   'assets/effects/poison.webp',
