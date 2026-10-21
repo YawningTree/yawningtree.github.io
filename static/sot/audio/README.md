@@ -22,6 +22,7 @@
 - 场地**站立循环**不配音效：VCMI 的障碍渲染只有 `appearSound`，没有环境循环字段，因此 `LOOPMINE`、`LOOPFIRE` 两个本地音源保持未使用，不自行发明持续音。
 - 开战控制/连锁/全场法术（0.9.0）使用 `DEATHRIP`、`SACBRETH`、`CHAINLTE` 与 `ERTHQUAK`，写入 `effects.deathRipple/destroyUndead/chainLightning/earthquake`；地震没有战斗 DEF 音画同步问题，按画布震动节拍播放。
 - 酒馆情报与全场驱散（0.9.6）使用末日审判 `FIRESTRM`、透视 `VISIONS`、伪装 `DISGUISE`，写入 `effects.armageddon/visions/disguise`；驱魔大法复用既有 `DISPELL`。透视/伪装是冒险法术，没有对应战斗 DEF，本作只使用原作音效与法术图标。
+- 复活/魔镜批次（0.9.9）使用 `RESURECT`、`ANIMDEAD`、`SACRIF1`、`REMOVEOB`、`BACKLASH`，写入 `effects.resurrect/animateDead/sacrifice/removeObstacle/magicMirror`；分别对应 `C01SPE0`、`C01SPE0`、`C12SPF1+C12SPF0`、`C18SPW0`、`C02SPA0`。魔镜图集按 10 帧 × 100ms、总 1000ms 播放。
 - 场地**解除**也不配音效（VCMI 注明“原作没有障碍移除音效”）；火墙灼烧同样没有专属音效（`fireWallTrigger` 只带 `directDamage`）。
 - `Heroes3/` 原始游戏目录、SND 文件和 MP3 不进入 Git，生成后的音频也不应随公开构建发布。
 
