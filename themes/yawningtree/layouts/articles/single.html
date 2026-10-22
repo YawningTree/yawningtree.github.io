@@ -74,6 +74,22 @@
         toc.addEventListener('scroll', updateTocOverflow, { passive: true });
         window.addEventListener('resize', updateTocOverflow, { passive: true });
         updateTocOverflow();
+
+        /* 桌面端目录区域独占滚轮：目录到顶/底后阻止滚动链传递到正文。 */
+        col.addEventListener('wheel', function (event) {
+          if (window.matchMedia('(max-width: 900px)').matches) return;
+          if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+          var scrollable = toc.scrollHeight > toc.clientHeight + 1;
+          if (!scrollable) {
+            event.preventDefault();
+            return;
+          }
+          var atTop = toc.scrollTop <= 0;
+          var atBottom = toc.scrollTop + toc.clientHeight >= toc.scrollHeight - 1;
+          if ((event.deltaY < 0 && atTop) || (event.deltaY > 0 && atBottom)) {
+            event.preventDefault();
+          }
+        }, { passive: false });
       });
     </script>
   </aside>

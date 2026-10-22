@@ -380,6 +380,7 @@ main.wrap { flex: 1 0 auto; width: 100%; }
   max-height: calc(100vh - 7rem);
   overflow-y: auto;
   overflow-x: hidden;   /* 高亮通栏不产生横向滚动条 */
+  overscroll-behavior-y: contain; /* 到顶/底时不把滚轮传递给正文 */
   scrollbar-width: none;      /* Firefox：隐藏滚动条 */
   -ms-overflow-style: none;   /* 旧 Edge / IE */
 }
