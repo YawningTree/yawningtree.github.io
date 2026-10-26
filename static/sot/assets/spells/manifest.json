@@ -1,7 +1,7 @@
 {
   "version": 1,
   "iconSource": "spells.def",
-  "mapping": "frame index = original spell reference ID (see docs/planning/spell-checklist.md)",
+  "mapping": "frame index = original spell reference ID (see docs/planning/spell-checklist.xlsx)",
   "icons": [
     {
       "key": "summonBoat",

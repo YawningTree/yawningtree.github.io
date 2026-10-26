@@ -6,13 +6,13 @@
 - `Heroes3/` 原始游戏文件和音频不进入 Git。
 - 图集已按阵营拆分，单位为无损 WebP；H3 PCX 使用文件内置调色板解码。
 - `manifest.json` 是展示层唯一读取的资源索引；缺少单位形态时资源检查会失败。动画清单当前为 `version = 10`，包含由 `CRANIM.TXT` 生成的移动、攻击、待机、高潮帧和动作总时长。
-- 战斗状态目标特效另存于 `effects/`：复活 `C01SPE0.DEF`、失明 `C02SPF0.DEF`、缠绕 `SP02_.DEF`、再生 `SP12_.DEF`、吸血 `SP06_.DEF`、暴击 `SP03_.DEF`、衰老 `SP01_.DEF`、好运 `C09SPA0.DEF`、坏运 `C10SPF0.DEF`、酸蚀 `C0ACID.DEF`、恐惧 `C0FEAR.DEF`、雷鸟雷击仅使用 `C11SPA1` 12帧爆散；`C11SPA0` 与 `C03SPA0` 逐字节相同；`C11SPA1` 与 `C03SPA1` 的帧 1–11 相同，但 `C03SPA1` 帧 0 带整行顶部对齐像素。高级嗜血是原作红色调程序效果，不生成替代 DEF；地下城补入驱散 `C05SPW0`、高级虚弱 `C17SPW0`、中毒 `SP11_`、死亡凝视 `C07SPE0`；元素城补入御气 `C11SPE0`、御水 `C11SPF0`、御火 `C11SPW0`、御土 `C13SPA0`；0.9.8 补入牺牲 `C12SPF1`/`C12SPF0`、移除障碍 `C18SPW0`、魔镜 `C02SPA0`；0.10.0 四系召唤复用 `C01SPE0` 作为独立 `summonElemental` 效果。
+- 战斗状态目标特效另存于 `effects/`：复活 `C01SPE0.DEF`、失明 `C02SPF0.DEF`、缠绕 `SP02_.DEF`、再生 `SP12_.DEF`、吸血 `SP06_.DEF`、暴击 `SP03_.DEF`、衰老 `SP01_.DEF`、好运 `C09SPA0.DEF`、坏运 `C10SPF0.DEF`、酸蚀 `C0ACID.DEF`、恐惧 `C0FEAR.DEF`、雷鸟雷击仅使用 `C11SPA1` 12帧爆散；`C11SPA0` 与 `C03SPA0` 逐字节相同；`C11SPA1` 与 `C03SPA1` 的帧 1–11 相同，但 `C03SPA1` 帧 0 带整行顶部对齐像素。高级嗜血是原作红色调程序效果，不生成替代 DEF；地下城补入驱散 `C05SPW0`、高级虚弱 `C17SPW0`、中毒 `SP11_`、死亡凝视 `C07SPE0`；元素城补入御气 `C11SPE0`、御水 `C11SPF0`、御火 `C11SPW0`、御土 `C13SPA0`；0.9.8 补入牺牲 `C12SPF1`/`C12SPF0`、移除障碍 `C18SPW0`、魔镜 `C02SPA0`；0.10.0 四系召唤复用 `C01SPE0` 作为独立 `summonElemental` 效果。2026-10-26 补入魔法神箭 `C20SPX0`–`C20SPX4`/`C20SPX`、寒冰魔箭 `C08SPW0`–`C08SPW4`/`C08SPW5`、霹雳闪电 `C11SPA0`/`C11SPA1`、内爆 `C05SPE0` 与泰坦之雷 `C11SPA0`/`C11SPA1`。五向投射图集保持 50ms/帧，但飞行时长独立为 4 个 50ms 战斗节拍（200ms）；其余命中图集保持 50ms/帧；寒冰命中按 VCMI 配置保留 0.5 透明度。
 - 开战场地法术（0.8.0）按原作存入每块场地的**三件套**：出现（`C17SPE0`/`C09SPF0`/`C15SPE0`/`C07SPF60`）、站立循环（`C17SPE1` 8 帧 / `C09SPF1` 1 帧 / `C15SPE1` 9 帧 / `C07SPF61` 10 帧）、解除（`C15SPE2`/`C07SPF62`），外加地雷爆炸 `C09SPF3`。出现素材与站立素材共用同一张原作画布（提取时保留原始画布 `keepCanvas`），逐帧居中绘制，因此交接时不跳动；出现与解除素材名取自可执行文件的战斗效果表（文件偏移 `0x241E08`），站立素材名取自 VCMI 法术配置的 `animation` 字段。
 - 不应把包含这些原版资源的构建公开发布。
 
 ## 本批地狱机制与资源
 
-十字爆炸/死亡云、永久恶魔转换、天然初级火盾、三头/环击边界及原作资产来源见[地狱技能评估](../../docs/inferno-skill-review.md)。当前基线为0.5.9；墓园、据点、元素城与中立单位评估分别见 `docs/undead-skill-review.md`、`docs/stronghold-skill-review.md`、`docs/conflux-skill-review.md`、`docs/neutral-skill-review.md`。动画时长约束统一见[战斗动画与音效时序规范](../../docs/animation-timing.md)。
+十字爆炸/死亡云、永久恶魔转换、天然初级火盾、三头/环击边界及原作资产来源见[地狱技能评估](../../docs/archive/inferno-skill-review.md)。当前基线为0.5.9；墓园、据点、元素城与中立单位评估分别见 `docs/archive/undead-skill-review.md`、`docs/archive/stronghold-skill-review.md`、`docs/archive/conflux-skill-review.md`、`docs/archive/neutral-skill-review.md`。动画时长约束统一见[战斗动画与音效时序规范](../../docs/animation-timing.md)。
 
 2026-10-18 开战控制、连锁与全场法术：
 

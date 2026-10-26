@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sot-pwa-v40';
+const CACHE_NAME = 'sot-pwa-v42';
 
 const corePaths = [
   '',
@@ -39,6 +39,21 @@ const corePaths = [
   'assets/effects/destroyUndead.webp',
   'assets/effects/chainLightningBolt.webp',
   'assets/effects/chainLightningDust.webp',
+  'assets/effects/magicArrow.webp',
+  'assets/effects/magicArrowProjectile.webp',
+  'assets/effects/magicArrowProjectile1.webp',
+  'assets/effects/magicArrowProjectile2.webp',
+  'assets/effects/magicArrowProjectile3.webp',
+  'assets/effects/magicArrowProjectile4.webp',
+  'assets/effects/iceBolt.webp',
+  'assets/effects/iceBoltProjectile.webp',
+  'assets/effects/iceBoltProjectile1.webp',
+  'assets/effects/iceBoltProjectile2.webp',
+  'assets/effects/iceBoltProjectile3.webp',
+  'assets/effects/iceBoltProjectile4.webp',
+  'assets/effects/lightningBoltImpact.webp',
+  'assets/effects/implosion.webp',
+  'assets/effects/titansLightningBolt.webp',
   'assets/effects/goodMorale.webp',
   'assets/effects/paralyze.webp',
   'assets/effects/poison.webp',
