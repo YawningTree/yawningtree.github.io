@@ -3,21 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <script>
-      (() => {
-        // Scale the portrait game with the browser's native viewport zoom instead
-        // of a CSS transform/zoom. WebKit then maps touch coordinates through the
-        // same native scaling path as the painted pixels, including after rotation.
-        const touchDevice = navigator.maxTouchPoints > 0 || window.matchMedia?.('(pointer: coarse)').matches;
-        const screenWidth = Math.min(window.screen?.width || 0, window.screen?.height || 0);
-        const screenHeight = Math.max(window.screen?.width || 0, window.screen?.height || 0);
-        if (!touchDevice || !(screenWidth > 0) || !(screenHeight > 0) || screenWidth > 1024) return;
-        const logicalWidth = Math.ceil(Math.max(375, screenWidth / 1.5, (734 * screenWidth) / screenHeight));
-        const viewport = document.querySelector('meta[name="viewport"]');
-        viewport?.setAttribute('content', `width=${logicalWidth}, viewport-fit=cover`);
-        document.documentElement.dataset.viewportScaleMode = 'browser';
-      })();
-    </script>
     <meta name="apple-mobile-web-app-title" content="酒馆阴影" />
     <meta name="theme-color" content="#000000" />
     <script>
@@ -41,7 +26,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png" />
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
     <title>魔法门之英雄无敌Ⅲ：酒馆阴影</title>
-    <script type="module" crossorigin src="/sot/assets/index-D43JzSJK.js"></script>
+    <script type="module" crossorigin src="/sot/assets/index-BXW6lkGw.js"></script>
     <link rel="stylesheet" crossorigin href="/sot/assets/index-Dkup0Phv.css">
   </head>
   <body>
