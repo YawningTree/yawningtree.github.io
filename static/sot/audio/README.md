@@ -24,6 +24,7 @@
 - 酒馆情报与全场驱散（0.9.6）使用末日审判 `FIRESTRM`、透视 `VISIONS`、伪装 `DISGUISE`，写入 `effects.armageddon/visions/disguise`；驱魔大法复用既有 `DISPELL`。透视/伪装是冒险法术，没有对应战斗 DEF，本作只使用原作音效与法术图标。
 - 复活/魔镜批次（0.9.9）使用 `RESURECT`、`ANIMDEAD`、`SACRIF1`、`REMOVEOB`、`BACKLASH`，写入 `effects.resurrect/animateDead/sacrifice/removeObstacle/magicMirror`；分别对应 `C01SPE0`、`C01SPE0`、`C12SPF1+C12SPF0`、`C18SPW0`、`C02SPA0`。魔镜图集按 10 帧 × 100ms、总 1000ms 播放。
 - 四系召唤元素（0.10.0）使用原作 `SumnElm.wav`，写入 `effects.summonElemental`；目标特效复用 `C01SPE0`（20 帧 × 50ms、1000ms、50% 透明），与尸堆转恶魔的 `RESURECT` 音效分开。
+- 状态法术（0.12.0）复用既有单位技能音源：`FIRESHIE`（烈火神盾）、`PROTECTA/PROTECTW/PROTECTF/PROTECTE`（四系御法）、`CURSE`、`BLOODLUS`、`WEAKNESS` 与 `BLIND`。不新增或伪造专属音效。
 - 场地**解除**也不配音效（VCMI 注明“原作没有障碍移除音效”）；火墙灼烧同样没有专属音效（`fireWallTrigger` 只带 `directDamage`）。
 - `Heroes3/` 原始游戏目录、SND 文件和 MP3 不进入 Git，生成后的音频也不应随公开构建发布。
 
