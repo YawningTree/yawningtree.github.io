@@ -20,3 +20,10 @@
 - 连锁闪电：`C11SPA0`（目标上方锚定雷柱）+ `C11SPA1`（12 帧爆散）。主目标先使用 `C11SPA0`；后续雷弧没有 DEF，按原作 `SBolt/doBolt` 程序绘制；全部跳完后所有目标同时播放 `C11SPA1` 爆散。`C03SPA1` 的帧 0 含整行顶部对齐像素，会造成目标顶部一线浅色伪影，因此改用画面等价的 `C11SPA1`。
 - 死亡波纹：`C04SPE0`（15 帧）；亡灵杀手：`C14SPA0`（15 帧，50% 透明）。死亡之云 `SP04_` 在本项目中取消透明度，固定为 1.0。
 - 以上图集已加入 `public/sw.js` 预缓存，并随 `SPELL_EFFECT_ASSET_VERSION = 6` 刷新缓存。
+
+2026-10-28 专家档法术资源（0.13.0）：
+
+- 新增目标 DEF：`C13SPE0`、`C01SPA0`、`C02SPE0`、`C03SPW0`、`C01SPW0`、`C12SPA0`、`C16SPE0`、`C07SPA0`+`C07SPA1`、`C10SPW`、`C09SPW0`、`C14SPE0`、`C09SPA0`、`C10SPF0`、`C15SPA0`、`C09SPE0`、`C13SPW0`、`C08SPF0`、`C04SPA0`、`C01SPF0`、`C10SPA0`、`C06SPW0`。
+- 新增音效：`SHIELD`、`AIRsHELD`、`ANTIMAGK`、`CURE`、`BLESS`、`PRECISON`、`TUFFSKIN`、`DISRUPTR`、`PRAYER`、`MIRTH`、`SORROW`、`FORTUNE`、`MISFORT`、`TAILWIND`、`MUCKMIRE`、`SLAYER`、`FRENZY`、`CNTRSTRK`、`BERSERK`、`HYPNOTIZ`、`FORGET`、`TELPTOUT`、`CLONE`。
+- 时空之门与克隆无目标 DEF；分别使用 `TELPTOUT` 与 `CLONE`，动画主体为单位/卡牌状态变化，不为它们伪造目标图集。
+- 所有新增图集已加入 `public/sw.js` `sot-pwa-v67` 预缓存，并由 `npm run assets:check` 校验。

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sot-pwa-v63';
+const CACHE_NAME = 'sot-pwa-v67';
 
 const corePaths = [
   '',
@@ -80,6 +80,28 @@ const corePaths = [
   'assets/effects/landMineIdle.webp',
   'assets/effects/quicksand.webp',
   'assets/effects/quicksandIdle.webp',
+  'assets/effects/shield.webp',
+  'assets/effects/airShield.webp',
+  'assets/effects/antiMagic.webp',
+  'assets/effects/cure.webp',
+  'assets/effects/bless.webp',
+  'assets/effects/precision.webp',
+  'assets/effects/stoneSkin.webp',
+  'assets/effects/disruptingRayRay.webp',
+  'assets/effects/disruptingRayBurst.webp',
+  'assets/effects/prayer.webp',
+  'assets/effects/mirth.webp',
+  'assets/effects/sorrow.webp',
+  'assets/effects/fortune.webp',
+  'assets/effects/misfortune.webp',
+  'assets/effects/haste.webp',
+  'assets/effects/slow.webp',
+  'assets/effects/slayer.webp',
+  'assets/effects/frenzy.webp',
+  'assets/effects/counterstrike.webp',
+  'assets/effects/berserk.webp',
+  'assets/effects/hypnotize.webp',
+  'assets/effects/forgetfulness.webp',
 ];
 
 const scopeUrl = new URL(self.registration.scope);
