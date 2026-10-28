@@ -5,7 +5,7 @@
 - 仅用于本人本地、非商业的游戏验证。
 - `Heroes3/` 原始游戏文件和音频不进入 Git。
 - 图集已按阵营拆分，单位为无损 WebP；H3 PCX 使用文件内置调色板解码。
-- `manifest.json` 是展示层唯一读取的资源索引；缺少单位形态时资源检查会失败。动画清单当前为 `version = 10`，包含由 `CRANIM.TXT` 生成的移动、攻击、待机、高潮帧和动作总时长。
+- `manifest.json` 是展示层唯一读取的资源索引；缺少单位形态时资源检查会失败。动画清单当前为 `version = 11`，包含由 `CRANIM.TXT` 生成的移动、攻击、待机、高潮帧、动作总时长，以及每个形态的 H3 `MIRROR_IMAGE` 调色板映射。
 - 战斗状态目标特效另存于 `effects/`：复活 `C01SPE0.DEF`、失明 `C02SPF0.DEF`、缠绕 `SP02_.DEF`、再生 `SP12_.DEF`、吸血 `SP06_.DEF`、暴击 `SP03_.DEF`、衰老 `SP01_.DEF`、好运 `C09SPA0.DEF`、坏运 `C10SPF0.DEF`、酸蚀 `C0ACID.DEF`、恐惧 `C0FEAR.DEF`、雷鸟雷击仅使用 `C11SPA1` 12帧爆散；`C11SPA0` 与 `C03SPA0` 逐字节相同；`C11SPA1` 与 `C03SPA1` 的帧 1–11 相同，但 `C03SPA1` 帧 0 带整行顶部对齐像素。高级嗜血是原作红色调程序效果，不生成替代 DEF；地下城补入驱散 `C05SPW0`、高级虚弱 `C17SPW0`、中毒 `SP11_`、死亡凝视 `C07SPE0`；元素城补入御气 `C11SPE0`、御水 `C11SPF0`、御火 `C11SPW0`、御土 `C13SPA0`；0.9.8 补入牺牲 `C12SPF1`/`C12SPF0`、移除障碍 `C18SPW0`、魔镜 `C02SPA0`；0.10.0 四系召唤复用 `C01SPE0` 作为独立 `summonElemental` 效果。2026-10-26 补入魔法神箭 `C20SPX0`–`C20SPX4`/`C20SPX`、寒冰魔箭 `C08SPW0`–`C08SPW4`/`C08SPW5`、霹雳闪电 `C11SPA0`/`C11SPA1`、内爆 `C05SPE0` 与泰坦之雷 `C11SPA0`/`C11SPA1`。五向投射图集保持 50ms/帧，但飞行时长独立为 4 个 50ms 战斗节拍（200ms）；其余命中图集保持 50ms/帧；寒冰命中按 VCMI 配置保留 0.5 透明度。
 - 开战场地法术（0.8.0）按原作存入每块场地的**三件套**：出现（`C17SPE0`/`C09SPF0`/`C15SPE0`/`C07SPF60`）、站立循环（`C17SPE1` 8 帧 / `C09SPF1` 1 帧 / `C15SPE1` 9 帧 / `C07SPF61` 10 帧）、解除（`C15SPE2`/`C07SPF62`），外加地雷爆炸 `C09SPF3`。出现素材与站立素材共用同一张原作画布（提取时保留原始画布 `keepCanvas`），逐帧居中绘制，因此交接时不跳动；出现与解除素材名取自可执行文件的战斗效果表（文件偏移 `0x241E08`），站立素材名取自 VCMI 法术配置的 `animation` 字段。
 - 不应把包含这些原版资源的构建公开发布。
@@ -26,4 +26,4 @@
 - 新增目标 DEF：`C13SPE0`、`C01SPA0`、`C02SPE0`、`C03SPW0`、`C01SPW0`、`C12SPA0`、`C16SPE0`、`C07SPA0`+`C07SPA1`、`C10SPW`、`C09SPW0`、`C14SPE0`、`C09SPA0`、`C10SPF0`、`C15SPA0`、`C09SPE0`、`C13SPW0`、`C08SPF0`、`C04SPA0`、`C01SPF0`、`C10SPA0`、`C06SPW0`。
 - 新增音效：`SHIELD`、`AIRsHELD`、`ANTIMAGK`、`CURE`、`BLESS`、`PRECISON`、`TUFFSKIN`、`DISRUPTR`、`PRAYER`、`MIRTH`、`SORROW`、`FORTUNE`、`MISFORT`、`TAILWIND`、`MUCKMIRE`、`SLAYER`、`FRENZY`、`CNTRSTRK`、`BERSERK`、`HYPNOTIZ`、`FORGET`、`TELPTOUT`、`CLONE`。
 - 时空之门与克隆无目标 DEF；分别使用 `TELPTOUT` 与 `CLONE`，动画主体为单位/卡牌状态变化，不为它们伪造目标图集。
-- 所有新增图集已加入 `public/sw.js` `sot-pwa-v68` 预缓存，并由 `npm run assets:check` 校验。
+- 所有新增图集已加入 `public/sw.js` `sot-pwa-v69` 预缓存，并由 `npm run assets:check` 校验。克隆不再生成第二套专用图集，只在浏览器内按帧应用清单中的镜像调色板并缓存结果。
