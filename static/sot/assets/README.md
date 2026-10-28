@@ -26,4 +26,4 @@
 - 新增目标 DEF：`C13SPE0`、`C01SPA0`、`C02SPE0`、`C03SPW0`、`C01SPW0`、`C12SPA0`、`C16SPE0`、`C07SPA0`+`C07SPA1`、`C10SPW`、`C09SPW0`、`C14SPE0`、`C09SPA0`、`C10SPF0`、`C15SPA0`、`C09SPE0`、`C13SPW0`、`C08SPF0`、`C04SPA0`、`C01SPF0`、`C10SPA0`、`C06SPW0`。
 - 新增音效：`SHIELD`、`AIRsHELD`、`ANTIMAGK`、`CURE`、`BLESS`、`PRECISON`、`TUFFSKIN`、`DISRUPTR`、`PRAYER`、`MIRTH`、`SORROW`、`FORTUNE`、`MISFORT`、`TAILWIND`、`MUCKMIRE`、`SLAYER`、`FRENZY`、`CNTRSTRK`、`BERSERK`、`HYPNOTIZ`、`FORGET`、`TELPTOUT`、`CLONE`。
 - 时空之门与克隆无目标 DEF；分别使用 `TELPTOUT` 与 `CLONE`，动画主体为单位/卡牌状态变化，不为它们伪造目标图集。
-- 所有新增图集已加入 `public/sw.js` `sot-pwa-v70` 预缓存，并由 `npm run assets:check` 校验。克隆不生成第二套专用图集，而是在浏览器内按帧应用蓝色亮度色阶并缓存结果。
+- 所有新增图集已加入 `public/sw.js` `sot-pwa-v71` 预缓存，并由 `npm run assets:check` 校验。克隆不生成第二套专用图集，而是在浏览器内按帧应用蓝色亮度色阶并缓存结果。
